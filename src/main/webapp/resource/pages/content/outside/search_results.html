@@ -1,0 +1,746 @@
+ <style>
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+h1.pull-left.h1.jobs-page-header-h1 {
+    margin: 0;
+    font-style: normal;
+    font-size: 24px;
+    color: #333;
+    text-transform: none;
+}
+.jobs-page-header h4, .page-header-custom h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+}
+.listing-section.search-result {
+    width: 100% !important;
+}
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+    border-bottom: 1px solid #fafafa;
+}
+
+button.accordion:after {
+    content: "\2212";
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: '\002B';
+    
+}
+.filter-option {
+    padding: 5px;
+}
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 500px;  
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <section class="content-header ">
+        <h1> Search results</h1>
+    </section>
+    <!-- Search  jobs table start here-->
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="searchjob">
+        
+              
+        <form id="frm_jobs_filtration" action="#" method="get" class="search-area search-bg">
+          <div class="col-lg-6 col-md-6 col-sm-5 pad_0">
+            <div class="search-input search-icon" > 
+              <span class="icon-search" style="background-image:url(resource/css/img/outside/chair.png)">
+              </span>
+              
+              <input type="text" placeholder="Company Name or Job Title or Key word" name="job_title" >
+              
+            </div>
+          </div> 
+    
+          <div class="col-lg-4 col-md-4 col-sm-4 pad_0">
+            <div class="search-input"> 
+              <i class="icon-search7">
+              </i>
+              <input type="text" id="location" placeholder="Preferred Locations" name="locations">
+            </div>
+          </div> 
+          <div class="col-lg-2 col-md-2 col-sm-3 pad_0">
+            <div class="search-btn">
+              <input type="submit" class="btncss" name="cs_" value="Search All Jobs">                
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="">
+      <div class="col-md-3">
+        <h2>Filter Results</h2>
+
+  <button class="accordion">Company Segment</button>
+    <div class="panel1">
+      <div class="default">
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Recruiter</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">DirectHire</a>
+        </div>
+      </div>
+    </div>
+
+  <button class="accordion">Company</button>
+    <div class="panel1">
+      <div class="default">
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">UnitedHealth Group</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Activesoft, Inc.</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">JPMorgan Chase</a>
+        </div>
+        <div class="filter-option">
+         <input type="checkbox">
+          <a href="#">ASCII Group LLC</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Acclaim Systems</a>
+        </div>
+      </div>
+    </div>
+
+  <button class="accordion">Title</button>
+    <div class="panel1">
+      <div class="default">
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Java Developer</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">HTML Developer</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Javascript Developer</a>
+        </div>
+        <div class="filter-option">
+         <input type="checkbox">
+          <a href="#">AngularJS Developer</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">PHP Developer</a>
+        </div>
+      </div>
+    </div>
+
+  <button class="accordion">Location</button>
+    <div class="panel1">
+      <div class="default">
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">New York, NY</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Chicago, IL</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Atlanta, GA</a>
+        </div>
+        <div class="filter-option">
+         <input type="checkbox">
+          <a href="#">San Francisco, CA</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Washington, DC</a>
+        </div>
+      </div>
+    </div>
+
+  <button class="accordion">Employment Type</button>
+    <div class="panel1">
+      <div class="default">
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Full-Time</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Part-Time</a>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox">
+          <a href="#">Contracts</a>
+        </div>
+        <div class="filter-option">
+         <input type="checkbox">
+          <a href="#">Third Party</a>
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="col-md-9">
+        <div class="jobs-page-header">
+          <!-- search result section right Header Start -->
+          <div class="row hidden-xs hidden-sm">
+            <div class="col-md-9">
+              <h1 class="pull-left h1 jobs-page-header-h1">
+                All Tech jobs in Hyderabad, 
+              </h1>
+            </div>
+            <div class="col-md-3">
+              <!-- Replacing for job notification page -->
+              <a class="btn button job-alert pull-right" data-toggle="modal" data-target="#createalert">
+                <span class="icon-mail-1">
+                </span><i class="fa fa-envelope-o" aria-hidden="true"></i> Create Job Alert
+              </a>
+            </div>
+          </div>
+          <div class="row visible-xs visible-sm">
+            <div class="col-md-12">
+              <h2 class="h1 jobs-page-header-h1">
+                All Tech jobs in Hyderabad, 
+              </h2>
+            </div>
+          </div>
+          <div class="row visible-xs visible-sm">
+            <div class="col-md-12 col-lg-12">
+              <h4 class="pull-left posiCount sort mobile">
+                <span>1 - 30
+                </span> of 
+                <span>100
+                </span> positions
+              </h4>
+            </div>
+          </div>
+          <div class="row visible-xs visible-sm hidden-md hidden-lg mobile-btns">
+            <div class="col-md-12">
+              <!-- Replacing for job notification page -->
+              <a class="btn button job-alert pull-right" data-toggle="modal" data-target="#createalert">
+                <span class="icon-mail-1">
+                </span><i class="fa fa-envelope-o" aria-hidden="true"></i> Create Job Alert
+              </a>
+            </div>
+          </div>
+          <div class="row hidden-xs hidden-sm">
+            <div class="col-md-12 col-lg-12">
+              <h4 class="pull-left posiCount sort">
+                <span>1 - 30
+                </span> of 
+                <span>100
+                </span> positions
+              </h4> 
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-12">
+              <hr>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-6 col-lg-6 mT10">
+              <div class="dataTables_paginate paging_simple_numbers">
+                <ul class="pagination">
+                  <li class="paginate_button previous disabled" id="example2_previous">
+                    <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous
+                    </a>
+                  </li>
+                  <li class="paginate_button active">
+                    <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1
+                    </a>
+                  </li>
+                  <li class="paginate_button ">
+                    <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2
+                    </a>
+                  </li>
+                  <li class="paginate_button ">
+                    <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3
+                    </a>
+                  </li>
+                  <li class="paginate_button ">
+                    <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4
+                    </a>
+                  </li>
+                  <li class="paginate_button ">
+                    <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5
+                    </a>
+                  </li>
+                  <li class="paginate_button ">
+                    <a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6
+                    </a>
+                  </li>
+                  <li class="paginate_button next" id="example2_next">
+                    <a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3 mT10">
+            </div>
+            
+          </div>
+          <!-- search result section right Header End -->
+        </div>
+        <div class="listing-section search-result">
+          <div class=" row listing-info">
+            <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
+              <div class="right-side2">
+                <a href="#">
+                  <center>
+                    <img src="resource/css/img/outside/logo.jpg" class="img-responsive" alt="">
+                  </center>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-10 col-xs-12">
+              <div class="row">
+                <div class="left-side1">
+                  <div class="listing-title">
+                    <div class="job-title">
+                      <a href="#/single-job-detail">Angularjs Developer
+                      </a>
+                      <span class="activatedate">
+                        <span class="captions-field">Jan 13, 2016
+                        </span>
+                      </span>
+                    </div>
+                  </div>    
+                  <div class="locationcss">
+                    <ul class="list-inline" style="text-align:left">
+                      <li>
+                        <i class="fa fa-suitcase" aria-hidden="true"></i> 
+                        <span class="ng-binding"> Testers LTD
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span class="ng-binding"> Hyderabad
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="show-brief">
+                    <div class="description">
+                      Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....                                         
+                    </div>
+                  </div>
+                  <br>   
+                  <!-- 3_sec -->
+                  <div class="locationcss">
+                    <ul class="list-inline" style="text-align:left">
+                      <li>
+                        <i class="fa fa-usd" aria-hidden="true"></i> 
+                        <span class="ng-binding"> 10k
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span class="ng-binding"> Management
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                        <span class="ng-binding"> Hot Job
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <span class="ng-binding"> Full time
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-graduation-cap" aria-hidden="true">
+                        </i>
+                        <span class="ng-binding">Graduate
+                        </span>
+                      </li>
+                      <a href="#">
+                        <li class="pull-right">
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          <span class="ng-binding">Save job</span>
+                        </li>
+                      </a>
+                    </ul> 
+
+                  </div>  
+                  <!-- 3_sec -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listing-section search-result">
+          <div class=" row listing-info">
+            <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
+              <div class="right-side2">
+                <a href="#">
+                  <center>
+                    <img src="resource/css/img/outside/logo.jpg" class="img-responsive" alt="">
+                  </center>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-10 col-xs-12">
+              <div class="row">
+                <div class="left-side1">
+                  <div class="listing-title">
+                    <div class="job-title">
+                      <a href="">Insurance agent
+                      </a>
+                      <span class="activatedate">
+                        <span class="captions-field">Oct 24, 2016
+                        </span>
+                      </span>
+                    </div>
+                  </div>    
+                  <div class="locationcss">
+                    <ul class="list-inline" style="text-align:left">
+                      <li>
+                        <i class="fa fa-suitcase" aria-hidden="true"></i> 
+                        <span class="ng-binding"> Testers LTD
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span class="ng-binding"> Sacramento, CA
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="show-brief">
+                    <div class="description">
+                      Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....                                         
+                    </div>
+                  </div>
+                  <br>   
+                  <!-- 3_sec -->
+                  <div class="locationcss">
+                   <ul class="list-inline" style="text-align:left">
+                      <li>
+                        <i class="fa fa-usd" aria-hidden="true"></i> 
+                        <span class="ng-binding"> 10k
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span class="ng-binding"> Management
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                        <span class="ng-binding"> Hot Job
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <span class="ng-binding"> Part time
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-graduation-cap" aria-hidden="true">
+                        </i>
+                        <span class="ng-binding">Graduate
+                        </span>
+                      </li>
+                      <a href="#">
+                        <li class="pull-right">
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          <span class="ng-binding">Save job</span>
+                        </li>
+                      </a>
+                    </ul>
+
+                  </div>  
+                  <!-- 3_sec -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listing-section search-result">
+          <div class=" row listing-info">
+            <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
+              <div class="right-side2">
+                <a href="#">
+                  <center>
+                    <img src="resource/css/img/outside/logo.jpg" class="img-responsive" alt="">
+                  </center>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-10 col-xs-12">
+              <div class="row">
+                <div class="left-side1">
+                  <div class="listing-title">
+                    <div class="job-title">
+                      <a href="#/single-job-detail">Angularjs Developer
+                      </a>
+                      <span class="activatedate">
+                        <span class="captions-field">Jan 13, 2016
+                        </span>
+                      </span>
+                    </div>
+                  </div>    
+                  <div class="locationcss">
+                    <ul class="list-inline" style="text-align:left">
+                      <li>
+                        <i class="fa fa-suitcase" aria-hidden="true"></i> 
+                        <span class="ng-binding"> Testers LTD
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span class="ng-binding"> Hyderabad
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="show-brief">
+                    <div class="description">
+                      Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....                                         
+                    </div>
+                  </div>
+                  <br>   
+                  <!-- 3_sec -->
+                  <div class="locationcss">
+                    <ul class="list-inline" style="text-align:left">
+                      <li>
+                        <i class="fa fa-usd" aria-hidden="true"></i> 
+                        <span class="ng-binding"> 10k
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span class="ng-binding"> Management
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                        <span class="ng-binding"> Hot Job
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <span class="ng-binding"> Full time
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-graduation-cap" aria-hidden="true">
+                        </i>
+                        <span class="ng-binding">Graduate
+                        </span>
+                      </li>
+                      <a href="#">
+                        <li class="pull-right">
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          <span class="ng-binding">Save job</span>
+                        </li>
+                      </a>
+                    </ul> 
+
+                  </div>  
+                  <!-- 3_sec -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listing-section search-result">
+          <div class=" row listing-info">
+            <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
+              <div class="right-side2">
+                <a href="#">
+                  <center>
+                    <img src="resource/css/img/outside/logo.jpg" class="img-responsive" alt="">
+                  </center>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-10 col-xs-12">
+              <div class="row">
+                <div class="left-side1">
+                  <div class="listing-title">
+                    <div class="job-title">
+                      <a href="">Insurance agent
+                      </a>
+                      <span class="activatedate">
+                        <span class="captions-field">Oct 24, 2016
+                        </span>
+                      </span>
+                    </div>
+                  </div>    
+                  <div class="locationcss">
+                    <ul class="list-inline" style="text-align:left">
+                      <li>
+                        <i class="fa fa-suitcase" aria-hidden="true"></i> 
+                        <span class="ng-binding"> Testers LTD
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span class="ng-binding"> Sacramento, CA
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="show-brief">
+                    <div class="description">
+                      Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....                                         
+                    </div>
+                  </div>
+                  <br>   
+                  <!-- 3_sec -->
+                  <div class="locationcss">
+                   <ul class="list-inline" style="text-align:left">
+                      <li>
+                        <i class="fa fa-usd" aria-hidden="true"></i> 
+                        <span class="ng-binding"> 10k
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <span class="ng-binding"> Management
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                        <span class="ng-binding"> Hot Job
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        <span class="ng-binding"> Part time
+                        </span>
+                      </li>
+                      <li>
+                        <i class="fa fa-graduation-cap" aria-hidden="true">
+                        </i>
+                        <span class="ng-binding">Graduate
+                        </span>
+                      </li>
+                      <a href="#">
+                        <li class="pull-right">
+                          <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                          <span class="ng-binding">Save job</span>
+                        </li>
+                      </a>
+                    </ul>
+
+                  </div>  
+                  <!-- 3_sec -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+
+
+
+<div class="modal fade" id="createalert" role="dialog">
+  <div class="modal-dialog margin-top-90">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">Create an alert</h4>
+      </div>
+      <div class="modal-body">
+        <form name="jobAlert" class="form-horizontal" id="CreateAlertForm_1">
+            <div class="form-group">
+              <div class="col-sm-2">
+                <label class="control-label">Title</label>
+              </div>
+              <div class="col-sm-10">
+                <input type="text" placeholder="Enter a title" value="" maxlength="100" name="name" id="alertname" class="form-control">
+                <div class="help-block hidden validTitle">Please enter a title.</div>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 0px;">
+              <div class="col-sm-2">
+                <label class="control-label" for="">Email</label>
+              </div>
+              <div class="col-sm-10">
+                <input type="text" placeholder="Enter an email" value="" name="email" id="alertEmail" class="form-control">
+                <input type="text" class="form-control hidden" id="alertDisabled" name="disabled" value="false">
+                <input type="text" class="form-control hidden" id="emailFrequency" name="emailFrequency" value="never">
+                <div class="help-block hidden validEmail">Please enter a valid email (email@domain.com).</div>
+              </div>
+            </div>
+          </form>
+      </div>
+      
+
+      <div class="modal-footer">
+        <div class="col-xs-12 form-group text-center"> 
+        <button type="button" class="btn button" data-dismiss="modal"> Create Alert</button>
+      </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+
+$.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?') 
+      .done (function(location)
+      {
+         var country=location.country_name;
+         var state=location.state;
+         var city=location.city;
+       $("#location").val(city+", "+state+", "+country);
+      }); 
+</script>

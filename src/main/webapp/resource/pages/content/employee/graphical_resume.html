@@ -1,0 +1,1382 @@
+<style>
+@import "compass/css3";
+
+$gray: #dddddd;
+
+.edu_timeline {
+  width: 100%;
+  position: relative;
+  padding: 1px 0;
+  list-style: none;
+  font-weight: 300;
+}
+.edu_timeline .edu_timeline-item {
+  padding-left: 0;
+  padding-right: 30px;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-right,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) {
+  padding-left: 30px;
+  padding-right: 0;
+}
+.edu_timeline .edu_timeline-item .edu_timeline-event {
+  width: 100%;
+}
+.edu_timeline:before {
+  border-right-style: solid;
+}
+.edu_timeline:before,
+.edu_timeline:after {
+  content: " ";
+  display: block;
+}
+.edu_timeline:after {
+  clear: both;
+}
+.edu_timeline:before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: auto !important;
+  margin-left: 1px;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: #888888;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline {
+  width: 100%;
+  max-width: 768px;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item {
+  padding-left: 72px;
+  padding-right: 0;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-right,
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) {
+  padding-left: 72px;
+  padding-right: 0;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item .edu_timeline-event {
+  width: 100%;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline:before {
+  left: 42px;
+  width: 0;
+  margin-left: -1px;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item:nth-of-type(even) {
+  margin-top: 0;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event:before,
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event:before {
+  left: -15px !important;
+  border-right-width: 15px !important;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+  left: -14px !important;
+  border-right-width: 14px !important;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-point {
+  transform: translateX(-50%);
+  left: 42px !important;
+  margin-left: 0;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-label {
+  transform: translateX(-50%);
+  margin: 0 0 20px 42px;
+}
+.edu_timeline.edu_timeline-single-column.edu_timeline .edu_timeline-label + .edu_timeline-item + .edu_timeline-item {
+  margin-top: 0;
+}
+.edu_timeline.edu_timeline-line-solid:before {
+  border-right-style: solid;
+}
+.edu_timeline.edu_timeline-line-dotted:before {
+  border-right-style: dotted;
+}
+.edu_timeline.edu_timeline-line-dashed:before {
+  border-right-style: dashed;
+}
+.edu_timeline .edu_timeline-item {
+  position: relative;
+  float: left;
+  clear: left;
+  width: 50%;
+  margin-bottom: 20px;
+}
+.edu_timeline .edu_timeline-item:before,
+.edu_timeline .edu_timeline-item:after {
+  content: "";
+  display: table;
+}
+.edu_timeline .edu_timeline-item:after {
+  clear: both;
+}
+.edu_timeline .edu_timeline-item:last-child {
+  margin-bottom: 0 !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-right > .edu_timeline-event,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-right > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-right > .edu_timeline-event:after,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-right > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:before {
+  left: -15px !important;
+  border-right-width: 15px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-right > .edu_timeline-event:after,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:after {
+  left: -14px !important;
+  border-right-width: 14px !important;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event:before {
+  top: 10px;
+  right: -15px;
+  border-top: 15px solid transparent;
+  border-left-width: 15px;
+  border-left-style: solid;
+  border-right-width: 0;
+  border-right-style: solid;
+  border-bottom: 15px solid transparent;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+  top: 11px;
+  right: -14px;
+  border-top: 14px solid transparent;
+  border-left-width: 14px;
+  border-left-style: solid;
+  border-right-width: 0;
+  border-right-style: solid;
+  border-bottom: 14px solid transparent;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point {
+  top: 25px;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event:before,
+.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event:before {
+  left: -15px !important;
+  border-right-width: 15px !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+  left: -14px !important;
+  border-right-width: 14px !important;
+}
+.edu_timeline .edu_timeline-item:nth-of-type(2) {
+  margin-top: 40px;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-left,
+.edu_timeline .edu_timeline-item.edu_timeline-item-right {
+  clear: both !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-right,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) {
+  float: right;
+  clear: right;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-right > .edu_timeline-point,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-point {
+  left: -24px;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-right > .edu_timeline-point.edu_timeline-point-blank,
+.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-point.edu_timeline-point-blank {
+  left: -12px;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm.edu_timeline-item-right > .edu_timeline-event,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm.edu_timeline-item-right > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm.edu_timeline-item-right > .edu_timeline-event:after,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm.edu_timeline-item-right > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:before {
+  left: -10px !important;
+  border-right-width: 10px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm.edu_timeline-item-right > .edu_timeline-event:after,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:after {
+  left: -9px !important;
+  border-right-width: 9px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm > .edu_timeline-event:before {
+  top: 4px;
+  right: -10px;
+  border-top: 10px solid transparent;
+  border-left-width: 10px;
+  border-left-style: solid;
+  border-right-width: 0;
+  border-right-style: solid;
+  border-bottom: 10px solid transparent;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm > .edu_timeline-event:after {
+  top: 5px;
+  right: -9px;
+  border-top: 9px solid transparent;
+  border-left-width: 9px;
+  border-left-style: solid;
+  border-right-width: 0;
+  border-right-style: solid;
+  border-bottom: 9px solid transparent;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm > .edu_timeline-point {
+  top: 14px;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm > .edu_timeline-event:before,
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm > .edu_timeline-event:before {
+  left: -10px !important;
+  border-right-width: 10px !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-sm > .edu_timeline-event:after {
+  left: -9px !important;
+  border-right-width: 9px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md.edu_timeline-item-right > .edu_timeline-event,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md.edu_timeline-item-right > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md.edu_timeline-item-right > .edu_timeline-event:after,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md.edu_timeline-item-right > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:before {
+  left: -15px !important;
+  border-right-width: 15px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md.edu_timeline-item-right > .edu_timeline-event:after,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:after {
+  left: -14px !important;
+  border-right-width: 14px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md > .edu_timeline-event:before {
+  top: 10px;
+  right: -15px;
+  border-top: 15px solid transparent;
+  border-left-width: 15px;
+  border-left-style: solid;
+  border-right-width: 0;
+  border-right-style: solid;
+  border-bottom: 15px solid transparent;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md > .edu_timeline-event:after {
+  top: 11px;
+  right: -14px;
+  border-top: 14px solid transparent;
+  border-left-width: 14px;
+  border-left-style: solid;
+  border-right-width: 0;
+  border-right-style: solid;
+  border-bottom: 14px solid transparent;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md > .edu_timeline-point {
+  top: 25px;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md > .edu_timeline-event:before,
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md > .edu_timeline-event:before {
+  left: -15px !important;
+  border-right-width: 15px !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-md > .edu_timeline-event:after {
+  left: -14px !important;
+  border-right-width: 14px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg.edu_timeline-item-right > .edu_timeline-event,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg.edu_timeline-item-right > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg.edu_timeline-item-right > .edu_timeline-event:after,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg.edu_timeline-item-right > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:before {
+  left: -18px !important;
+  border-right-width: 18px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg.edu_timeline-item-right > .edu_timeline-event:after,
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg:nth-of-type(even):not(.edu_timeline-item-left) > .edu_timeline-event:after {
+  left: -17px !important;
+  border-right-width: 17px !important;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg > .edu_timeline-event:before {
+  top: 10px;
+  right: -18px;
+  border-top: 18px solid transparent;
+  border-left-width: 18px;
+  border-left-style: solid;
+  border-right-width: 0;
+  border-right-style: solid;
+  border-bottom: 18px solid transparent;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg > .edu_timeline-event:after {
+  top: 11px;
+  right: -17px;
+  border-top: 17px solid transparent;
+  border-left-width: 17px;
+  border-left-style: solid;
+  border-right-width: 0;
+  border-right-style: solid;
+  border-bottom: 17px solid transparent;
+}
+.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg > .edu_timeline-point {
+  top: 28px;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg > .edu_timeline-event {
+  float: right !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg > .edu_timeline-event:before,
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg > .edu_timeline-event:after {
+  right: auto !important;
+  border-left-width: 0 !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg > .edu_timeline-event:before {
+  left: -18px !important;
+  border-right-width: 18px !important;
+}
+.edu_timeline-single-column.edu_timeline .edu_timeline-item.edu_timeline-item-arrow-lg > .edu_timeline-event:after {
+  left: -17px !important;
+  border-right-width: 17px !important;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event {
+  background: #fff;
+  border: 1px solid #888888;
+  color: #555;
+  position: relative;
+  float: left;
+  border-radius: 3px;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event:before {
+  border-left-color: #888888;
+  border-right-color: #888888;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event * {
+  color: inherit;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-default {
+  background: #fff;
+  border: 1px solid #888888;
+  color: #555;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-default:before {
+  border-left-color: #888888;
+  border-right-color: #888888;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-default:after {
+  border-left-color: #fff;
+  border-right-color: #fff;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-default * {
+  color: inherit;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-primary {
+  background: #f5f5f5;
+  border: 1px solid #888888;
+  color: #555;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-primary:before {
+  border-left-color: #888888;
+  border-right-color: #888888;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-primary:after {
+  border-left-color: #f5f5f5;
+  border-right-color: #f5f5f5;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-primary * {
+  color: inherit;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-success {
+  background: #F3F8ED;
+  border: 1px solid #72b92e;
+  color: #3F8100;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-success:before {
+  border-left-color: #72b92e;
+  border-right-color: #72b92e;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-success:after {
+  border-left-color: #F3F8ED;
+  border-right-color: #F3F8ED;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-success * {
+  color: inherit;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-info {
+  background: #F0F8FD;
+  border: 1px solid #3e93cf;
+  color: #0062A7;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-info:before {
+  border-left-color: #3e93cf;
+  border-right-color: #3e93cf;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-info:after {
+  border-left-color: #F0F8FD;
+  border-right-color: #F0F8FD;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-info * {
+  color: inherit;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-warning {
+  background: #FFF9E9;
+  border: 1px solid #d0aa42;
+  color: #ac7e00;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-warning:before {
+  border-left-color: #d0aa42;
+  border-right-color: #d0aa42;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-warning:after {
+  border-left-color: #FFF9E9;
+  border-right-color: #FFF9E9;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-warning * {
+  color: inherit;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-danger {
+  background: #FFC4BC;
+  border: 1px solid #d25a4b;
+  color: #B71500;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-danger:before {
+  border-left-color: #d25a4b;
+  border-right-color: #d25a4b;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-danger:after {
+  border-left-color: #FFC4BC;
+  border-right-color: #FFC4BC;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event.edu_timeline-event-danger * {
+  color: inherit;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event:before,
+.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-heading,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-body,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-footer {
+  padding: 4px 10px;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-heading p,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-body p,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-footer p,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-heading ul,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-body ul,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-footer ul {
+  margin-bottom: 0;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-heading h4 {
+  font-weight: 400;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event .edu_timeline-footer a {
+  cursor: pointer;
+  text-decoration: none;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event .panel,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .table,
+.edu_timeline .edu_timeline-item > .edu_timeline-event .blankslate {
+  margin: 0;
+  border: none;
+  border-radius: inherit;
+  overflow: hidden;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-event .table th {
+  border-top: 0;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point {
+  color: #888888;
+  background: #fff;
+  right: -24px;
+  width: 24px;
+  height: 24px;
+  margin-top: -12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  position: absolute;
+  z-index: 100;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 100%;
+  line-height: 20px;
+  text-align: center;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point.edu_timeline-point-blank {
+  right: -12px;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  margin-left: 6px;
+  margin-right: 6px;
+  color: #888888;
+  background: #888888;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point.edu_timeline-point-default {
+  color: #888888;
+  background: #fff;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point.edu_timeline-point-primary {
+  color: #888888;
+  background: #fff;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point.edu_timeline-point-success {
+  color: #72b92e;
+  background: #fff;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point.edu_timeline-point-info {
+  color: #3e93cf;
+  background: #fff;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point.edu_timeline-point-warning {
+  color: #d0aa42;
+  background: #fff;
+}
+.edu_timeline .edu_timeline-item > .edu_timeline-point.edu_timeline-point-danger {
+  color: #d25a4b;
+  background: #fff;
+}
+.edu_timeline .edu_timeline-label {
+  position: relative;
+  float: left;
+  clear: left;
+  width: 50%;
+  margin-bottom: 20px;
+  top: 1px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  text-align: center;
+}
+.edu_timeline .edu_timeline-label:before,
+.edu_timeline .edu_timeline-label:after {
+  content: "";
+  display: table;
+}
+.edu_timeline .edu_timeline-label:after {
+  clear: both;
+}
+.edu_timeline .edu_timeline-label:last-child {
+  margin-bottom: 0 !important;
+}
+.edu_timeline .edu_timeline-label + .edu_timeline-item {
+  margin-top: 0;
+}
+.edu_timeline .edu_timeline-label + .edu_timeline-item + .edu_timeline-item {
+  margin-top: 40px;
+}
+.edu_timeline .edu_timeline-label .label-default {
+  background-color: #888888;
+}
+.edu_timeline .edu_timeline-label .label-primary {
+  background-color: #888888;
+}
+.edu_timeline .edu_timeline-label .label-info {
+  background-color: #3e93cf;
+}
+.edu_timeline .edu_timeline-label .label-warning {
+  background-color: #d0aa42;
+}
+.edu_timeline .edu_timeline-label .label-danger {
+  background-color: #d25a4b;
+}
+@media (max-width: 768px) {
+  .edu_timeline.edu_timeline {
+    width: 100%;
+    max-width: 100%;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item {
+    padding-left: 72px;
+    padding-right: 0;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item.edu_timeline-item-right,
+  .edu_timeline.edu_timeline .edu_timeline-item:nth-of-type(even):not(.edu_timeline-item-left) {
+    padding-left: 72px;
+    padding-right: 0;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item .edu_timeline-event {
+    width: 100%;
+  }
+  .edu_timeline.edu_timeline:before {
+    left: 42px;
+    width: 0;
+    margin-left: -1px;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item:nth-of-type(even) {
+    margin-top: 0;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item > .edu_timeline-event {
+    float: right !important;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item > .edu_timeline-event:before,
+  .edu_timeline.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+    right: auto !important;
+    border-left-width: 0 !important;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item > .edu_timeline-event:before {
+    left: -15px !important;
+    border-right-width: 15px !important;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item > .edu_timeline-event:after {
+    left: -14px !important;
+    border-right-width: 14px !important;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-item > .edu_timeline-point {
+    transform: translateX(-50%);
+    left: 42px !important;
+    margin-left: 0;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-label {
+    transform: translateX(-50%);
+    margin: 0 0 20px 42px;
+  }
+  .edu_timeline.edu_timeline .edu_timeline-label + .edu_timeline-item + .edu_timeline-item {
+    margin-top: 0;
+  }
+}
+/** edu_timeline box structure **/
+/** media queries **/
+@media (max-width: 991px) {
+  .edu_timeline li .edu_timeline-panel {
+    width: 44%;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-header h1 { font-size: 1.8em; }
+  
+  ul.edu_timeline:before {
+    left: 40px;
+  }
+  
+  .tldate { width: 140px; }
+
+  ul.edu_timeline li .edu_timeline-panel {
+    width: calc(100% - 90px);
+    width: -moz-calc(100% - 90px);
+    width: -webkit-calc(100% - 90px);
+  }
+
+  ul.edu_timeline li .tl-circ {
+    top: 22px;
+    left: 22px;
+    margin-left: 0;
+
+  }
+  ul.edu_timeline > li > .tldate {
+    margin: 0;
+  }
+
+  ul.edu_timeline > li > .edu_timeline-panel {
+    float: right;
+  }
+
+  ul.edu_timeline > li > .edu_timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+  }
+
+  ul.edu_timeline > li > .edu_timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+  }
+}
+
+.grapicpad {
+    background: #555555;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.grapicpad .right-side2 img {
+    height: 100px;
+}
+.grapicpad .ng-binding {
+    color: #fff;
+}
+.grapicpad i {
+    color: #fff;
+}
+.grapicpad .right-side2 {
+    margin-top: 5px;
+}
+h2.graphtitle {
+    font-weight: bold;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#selected-state {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+#selected-state > span { 
+ font-style: normal;
+  font-size: 0.75em;
+}
+
+#map {width: 570px; height: 350px; ;}
+
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+#hor-timeline {
+  list-style: none;
+  width: 100%;
+  height: 200px;
+  margin: 200px 0 0;
+  border-top: 6px solid #3c8dbc;
+  display: table;
+  border-spacing: 30px 0;
+  font-weight:bold;
+}
+#hor-timeline li {
+  display: table-cell;
+  position: relative;
+  min-width: 100px;
+}
+
+.timeline-circle {
+  margin: 0 auto;
+  top: -14px;
+  left: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: #3c8dbc;
+  border: 6px solid #00284d;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+
+.timeline-content {
+  text-align: center;
+  position: relative;
+  font-weight:bold;
+}
+
+.avatar {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  border: 1px solid #3c8dbc;
+  border-radius: 30px;
+  height: 30px;
+  width: 200px;
+  top: -19px;
+  position: relative;
+  background: #fffff0;
+  line-height: 30px;
+  text-align: center;
+  font-weight:bold;
+}
+
+.timeline-content:before {
+  content: '';
+  width: 50px;
+  height: 100px;
+  left: 50%;
+  margin-left: -2px;
+  position: absolute;
+  font-weight:bold;
+}
+
+li.down .timeline-content:before {
+  border-left: 4px solid #3c8dbc;
+  border-bottom: 4px solid #3c8dbc;
+  -webkit-border-radius: 0 20px;
+  -moz-border-radius: 0 20px;
+  border-radius: 0 20px;
+  font-weight:bold;
+}
+li.down .avatar {
+  top: 80px;
+  left: 8px;
+  font-weight:bold;
+}
+
+li.up .timeline-content {
+  margin-top: -106px;
+  font-weight:bold;
+}
+li.up .timeline-content:before {
+  border-left: 4px solid #3c8dbc;
+}
+li.up .date {
+  margin-top: 100px;
+  font-weight:bold;
+  
+}
+li.up .avatar {
+  background: #fffff0;
+  margin-top: -30px;
+}
+
+
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+
+
+</style>
+<div class="container">
+  <div class="row">
+    <section class="content-header">
+      <h1>Graphsume</h1>
+      <a class="btn button editpadding pull-right" href="#edit_profile"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+	  </a>
+    </section>
+    <!--- Content start here-->
+    <div class="col-md-12 col-sm-12 col-lg-12">
+      <div class="grapicpad">
+        <div class="row">
+          <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+               <a href="#">
+                 <center>
+                   <img src="resource/css/img/Employer/dinesh.jpg" class="img-responsive img-circle" alt="">
+                 </center>
+               </a>
+          </div>
+          <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12">
+	          <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" align="center">
+                <h2 style="font-weight: bold;color: #fff;"> JOHN ANDERSON
+                </h2>
+	          </div>
+              <div class="col-md-12 pd-0 col-sm-12 col-xs-12 pd-lg-12">
+              	<ul class="list-inline" style="text-align:center">
+              		<li>
+	              		<i class="fa fa-birthday-cake " aria-hidden="true">
+		                </i>
+		                <label>
+		                  <b class="ng-binding">5/6/1992
+		                  </b>
+		                </label>
+	                </li>
+	                <li>
+	                	<i class="fa fa-phone" aria-hidden="true"></i>
+	                	</i>
+	                	<label>
+		                  <b class="ng-binding">9876543210
+		                  </b>
+		                </label>	
+	                </li>
+	                <li>
+	                	<i class="fa fa-envelope-o" aria-hidden="true"></i>
+		                </i>
+		                <label>
+		                  <b class="ng-binding">testing@gmail.com
+		                  </b>
+		                </label>	
+	                </li>
+	                <li>
+	                	<i class="fa fa-home" aria-hidden="true"></i>
+		                </i>
+		                <label>
+		                  <b class="ng-binding">350 Fifth Avenue, 34th floor. New York, NY 10118-3299
+		                  </b>
+		                </label>
+	                </li>
+              	</ul>
+              	<ul class="list-inline" style="text-align:center;color:#fff;">
+              		<li>
+              			An adaptable, conscientious, enthusiastic, and self-motivated individual with exposure to a wide range of areas. Possessing excellent communication skills combined with the ability to relate well to people at all levels. Now seeking next challenging and rewarding opportunity within a successful organization
+              		</li>
+              	</ul>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 
+      <div class="col-md-12 col-lg-12 pd-l-0 pd-r-0">
+        <div class="" id="media">
+          <div class="panel-heading"><i class="fa fa-user" aria-hidden="true"></i> Profile
+          </div>
+          <div class="new-body headline-sty">
+            <div class="ng-binding"> An adaptable, conscientious, enthusiastic, and self-motivated individual with exposure to a wide range of areas. Possessing excellent communication skills combined with the ability to relate well to people at all levels. Now seeking next challenging and rewarding opportunity within a successful organization
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+	<div class="col-md-12 col-lg-12 pd-l-0 pd-r-0">
+        <div class="" id="media">
+			  <div class="panel-heading"><i class="fa fa-user" aria-hidden="true"></i> Education
+		          </div>
+		          <div class="new-body headline-sty">
+		          	 <div class="row">
+		          	 	<ul>
+		          	 	<li>
+		          	 	<b>2016 ( BTECH ) </b>- Now seeking next challenging and rewarding opportunity within a successful organization.
+		          	 	</li>
+		          	 	<li>
+		          	 	<b>2012 ( DIPLOMA ) </b>- Now seeking next challenging and rewarding opportunity within a successful organization.
+		          	 	</li>
+		          	 	</ul>
+		          	 </div>
+		          	 <!-- <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+			          	   <div class="panel">
+			                  <div class="panel-heading">BTECH IT
+			                  	<div class="pull-right">
+				                  	2016
+			 	 				</div>			
+			                  </div>
+				                  <div class="new-body">
+				                  	Now seeking next challenging and rewarding opportunity within a successful organization.Now seeking next challenging and rewarding opportunity within a successful organization	
+							      </div>
+					        </div>
+						</div>
+						<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+			          	   <div class="panel">
+			                  <div class="panel-heading">DIPLOMA
+			                  	<div class="pull-right">
+				                  	2008
+			 	 				</div>			
+			                  </div>
+				                  <div class="new-body">
+				                  	Now seeking next challenging and rewarding opportunity within a successful organization.Now seeking next challenging and rewarding opportunity within a successful organization	
+							      </div>
+					        </div>
+						</div>
+						<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+			          	   <div class="panel">
+			                  <div class="panel-heading">HSC
+			                  	<div class="pull-right">
+				                  	2006
+			 	 				</div>			
+			                  </div>
+				                  <div class="new-body">
+				                  	Now seeking next challenging and rewarding opportunity within a successful organization.Now seeking next challenging and rewarding opportunity within a successful organization	
+							      </div>
+					        </div>
+						</div>
+						<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+			          	   <div class="panel">
+			                  <div class="panel-heading">SSLC
+			                  	<div class="pull-right">
+				                  	2004
+			 	 				</div>			
+			                  </div>
+				                  <div class="new-body">
+				                  	Now seeking next challenging and rewarding opportunity within a successful organization.Now seeking next challenging and rewarding opportunity within a successful organization	
+							      </div>
+					        </div>
+						</div> -->	
+					 
+		               <!-- <div class="edu_timeline edu_timeline-line-dotted">
+		                    <span class="edu_timeline-label">
+		                        <span class="label label-primary">2016</span>
+		                    </span>
+		                    <div class="edu_timeline-item">
+		                        <div class="edu_timeline-event">
+		                            <div class="edu_timeline-heading">
+		                                <h4>BTECH IT</h4>
+		                            </div>
+		                            <div class="edu_timeline-body">
+		                                <p>Now seeking next challenging and rewarding opportunity within a successful organization</p>
+		                            </div>
+		                            <div class="edu_timeline-footer">
+		                                <p class="text-right">08.02.2016 14:00</p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="edu_timeline-item">
+		                        <div class="edu_timeline-event">
+		                            <div class="edu_timeline-heading">
+		                                <h4>JAVA</h4>
+		                            </div>
+		                            <div class="edu_timeline-body">
+		                                <p>Now seeking next challenging and rewarding opportunity within a successful organization</p>
+		                            </div>
+		                            <div class="edu_timeline-footer">
+		                                <p class="text-right">08.02.2016 12:00</p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="edu_timeline-item">
+		                        <div class="edu_timeline-event">
+		                            <div class="edu_timeline-heading">
+		                                <h4>.NET</h4>
+		                            </div>
+		                            <div class="edu_timeline-body">
+		                                <p>Now seeking next challenging and rewarding opportunity within a successful organization</p>
+		                            </div>
+		                            <div class="edu_timeline-footer">
+		                                <p class="text-right">08.02.2016 11:30</p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="edu_timeline-item">
+		                        <div class="edu_timeline-event">
+		                            <div class="edu_timeline-heading">
+		                                <h4>CONTENT DEVELOPER</h4>
+		                            </div>
+		                            <div class="edu_timeline-body">
+		                                <p>Now seeking next challenging and rewarding opportunity within a successful organization</p>
+		                            </div>
+		                            <div class="edu_timeline-footer">
+		                                <p class="text-right">08.02.2016 11:00</p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <span class="edu_timeline-label">
+		                        <span class="label label-primary">2015</span>
+		                    </span>
+		                    <div class="edu_timeline-item">
+		                        <div class="edu_timeline-event">
+		                            <div class="edu_timeline-heading">
+		                                <h4>DIPLOMA</h4>
+		                            </div>
+		                            <div class="edu_timeline-body">
+		                                <p>Now seeking next challenging and rewarding opportunity within a successful organization</p>
+		                            </div>
+		                            <div class="edu_timeline-footer">
+		                                <p class="text-right">13.01.2016 15:00</p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="edu_timeline-item">
+		                        <div class="edu_timeline-event">
+		                            <div class="edu_timeline-heading">
+		                                <h4>DATA ANALYST</h4>
+		                            </div>
+		                            <div class="edu_timeline-body">
+		                                <p>Now seeking next challenging and rewarding opportunity within a successful organization</p>
+		                            </div>
+		                            <div class="edu_timeline-footer">
+		                                <p class="text-right">08.02.2016 10:00</p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div> -->
+		            </div>
+		      </div>
+		    </div>
+		  </div>
+				
+		<div class="col-md-12 col-lg-12 pd-l-0 pd-r-0">
+	        <div class="row" id="media">
+		          <div class="panel-heading"><i class="fa fa-suitcase" aria-hidden="true"></i> Work Experience
+		          </div>
+		          <div class="new-body headline-sty">
+			    	<div id="visualization"></div>
+				</div>
+			</div>
+		</div>
+	
+      <div class="col-md-6 col-lg-6 pd-l-0">
+        <div class="" id="media">
+          <div class="panel-heading"><i class="fa fa-bar-chart" aria-hidden="true"></i> Skills
+          </div>
+          <div class="new-body headline-sty">
+            <div class="col-md-12">
+                  <p class="text-center">
+                    <strong>Goal Completion</strong>
+                  </p>
+
+                  <div class="progress-group">
+                    <span class="progress-text">AngularJs</span>
+                    <span class="progress-number"><b>50</b>/100</span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: 50%"></div>
+                    </div>
+                  </div>
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    <span class="progress-text">Java</span>
+                    <span class="progress-number"><b>75</b>/100</span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-red" style="width: 75%"></div>
+                    </div>
+                  </div>
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    <span class="progress-text">HTML5</span>
+                    <span class="progress-number"><b>95</b>/100</span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-green" style="width: 95%"></div>
+                    </div>
+                  </div>
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    <span class="progress-text">CSS3</span>
+                    <span class="progress-number"><b>90</b>/100</span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-yellow" style="width: 90%"></div>
+                    </div>
+                  </div>
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    <span class="progress-text">Javascript</span>
+                    <span class="progress-number"><b>80</b>/100</span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                    </div>
+                  </div>
+            </div>
+			<!--  
+			<div class="row">
+	            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+	              
+	                <fieldset class="rating">
+	                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+	                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+	                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+	                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+	                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+	                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+	                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+	                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+	                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+	                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+	                </fieldset>
+	                <div class="text-center">
+	                  <label> English</label>
+	                </div>
+	                
+	            </div>
+	
+	            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+	             
+	                <fieldset class="rating">
+	                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+	                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+	                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+	                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+	                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+	                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+	                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+	                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+	                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+	                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+	                </fieldset>
+	                <div class="text-center">
+	                  <label> Hindi</label>
+	                </div>
+	            </div>
+	
+	            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+	             
+	                <fieldset class="rating">
+	                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+	                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+	                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+	                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+	                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+	                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+	                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+	                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+	                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+	                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+	                </fieldset>
+	                <div class="text-center">
+	                  <label> Telugu</label>
+	                </div>
+	                
+	            </div>
+	            
+			</div>-->
+          </div>
+        </div>
+      </div>
+
+       
+
+      <div class="col-md-6 col-lg-6 pd-l-0 pd-r-0">
+        <div class="" id="media">
+          <div class="panel-heading"><i class="fa fa-map-marker" aria-hidden="true">
+                        </i> Location
+          </div>
+          <div class="new-body headline-sty">
+              
+            <div id="selected-state">Which state is that? <span>Hover over it to find out.</span>
+            </div>
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12 col-lg-12 pd-l-0 pd-r-0">
+        <div class="" id="media">
+          <div class="panel-heading"><i class="fa fa-certificate" aria-hidden="true"></i> Certificates
+          </div>
+          <div class="new-body headline-sty">
+            <div class="ng-binding">
+            <ul>
+             <li> Microsoft Certificate in ASP.net and C# .Net in 2015. </li>
+             <li> Earned a promotion from an entry-level position to lead specialist for my department. </li>
+             <li> Improved office efficiency by updating database. </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-12 col-lg-12 pd-l-0 pd-r-0">
+        <div class="" id="media">
+          <div class="panel-heading"><i class="fa fa-trophy" aria-hidden="true"></i> Achievement
+          </div>
+          <div class="new-body headline-sty">
+            <div class="ng-binding">
+            <ul>
+             <li> Successfully completed major systems update within a tight one-month deadline. </li>
+             <li> Efficiently resolved many client issues, often earning praise from clients for my efforts. </li>
+             <li> Earned a promotion from an entry-level position to lead specialist for my department. </li>
+             <li> Improved office efficiency by updating database. </li>
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+<script>
+/* 
+Forked from: https://github.com/NewSignature/us-map
+Instructions for use at: https://newsignature.github.io/us-map/ 
+*/
+
+$(document).ready(function() {
+
+  $('#map').usmap({
+    mouseover: function(event, data) {
+      $('#selected-state > span').text(data.name).css({"font-weight": "bold", "color": "#FF6E6E"});
+    },
+    mouseout: function(event, data) {
+      $('#selected-state > span').text('Hover over it to find out').css({"font-weight": "normal", "color": "#272D33"});
+    }
+  });
+});
+
+</script>
+
+<script type="text/javascript">
+  // DOM element where the Timeline will be attached
+  var container = document.getElementById('visualization');
+
+  // Create a DataSet (allows two way data-binding)
+  var items = new vis.DataSet([
+    {id: 1, content: 'Junior Developer<br> CTS <br> Chennai', start: '2004-04-25', end: '2007-04-25'},
+    {id: 2, content: 'Web Designer<br> Infosys<br> Chennai', start: '2007-09-02', end: '2012-06-21'},
+    {id: 3, content: 'Web Developer<br>Tcs<br> Bangalore', start: '2012-07-27', end: '2017-01-20'}
+  ]);
+
+  // Configuration for the Timeline
+  var options = {};
+
+  // Create a Timeline
+  var timeline = new vis.Timeline(container, items, options);
+</script>

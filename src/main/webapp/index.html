@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="jobumesApp">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Just - Roar</title>
+	
+	<!-- Vendor CSS -->
+	<link rel="stylesheet" href="resource/css/vendor/bootstrap.min.css"/>
+	<link rel="stylesheet" href="resource/css/vendor/bootstrap-theme.css"/>
+	<link rel="stylesheet" href="resource/css/vendor/swiper.min.css"/>
+	<link rel="stylesheet" href="resource/css/vendor/vis-timeline.min.css"/>
+	<link rel="stylesheet" href="resource/css/fonts/font-awesome/css/font-awesome.css"/>
+	<link rel="stylesheet" href="resource/admin/css/vendor/bootstrap3-wysihtml5.css"/>
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="resource/css/custom/_all-skins.css"/>
+	<link rel="stylesheet" href="resource/css/custom/chart.css"/>
+	<link rel="stylesheet" href="resource/css/custom/circle.css"/>
+	<link rel="stylesheet" href="resource/css/custom/home_style.css"/>
+	<link rel="stylesheet" href="resource/css/custom/posted_job_style.css"/>
+	<link rel="stylesheet" href="resource/css/custom/style_sr.css"/>
+	<link rel="stylesheet" href="resource/css/custom/style.css"/>
+	<link rel="stylesheet" href="resource/css/custom/Admin.css"/>
+	
+	<!-- Vendor JS -->
+	<script src="resource/js/vendor/jquery-3.1.1.min.js"></script>
+	<script src="resource/js/vendor/jquery.chart.js"></script>
+	<script src="resource/js/vendor/jquery.knob.js"></script>
+	<script src="resource/js/vendor/jquery-ui.js"></script>
+	<script src="resource/js/vendor/canvasjs.min.js"></script>
+	<script src="resource/js/vendor/loader.js"></script>
+	<script src="resource/js/vendor/raphael.js"></script>
+	<script src="resource/js/vendor/jquery.usmap.js"></script>	
+	<script src="resource/js/vendor/bootstrap.js"></script>
+	<script src="resource/js/vendor/bootstrap-datepicker.js"></script>
+	<script src="resource/js/vendor/popup2.3.js"></script>
+	<script src="resource/js/vendor/tableHeadFixer.js"></script>
+	<script src="resource/admin/js/vendor/bootstrap3-wysihtml5.all.js"></script>
+	<script src="resource/js/vendor/angular.min.js"></script>
+	<script src="resource/js/vendor/angular-route.js"></script>
+	<script src="resource/js/vendor/swiper.min.js"></script>
+	<script src="resource/js/vendor/vis.min.js"></script>
+	
+	<!-- Custom Outside Controller JS -->
+	<script src="resource/js/custom/outside/controllers/script.js"></script>
+	<script src="resource/js/custom/outside/controllers/signinController.js"></script>
+	<script src="resource/js/custom/outside/controllers/signupController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/404ErrorController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/aboutController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/contactController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/contentController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/employeeHomeController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/employerHomeController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/forgotPasswordController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/getDemoController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/profileSettingsController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/registerController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/resetPasswordController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/searchResultsController.js"></script>
+ 	<script src="resource/js/custom/outside/controllers/termsController.js"></script>
+	
+	<!-- Custom employee controllers start -->
+	<script src="resource/js/custom/employee/controllers/clientSchedulesController.js"></script>
+	<script src="resource/js/custom/employee/controllers/detailedResumeController.js"></script>
+	<script src="resource/js/custom/employee/controllers/downloadsController.js"></script>
+	<script src="resource/js/custom/employee/controllers/editProfileController.js"></script>
+	<script src="resource/js/custom/employee/controllers/employeeDashboardController.js"></script>
+	<script src="resource/js/custom/employee/controllers/graphsumeController.js"></script>
+	<script src="resource/js/custom/employee/controllers/myJobsController.js"></script>
+	<script src="resource/js/custom/employee/controllers/myVideoController.js"></script>
+	<script src="resource/js/custom/employee/controllers/profileViewsController.js"></script>
+	
+	<!-- Custom employee controllers end -->
+	
+	<!-- Custom employer controllers start -->
+	<script src="resource/js/custom/employer/controllers/booleanSearchController.js"></script>
+	<script src="resource/js/custom/employer/controllers/employerDashboardController.js"></script>
+	<script src="resource/js/custom/employer/controllers/myFavouriteController.js"></script>
+	<script src="resource/js/custom/employer/controllers/postaJobController.js"></script>
+	<script src="resource/js/custom/employer/controllers/postedJobListController.js"></script>
+	<script src="resource/js/custom/employer/controllers/postedJobsController.js"></script>
+	<script src="resource/js/custom/employer/controllers/savedResumesController.js"></script>
+	<script src="resource/js/custom/employer/controllers/savedSearchController.js"></script>
+	<!-- Custom employer controllers end -->
+	
+	<!--  End Js files -->
+	
+	</head>
+	
+	<body class="hold-transition skin-blue  fixed sidebar-mini">
+		<div class="content-wrapper1 test" style="min-height:100% !important;margin-top:60px;">		
+		
+			<div class="header">
+				<div ng-include="'resource/pages/header/header.html'"></div>
+			</div>	
+
+			<div ng-view></div>
+
+		    <div class="footercs">
+				<div ng-include="'resource/pages/footer/footer.html'">
+				</div>
+			</div>
+		</div>
+	 	
+	</body>
+	
+</html>

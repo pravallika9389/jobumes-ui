@@ -1,0 +1,134 @@
+
+<section class="workwithus" style="height: 400px;">
+  <div class="layer1">
+    <div class="container">
+    <!--
+      <div class="col-md-5 col-lg-4">
+        <div class="postresumebg">
+          <h2 class="text-uppercase text-center postresume">Post a Job
+          </h2>
+          <ul class="postresumeul">
+            <li>Get contacted directly by employere!</li>
+            <li>Easily upload/edit your job.</li>
+            <li>Submit your job.</li>
+            <li>Employees find you directly.</li>
+            <li>Employee reach you about potential job opportunites.</li>
+          </ul>
+          <div class="text-center">  
+            <a href="#/signin">
+              <input class="btn button text-center" type="button" value="Sign In" name="Submit">
+            </a>
+          </div>
+
+        </div>
+      </div>
+    -->
+      <div class="modal-dialog">
+        <div class="empsignin">
+          <div class="modal-content signin">
+            <div class="modal-header">
+              <h4 class="modal-title text-center" id="myModalLabel">SIGN IN</h4>
+            </div>
+            <div class="modal-body">
+              
+              <div id="employer_signin" class="tab-pane fade in">
+                <div class="register-box-body">
+                  <form action="#" method="post" name="singinform" novalidate>
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" name="username" ng-model="userName" placeholder="Email" required>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback">
+                        </span>
+                       
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" name="password" placeholder="Password" ng-model="pass" required>
+                        <span class="glyphicon glyphicon-lock form-control-feedback">
+                        </span>
+                        
+                    </div>
+                      <div class="">
+                      <div class="row">
+                        <div class="col-xs-12 col-sm-5 pad_0">
+                          <div class="checkbox icheck">
+                            <div class="checkbox pad_remember">
+                              <label>
+                                <input type="checkbox"> Remember me
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-12 col-sm-7">
+                          <div class="checkbox icheck">
+                            <div class="checkbox text-right">
+                              <a href="#/forgot-password">I forgot my password
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xs-12 form-group text-center">  
+                          <a href="#/employer-dashboard">
+                            <button type="submit" class="btn button text-center postjobs">Sign In
+                            </button>
+                          </a>
+                        </div>
+                        <!-- /.col -->
+                      </div>
+                    </div>
+                  </form>
+                  <div class="col-sm-12 text-center">
+                    <!--<a href="javascript::void();" data-toggle="modal" data-target="#myModal" class="text-center">I already have a Employee / Employer</a>-->
+                    <a href="#/signup"  class="text-center">Register a new Employer
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+     
+    </div>
+    <div class="clearfix">
+    </div>
+  </div>
+</section>
+
+<script>
+$(document).ready(function(){
+    $("#employeeheader").hide();
+      $("#signoutheader").hide();
+      $("#homeheader").show();
+      $("#employerheader").hide();
+      $("#signinheader").show();
+      $("#footersection").show();
+      
+    $(".applyjob").click(function(){
+        $("#employeeheader").show();
+        $("#signoutheader").show();
+        $("#homeheader").hide();
+        $("#employerheader").hide();
+        $("#signinheader").hide();
+        $("#footersection").hide();
+        $(".hideclass").hide();
+    });
+    $(".postjobs").click(function(){
+        $("#employerheader").show();
+        $("#signoutheader").show();
+        $("#homeheader").hide();
+        $("#employeeheader").hide();
+        $("#signinheader").hide();
+        $("#footersection").hide();
+        $(".hideclass").hide();
+    });
+    $(".signout").click(function(){
+        $("#employerheader").hide();
+        $("#homeheader").show();
+        $("#employeeheader").hide();
+        $("#signinheader").show();
+        $("#signoutheader").hide();
+        $("#footersection").show();
+    });
+});
+</script>

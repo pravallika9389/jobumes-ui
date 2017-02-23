@@ -1,0 +1,134 @@
+<div class="container">
+  <div class="row">
+    <section class="content-header">
+      <h1>Edit Posted Job</h1>
+    </section>
+    
+    <!-- Content start here -->
+    <div class="col-md-12">
+      <div class="panel shadownone">
+        <div class="panel-heading deatilednew ">Advanced edit option</div>
+        <div class="new-body">
+          <div class="row">
+            <form name="jobseekersOther" ng-submit="jobseekersOther.$valid &amp;&amp; savePersonalData('98')" novalidate="" class="ng-pristine ng-invalid-required ng-valid-maxlength ng-submitted ng-invalid">
+            
+            <div class="form-group col-md-12 ">
+              <label for="title">Title *:</label>
+              <input type="text" name="title" class="form-control" cols="3" rows="3"  name="title" id="title" maxlength="250" value="Angularjs developer" required="">
+            </div>
+
+            <div class="form-group col-md-12 ">
+              <label for="title">Description:</label>
+              <textarea class="form-control" cols="3" rows="3"  name="title" id="title" maxlength="250" required="">We see such examples spanning across financial services, healthcare, life science, manufacturing, consumer products, and high technology. The traditional divide between front and back office is blurring...</textarea>
+            </div>
+
+            <div class="form-group col-md-12 ">
+              <div id="morefields" class="pull-right">
+                    <a href="javascript:void(0)"><i class="fa fa-plus-circle" aria-hidden="true"></i> More fields</a>
+                  </div>
+                </div>
+
+            <div id="postajob">
+                
+
+              <div class="form-group col-md-6 ">
+                <label for="title">Company Name *:</label>
+                <input type="text" name="title" class="form-control" cols="3" rows="3"  name="title" id="title" maxlength="250" value="Jobumes" required="">
+              </div>
+              
+              <div class="form-group col-md-6 ">
+                <label for="title">Email *:</label>
+                <input type="text" name="title" class="form-control" cols="3" rows="3"  name="title" id="title" maxlength="250" value="hr@jobumes.com" required="">
+              </div>
+              
+              <div class="form-group col-md-6 ">
+                <label for="title">Keyword:</label>
+                 <input type="text" name="keyword" class="form-control" cols="3" rows="3"  name="title" id="title" maxlength="250" value="Angularjs" required="">
+              </div>
+                      
+              <div class="form-group col-md-12 ">
+                <label for="title">Job Requirements:</label>
+                <textarea class="form-control" cols="3" rows="3"  name="title" id="title" maxlength="250" required="">We see such examples spanning across financial services, healthcare, life science, manufacturing, consumer products, and high technology. The traditional divide between front and back office is blurring...</textarea>
+              </div>
+              
+              <div class="form-group col-md-4 ">
+                <label for="title">Number of vacancies :</label>
+                <input type="text" name="number_of_vacanies" class="form-control" cols="3" rows="3"  name="title" id="title" maxlength="250" value="3" required="">
+              </div>
+              
+              <div class="form-group col-md-4 ">
+                <label for="title">Industry Type :</label>
+                <select class="form-control"  id="courseType" name="industrytype" required="">
+                  <option value="">Select Industry Type</option>
+                  <option value="InformationTechnology" selected>Information Technology</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-md-4 ">
+                <label for="title">Functional Area  :</label>
+                <select class="form-control" ng-model="educationDetails.courseType" id="courseType" name="industrytype" required="">
+                    <option value="">Select Functional Area</option>
+                    <option value="WebDesign" selected>Web Design</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-md-4 ">
+                <label for="title">Country *:</label>
+                <select class="form-control" id="courseType" name="country" required="">
+                  <option value="">Select Country</option>
+                  <option value="india" selected>India</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-md-4 ">
+                <label for="title">State *:</label>
+                <select class="form-control" id="courseType" name="country" required="">
+                  <option value="">Select State</option>
+                  <option value="telangana" selected>Telangana</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-md-4 ">
+                <label for="title">City *:</label>
+                <select class="form-control" id="courseType" name="country" required="">
+                  <option value="">Select City</option>
+                  <option value="hyderabad"selected>Hyderabad</option>
+                </select>
+              </div>
+            
+            </div>
+            <div class="form-group col-md-12 ">
+              <div id="lessfields" class="pull-right">
+                    <a href="javascript:void(0)"><i class="fa fa-minus-circle" aria-hidden="true"></i> Less fields</a>
+                  </div>
+                </div>
+
+            <div class="col-md-12 text-center">
+              <button type="submit" class="btn button save margin-2" ng-click="submitted=true">Submit</button>
+            </div>
+          </form>
+         </div>
+          </div>
+      </div>
+    </div>        
+    <!-- Content start here -->
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#postajob").hide();
+  $("#lessfields").hide();
+    $("#morefields").click(function(){
+      $("#lessfields").show();
+      $("#morefields").hide();
+        $("#postajob").toggle();
+    });
+
+    $("#lessfields").click(function(){
+      $("#morefields").show();
+      $("#lessfields").hide();
+        $("#postajob").toggle();
+    });
+});
+</script>
