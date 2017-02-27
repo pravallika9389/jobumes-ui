@@ -5,7 +5,7 @@
     <div class="container">
       <!--
       <div class="navbar-header">
-        <a href="#" class="navbar-brand"> 
+        <a href="#" class="navbar-brand">
           <b>Jobumes
           </b>
         </a>
@@ -15,7 +15,7 @@
         </button>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
-   
+
 
     <div id="employeeheader" style="display:none;">
       <div class="navbar-header">
@@ -25,9 +25,9 @@
         </div>
 
         <!--<a href="#/" class="navbar-brand">
-          
+
         <b>Jobumes
-          </b>  
+          </b>
         </a>
          -->
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse2">
@@ -39,7 +39,7 @@
         <ul class="nav navbar-nav">
           <li class="emp_dashboard">
             <a href="#/employee-dashboard">
-              <span> Dashboard 
+              <span> Dashboard
               </span>
             </a>
           </li>
@@ -63,7 +63,7 @@
               </span>
             </a>
           </li>
-          
+
           <li class="my_documents">
             <a href="#/my-video">
               <span> My Video
@@ -82,7 +82,7 @@
         </div>
           <!--
         <a href="#/" class="navbar-brand">
-          
+
         </a>
       -->
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse3">
@@ -94,20 +94,20 @@
         <ul id="nav" class="nav navbar-nav">
           <li class="employer_dashboard active">
             <a href="#/employer-dashboard">
-              <span> Dashboard 
+              <span> Dashboard
               </span>
             </a>
           </li>
 
           <li class="posted_jobs">
             <a href="#/posted-jobs">
-              <span> Posted Jobs 
+              <span> Posted Jobs
               </span>
             </a>
           </li>
           <li class="postajob">
             <a href="#postajob">
-              <span>Post a Job 
+              <span>Post a Job
               </span>
             </a>
           </li>
@@ -153,12 +153,12 @@
 
       <div class="">
         <div id="homeheader" style="display:none;">
-        
+
           <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
             <ul class="nav navbar-nav floatright">
               <li class="">
                 <a href="#/employee-home">
-                  <span> Apply Jobs 
+                  <span> Apply Jobs
                   </span>
                 </a>
               </li>
@@ -173,6 +173,7 @@
                   <span>Get Demo
                   </span>
                 </a>
+
               </li>
               <li class="signin">
                 <a href="javascript::void(0);" id="myBtn">
@@ -194,7 +195,7 @@
               <img src="resource/css/img/Employer/dinesh.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs">John
               </span>
-            </a> 
+            </a>
             <ul class="dropdown-menu">
               <li class="user-header">
                 <img src="resource/css/img/Employer/dinesh.jpg" class="img-circle" alt="User Image">
@@ -236,7 +237,7 @@
 
     $(".employer_dashboard").click(function()
     {
-      $(".employer_dashboard").addClass("active");                      
+      $(".employer_dashboard").addClass("active");
       $(".posted_jobs").removeClass("active");
       $(".postajob").removeClass("active");
       $(".boolean_search").removeClass("active");
@@ -247,7 +248,7 @@
     $(".posted_jobs").click(function()
     {
       $(".posted_jobs").addClass("active");
-      $(".employer_dashboard").removeClass("active");                      
+      $(".employer_dashboard").removeClass("active");
       $(".postajob").removeClass("active");
       $(".boolean_search").removeClass("active");
       $(".my_favorites").removeClass("active");
@@ -258,7 +259,7 @@
    {
       //e.preventDefault();
       $(".postajob").addClass("active");
-      $(".employer_dashboard").removeClass("active");                      
+      $(".employer_dashboard").removeClass("active");
       $(".posted_jobs").removeClass("active");
       $(".boolean_search").removeClass("active");
       $(".my_favorites").removeClass("active");
@@ -269,7 +270,7 @@
     {
       //e.preventDefault();
       $(".boolean_search").addClass("active");
-      $(".employer_dashboard").removeClass("active");                      
+      $(".employer_dashboard").removeClass("active");
       $(".posted_jobs").removeClass("active");
       $(".postajob").removeClass("active");
       $(".my_favorites").removeClass("active");
@@ -280,7 +281,7 @@
     {
       //e.preventDefault();
       $(".my_favorites").addClass("active");
-      $(".employer_dashboard").removeClass("active");                      
+      $(".employer_dashboard").removeClass("active");
       $(".posted_jobs").removeClass("active");
       $(".postajob").removeClass("active");
       $(".boolean_search").removeClass("active");
@@ -291,7 +292,7 @@
     {
       //e.preventDefault();
       $(".saved_search").addClass("active");
-      $(".employer_dashboard").removeClass("active");                      
+      $(".employer_dashboard").removeClass("active");
       $(".posted_jobs").removeClass("active");
       $(".postajob").removeClass("active");
       $(".boolean_search").removeClass("active");
@@ -311,14 +312,14 @@
 
 
   $(document).ready(function()
-  {  
+  {
 
     $(".emp_dashboard").addClass("active");
     $(".myjobs").removeClass("active");
     $(".graphsume").removeClass("active");
     $(".detailed_resume").removeClass("active");
     $(".my_documents").removeClass("active");
-          
+
     $(".emp_dashboard").click(function()
     {
       $(".emp_dashboard").addClass("active");
@@ -370,7 +371,7 @@
       $("#employerheader").hide();
       $("#signinheader").show();
       $("#footersection").show();
-      
+
     $(".applyjob").click(function(){
         $("#employeeheader").show();
         $("#signoutheader").show();
@@ -412,7 +413,7 @@
 
 <div class="hideclass">
   <div id="myModal" class="modal">
-    
+
     <div class="modal-dialog margin-top-90" role="document" ng-controller='signinController' ng-hide='isLoggedin'>
         <!-- Modal content -->
       <div class="modal-content signin">
@@ -439,7 +440,7 @@
                 <!-- Employee start-->
                 <div id="employee_signin" class="tab-pane fade in active">
                   <div class="register-box-body">
-                        
+
                         <form name = "myform" novalidate>
                           <div class="form-group has-feedback">
                             <input type="text" name="username" class="form-control" ng-model="userName" placeholder="Email"  required="required">
@@ -471,12 +472,12 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="col-xs-12 form-group text-center"> 
-                                <a href="#/employee-dashboard">
+                              <div class="col-xs-12 form-group text-center">
+                                <!-- <a href="#/employee-dashboard">
                                   <input class="btn button text-center applyjob" type="button" value="Sign In" name="Submit">
-                                </a>
-                                <!--
-                                <button type="submit" onclick="validate();" class="btn button text-center">Sign In</button> -->
+                                </a> -->
+
+                                <button type="submit" onclick="validatesignin();" class="btn button text-center">Sign In</button>
                               </div>
                             </div>
                           </div>
@@ -537,7 +538,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-xs-12 form-group text-center">  
+                          <div class="col-xs-12 form-group text-center">
                             <a href="#/employer-dashboard">
                               <button type="submit" class="btn button text-center postjobs">Sign In
                               </button>
@@ -569,7 +570,7 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the modal
 btn.onclick = function() {
     modal.style.display = "block";
 }
@@ -586,26 +587,26 @@ window.onclick = function(event) {
 
 $(document).ready(function()
     {
-      
+
       $("#employee_signin").show();
       $("#employer_signin").hide();
-          
+
       $("#employee_signin_tab").click(function()
       {
         $("#employee_signin").show();
         $("#employer_signin").hide();
-        
-        
+
+
         $('#employee_signin_tab').addClass('active');
         $('#employer_signin_tab').removeClass('active');
-        
+
       });
 
       $("#employer_signin_tab").click(function()
       {
         $("#employee_signin").hide();
         $("#employer_signin").show();
-        
+
         $('#employee_signin_tab').removeClass('active');
         $('#employer_signin_tab').addClass('active');
 
@@ -614,8 +615,8 @@ $(document).ready(function()
 
 $('.nav a').on('click', function(){
     //$('.btn-navbar').click(); //bootstrap 2.x
- 
-    
+
+
        $('.navbar-collapse').removeClass('in');
 });
 
