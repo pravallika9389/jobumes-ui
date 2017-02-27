@@ -192,19 +192,23 @@
         <ul class="nav navbar-nav">
           <li class="dropdown user user-menu">
             <a href="javascript::void(0);" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="resource/css/img/Employer/dinesh.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">John
+              <img src="resource/css/img/default_user.png" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{returnData.firstName}}
               </span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
-                <img src="resource/css/img/Employer/dinesh.jpg" class="img-circle" alt="User Image">
-                <p>
+                <img src="resource/css/img/default_user.png" class="img-circle" alt="User Image">
+                <!-- <p>
                   Dinesh - Web Developer
                   <small>dineshwalas@gmail.com
                   </small>
                   <small>8973721526
                   </small>
+                </p> -->
+                <p>
+                  {{returnData.firstName}} {{returnData.lastName}}
+                  <small>{{userobj.userName}}</small>
                 </p>
               </li>
               <li class="user-footer">
@@ -477,7 +481,7 @@
                                   <input class="btn button text-center applyjob" type="button" value="Sign In" name="Submit">
                                 </a> -->
 
-                                <button type="submit" onclick="validatesignin();" class="btn button text-center">Sign In</button>
+                                <button type="submit" ng-click="validatesignin();" class="btn button text-center">Sign In</button>
                               </div>
                             </div>
                           </div>
