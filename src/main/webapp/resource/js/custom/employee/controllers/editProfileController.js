@@ -1,25 +1,31 @@
-app.controller('editProfileController',['$scope', function($scope){
+app.controller('editProfileController',['$scope', '$location', function($scope, $location){
+
+	var user = localStorage.getItem('isCheckUser');
+	if(user == "" || user == "empty" || user == undefined){
+		$location.path('/employee-home');
+	}
+
 		/** holds tabs, we will perform repeat on this **/
 		$scope.tabs = [{
 			id:1,
 			content:'This is a default tab on load'
 		}]
-		
+
 		$scope.languagetabs = [{
 			id:1,
 			content:'This is a default tab on load'
 		}]
-		
+
 		$scope.experiencetabs = [{
 			id:1,
 			content:'This is a default tab on load'
 		}]
-		
+
 		$scope.certificatetabs = [{
 			id:1,
 			content:'This is a default tab on load'
 		}]
-		
+
 		$scope.counter = 1;
 		/** Function to add a new tab **/
 		$scope.addTab = function(){
@@ -28,8 +34,8 @@ app.controller('editProfileController',['$scope', function($scope){
 			$scope.selectedTab = $scope.tabs.length - 1; //set the newly added tab active.
 			document.getElementById('deleteEducation').style.display = 'block';
 		}
-		
-		
+
+
 		/** Function to delete a tab **/
 		$scope.deleteTab = function(index)
 		{
@@ -37,17 +43,17 @@ app.controller('editProfileController',['$scope', function($scope){
 			{
 				document.getElementById('deleteEducation').style.display = 'none';
 			}
-			
+
 			$scope.tabs.splice(index,1); //remove the object from the array based on index
 		}
-		
+
 		$scope.selectedTab = 0; //set selected tab to the 1st by default.
-		
+
 		/** Function to set selectedTab **/
 		$scope.selectTab = function(index){
 			$scope.selectedTab = index;
 		}
-		
+
 		$scope.selectedLanguageTab = 0; //set selected tab to the 1st by default.
 
 
@@ -72,13 +78,13 @@ app.controller('editProfileController',['$scope', function($scope){
 			}
 			$scope.languagetabs.splice(index,1); //remove the object from the array based on index
 		}
-		
+
 		$scope.selectedExperienceTab = 0; //set selected tab to the 1st by default.
 
 
 		/** Function to set selectedTab **/
 		$scope.Expcounter = 1;
-		
+
 		$scope.selectExperienceTab = function(index){
 			$scope.selectedExperienceTab = index;
 		}
@@ -98,9 +104,9 @@ app.controller('editProfileController',['$scope', function($scope){
 			}
 			$scope.experiencetabs.splice(index,1); //remove the object from the array based on index
 		}
-		
+
 		$scope.Certcounter = 1;
-		
+
 		$scope.selectCertificateTab = function(index){
 			$scope.selectedCertificateTab = index;
 		}
