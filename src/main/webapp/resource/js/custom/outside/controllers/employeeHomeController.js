@@ -1,4 +1,4 @@
-app.controller('employeeHomeController', function($scope,$http,$location,$rootScope) {
+app.controller('employeeHomeController', function($scope,$http,$location,$rootScope,facebookService) {
 		//$scope.message = 'Contact us! JK. This is just a demo.';
 		$scope.validatesignin=function(){
 			// alert("validatesignin");
@@ -23,6 +23,7 @@ app.controller('employeeHomeController', function($scope,$http,$location,$rootSc
 						$rootScope.userobj = userobj;
 						$rootScope.returnData = data;
 						if(status === 200){
+							localStorage.setItem('isCheckUser', $rootScope.returnData.uuid);
 							// if(data.data=='valid'){
 							$("#employeeheader").show();
 			        $("#signoutheader").show();
@@ -55,4 +56,26 @@ app.controller('employeeHomeController', function($scope,$http,$location,$rootSc
 				}
 
 			};
+
+			$scope.myFacebookLogin = function() {
+	      FB.login(function(){
+	        //to share a post with text in message: ''
+	        // FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+	        facebookService.getMyDetails()
+	          .then(function(response) {
+	            console.log(response);
+	            //for profile picture "http://graph.facebook.com/"+response.id+"/picture";
+	            // console.log("http://graph.facebook.com/"+response.id+"/picture");
+	          }
+	        );
+				// }, {scope: 'email, publish_actions, user_likes',
+	      }, {scope: 'email, publish_actions',
+	    return_scopes: true});
+	    }
+
+	    $scope.logoutFb = function(){
+	      FB.logout(function(response) {
+	        // user is now logged out
+	      });
+	    }
 	});

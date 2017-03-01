@@ -1,5 +1,11 @@
 var app = angular.module('jobumesApp', ['ngRoute']);
 
+app.run(["$rootScope", "$window", function($rootScope, $window) {
+    $rootScope.signOut = function(){
+      localStorage.setItem('isCheckUser', 'empty');
+    }
+}]);
+
   // configure our routes
   app.config(function($routeProvider)
   {
@@ -15,6 +21,7 @@ var app = angular.module('jobumesApp', ['ngRoute']);
       templateUrl :'resource/pages/header/header.html',
       controller  : 'contentController'
     })
+
 
     .when('/admin', {
       templateUrl :'resource/admin/index.html',
@@ -231,6 +238,17 @@ var app = angular.module('jobumesApp', ['ngRoute']);
     })
     // Outside Route and Controller end
 
+    // for fb login callback
+    .when('/fbLoginCallback', {
+      templateUrl : 'resource/pages/content/outside/oauthcallback.html',
+      controller : 'fbLoginCallbackContoller'
+    })
+
+  });
+
+  app.controller('fbLoginCallbackContoller', function ($scope) {
+    window.opener.openFB.oauthCallback(window.location.href);
+    window.close();
   });
 
   app.controller('MyController', function ($scope)
@@ -273,3 +291,43 @@ var app = angular.module('jobumesApp', ['ngRoute']);
           $scope.matchedjobs = false;
         }
       });
+
+  //for fb login
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '567085660166390',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+   // ...
+   app.factory('facebookService', function($q) {
+       return {
+           getMyDetails: function() {
+               var deferred = $q.defer();
+               FB.api('/me', {
+                   fields: 'id,first_name,last_name,gender,email'
+               }, function(response) {
+                   if (!response || response.error) {
+                       deferred.reject('Error occured');
+                   } else {
+                       deferred.resolve(response);
+                   }
+               });
+              //  to get accessToken
+              //  var accessToken = FB.getAuthResponse();
+              //  console.log(accessToken);
+               return deferred.promise;
+           }
+       }
+   });
