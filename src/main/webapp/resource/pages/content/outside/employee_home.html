@@ -1,15 +1,14 @@
 <section class="workwithus">
   <div class="layer1">
     <div class="container">
-      
-      <div class="modal-dialog">
+            <div class="modal-dialog">
         <div class="empsignin">
           <div class="modal-content signin">
             <div class="modal-header">
               <h4 class="modal-title text-center" id="myModalLabel">SIGN IN</h4>
             </div>
             <div class="modal-body">
-              
+
               <div id="employee_signin" class="tab-pane fade in active">
                 <div class="register-box-body">
                   <span class="error ng-binding"></span>
@@ -24,7 +23,7 @@
                       <input type="password" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="pword" ng-model="pass" placeholder="Password" required="">
                       <span class="glyphicon glyphicon-lock form-control-feedback">
                       </span>
-                      
+
                         <span ng-show="myform.pword.$touched &amp;&amp; myform.pword.$invalid" class="ng-hide">password is required</span>
                     </div>
                     <div class="">
@@ -38,7 +37,7 @@
                             </div>
                           </div>
                         </div>
-                        
+
                         <div class="col-xs-12 col-sm-7">
                           <div class="checkbox icheck">
                             <div class="checkbox text-right textcenter">
@@ -47,14 +46,15 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-xs-12 form-group text-center">  
-                          <a href="#/employee-dashboard">
+                        <div class="col-xs-12 form-group text-center">
+                          <!-- <a href="#/employee-dashboard">
                             <input class="btn button text-center applyjob" type="button" value="Sign In" name="Submit" >
-                          </a>
+                          </a> -->
+                          <button type="submit" ng-click="validatesignin();" class="btn button text-center" >Sign In</button>
                         </div>
                       </div>
                     </div>
-                    
+
                     <p></p>
                   </form>
                   <div class="social-auth-links text-center">
@@ -70,7 +70,7 @@
                     </a>
                   </div>
                   <div class="col-sm-12 text-center">
-                    
+
                     <a href="#/signup" class="text-center">Register a new Employee
                     </a>
                   </div>
@@ -80,7 +80,7 @@
           </div>
         </div>
       </div>
-     
+
     </div>
     <div class="clearfix">
     </div>
@@ -95,7 +95,7 @@ $(document).ready(function(){
       $("#employerheader").hide();
       $("#signinheader").show();
       $("#footersection").show();
-      
+
     $(".applyjob").click(function(){
         $("#employeeheader").show();
         $("#signoutheader").show();

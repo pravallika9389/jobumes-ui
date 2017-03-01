@@ -27,7 +27,7 @@ select.form-control {
     padding-left: 7px;
 }
 </style>
-  
+
 <!---Sign In start here-->
 
 <div ng-controller='signinController' ng-hide='isLoggedin' tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -58,7 +58,7 @@ select.form-control {
                           <input type="password" class="form-control" name="pword" ng-model="pass" placeholder="Password" required>
                           <span class="glyphicon glyphicon-lock form-control-feedback">
                           </span>
-                          
+
                         <span ng-show="myform.pword.$touched && myform.pword.$invalid">password is required</span>
                         </div>
                         <div class="">
@@ -81,7 +81,7 @@ select.form-control {
                                 </div>
                               </div>
                             </div>
-                            <div class="col-xs-12 form-group text-center">  
+                            <div class="col-xs-12 form-group text-center">
                               <input class="btn button text-center" type="button" ng-disabled="myform.$invalid" value="Sign In" name="Submit" ng-click= "validatesignin()">
                               <!--
                               <button type="submit"  onclick="validate();" class="btn button text-center">Sign In</button> -->
@@ -119,13 +119,13 @@ select.form-control {
                         <input type="text" class="form-control" name="username" ng-model="userName" placeholder="Email" required>
                         <span class="glyphicon glyphicon-envelope form-control-feedback">
                         </span>
-                       
+
                     </div>
                     <div class="form-group has-feedback">
                         <input type="password" class="form-control" name="password" placeholder="Password" ng-model="pass" required>
                         <span class="glyphicon glyphicon-lock form-control-feedback">
                         </span>
-                        
+
                     </div>
                       <div class="">
                       <div class="row">
@@ -147,7 +147,7 @@ select.form-control {
                             </div>
                           </div>
                         </div>
-                        <div class="col-xs-12 form-group text-center">  
+                        <div class="col-xs-12 form-group text-center">
                           <button type="submit"  ng-click="validate();" class="btn button text-center">Sign In
                           </button>
                         </div>
@@ -174,27 +174,27 @@ $(document).ready(function()
     {
       $("#employee_signin_page_tab").show();
       //$("#employer_signin_page_tab").hide();
-          
+
       $("#employee_signin_page_tab").click(function()
       {
         $("#employee_signin_page").show();
         $("#employer_signin_page").hide();
-        
-        
+
+
         $('#employee_signin_page_tab').addClass('active');
         $('#employer_signin_page_tab').removeClass('active');
-        
+
       });
 
       $("#employer_signin_page_tab").click(function()
       {
         $("#employee_signin_page").hide();
         $("#employer_signin_page").show();
-        
-        
+
+
         $('#employee_signin_page_tab').removeClass('active');
         $('#employer_signin_page_tab').addClass('active');
-        
+
       });
     });
 
