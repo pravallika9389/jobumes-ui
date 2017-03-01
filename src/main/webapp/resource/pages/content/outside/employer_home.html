@@ -14,7 +14,7 @@
             <li>Employees find you directly.</li>
             <li>Employee reach you about potential job opportunites.</li>
           </ul>
-          <div class="text-center">  
+          <div class="text-center">
             <a href="#/signin">
               <input class="btn button text-center" type="button" value="Sign In" name="Submit">
             </a>
@@ -30,7 +30,7 @@
               <h4 class="modal-title text-center" id="myModalLabel">SIGN IN</h4>
             </div>
             <div class="modal-body">
-              
+
               <div id="employer_signin" class="tab-pane fade in">
                 <div class="register-box-body">
                   <form action="#" method="post" name="singinform" novalidate>
@@ -38,13 +38,13 @@
                         <input type="text" class="form-control" name="username" ng-model="userName" placeholder="Email" required>
                         <span class="glyphicon glyphicon-envelope form-control-feedback">
                         </span>
-                       
+
                     </div>
                     <div class="form-group has-feedback">
                         <input type="password" class="form-control" name="password" placeholder="Password" ng-model="pass" required>
                         <span class="glyphicon glyphicon-lock form-control-feedback">
                         </span>
-                        
+
                     </div>
                       <div class="">
                       <div class="row">
@@ -66,11 +66,12 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-xs-12 form-group text-center">  
-                          <a href="#/employer-dashboard">
+                        <div class="col-xs-12 form-group text-center">
+                          <!-- <a href="#/employer-dashboard">
                             <button type="submit" class="btn button text-center postjobs">Sign In
                             </button>
-                          </a>
+                          </a> -->
+                          <button type="button" ng-click="validatesignin();" class="btn button text-center" >Sign In</button>
                         </div>
                         <!-- /.col -->
                       </div>
@@ -87,8 +88,8 @@
           </div>
         </div>
       </div>
-      
-     
+
+
     </div>
     <div class="clearfix">
     </div>
@@ -103,7 +104,7 @@ $(document).ready(function(){
       $("#employerheader").hide();
       $("#signinheader").show();
       $("#footersection").show();
-      
+
     $(".applyjob").click(function(){
         $("#employeeheader").show();
         $("#signoutheader").show();
