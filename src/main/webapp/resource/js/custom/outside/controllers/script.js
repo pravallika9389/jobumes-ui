@@ -1,6 +1,7 @@
 var app = angular.module('jobumesApp', ['ngRoute']);
 
 app.run(["$rootScope", "$window", function($rootScope, $window) {
+  localStorage.setItem('isCheckUser', 'empty');
     $rootScope.signOut = function(){
       localStorage.setItem('isCheckUser', 'empty');
     }

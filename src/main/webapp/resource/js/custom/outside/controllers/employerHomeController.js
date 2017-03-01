@@ -24,6 +24,7 @@ app.controller('employerHomeController', function($scope,$http,$location,$rootSc
 				$rootScope.userobj = userobj;
 				$rootScope.returnData = data;
 				if(status === 200){
+					localStorage.setItem('isCheckUser', $rootScope.returnData.uuid);
 					// if(data.data=='valid'){
 					$("#employerheader").show();
 	        $("#signoutheader").show();
