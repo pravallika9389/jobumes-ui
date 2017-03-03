@@ -1,9 +1,10 @@
 var app = angular.module('jobumesApp', ['ngRoute']);
 
 app.run(["$rootScope", "$window", function($rootScope, $window) {
-  localStorage.setItem('isCheckUser', 'empty');
+  // localStorage.setItem('isCheckUser', 'empty');
     $rootScope.signOut = function(){
       localStorage.setItem('isCheckUser', 'empty');
+      localStorage.setItem('userRole', 'empty');
     }
 }]);
 
@@ -87,7 +88,8 @@ app.run(["$rootScope", "$window", function($rootScope, $window) {
 
     .when('/graphical-resume', {
       templateUrl : 'resource/pages/content/employee/graphical_resume.html',
-      controller  : 'graphicalResumeController'
+      // controller  : 'graphicalResumeController'
+      controller: 'editProfileController'
     })
 
     // Employee Route and Controllers end

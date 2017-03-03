@@ -1,41 +1,92 @@
-app.controller("signupController", ['$scope','$http','$location','$route'])
+app.controller("signupController", function signupController($scope, $http,$location,$route,$http) {
 
-function signupController($scope, $http,$location,$route) {				
-	$scope.singUp=function(){
-	
-	  if($scope.userName && $scope.pass){
-			var signUp = {};			
-			signUp.userName = $scope.userName;
-			signUp.password = $scope.password;
-			signUp.email = $scope.email;
-			signUp.mobile = $scope.mobile;
-			var res = $http.post('/RoarRWS/RegisterUser', signUp);
-			
-			res.success(function(data, status, headers, config) {			
-				if(status === 200 && data == 'valid'){
+	// to get roles
+	var res = $http({
+		method: 'GET',
+		url: 'http://183.82.1.143:9060/roles'
+	});
+	res.success(function(data, status, headers, config) {
+		if((status >= 200 || status < 300)){
+			// console.log(data);
+			$scope.getRoles = data;
+		}
+		else{
+			$scope.loginMessage =  status;
+			alert("Error in retrieving Roles");
+		}
+
+	});
+	res.error(function(data, status, headers, config) {
+			console.log(data);
+			alert("Server error in retrieving Roles");
+	});
+
+	// register a user
+	$scope.signUpUser = function() {
+		if (!$scope.iAgree) {
+			alert("Please accept the Terms");
+		}else if($scope.userName && $scope.password && $scope.mobile && $scope.role && $scope.iAgree){
+
+			var body = {
+			  "username": $scope.userName,
+			  "password": $scope.password,
+			  "phonenumber": $scope.mobile,
+			  "status":"new user",
+			  "role": $scope.role
+			};
+
+			var res = $http({
+				method: 'POST',
+				url: 'http://183.82.1.143:9060/users',
+				// headers: {'Authorization': valuesToBasic},
+				data: body
+			});
+
+			res.success(function(data, status, headers, config) {
+				if((status >= 200 || status < 300)){
 					$scope.isRegistered = true;
 					 $scope.loginMessage = '';
+					 alert("Registered Succesfully");
 					$location.path('/signin');
-				    window.location.reload();						   
+				    // window.location.reload();
 				}
 				else{
 					$scope.loginMessage =  status;
+					alert("Error in Registering");
 				}
-				
+
 			});
 			res.error(function(data, status, headers, config) {
 					console.log(data);
+					alert("Server error");
 			});
 			// Making the fields empty
-			$scope.username='';
+			$scope.userName='';
 			$scope.password='';
-			$scope.email = "";
 			$scope.mobile = '';
-
+			$scope.role = '';
+			$scope.iAgree = '';
 	  }
 	  else{
 		  $scope.loginMessage = "Please enter your User Name / Password";
-		  
+		  alert("Please enter all fields");
 	  }
 	};
-};
+
+	// registration through facebook
+	$scope.myFacebookRegistration = function () {
+		FB.login(function(){
+			//to share a post with text in message: ''
+			// FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+			facebookService.getMyDetails()
+				.then(function(response) {
+					console.log(response);
+					//for profile picture "http://graph.facebook.com/"+response.id+"/picture";
+					// console.log("http://graph.facebook.com/"+response.id+"/picture");
+				}
+			);
+		// }, {scope: 'email, publish_actions, user_likes',
+		}, {scope: 'email, publish_actions',
+		return_scopes: true});
+	}
+});

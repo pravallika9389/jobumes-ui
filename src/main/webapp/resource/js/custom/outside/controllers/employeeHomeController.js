@@ -23,7 +23,10 @@ app.controller('employeeHomeController', function($scope,$http,$location,$rootSc
 						$rootScope.userobj = userobj;
 						$rootScope.returnData = data;
 						if(status === 200){
+							window.localStorage['userObj'] = angular.toJson(userobj);
+							window.localStorage['userDetailsObj'] = angular.toJson(data);
 							localStorage.setItem('isCheckUser', $rootScope.returnData.uuid);
+							localStorage.setItem('userRole', 'employee');
 							// if(data.data=='valid'){
 							$("#employeeheader").show();
 			        $("#signoutheader").show();
@@ -47,12 +50,12 @@ app.controller('employeeHomeController', function($scope,$http,$location,$rootSc
 					});
 					res.error(function(data, status, headers, config) {
 							console.log(data);
-							alert("Please check Login Credentials");
+							alert("Server Error! <br>Please check Login Credentials");
 					});
 
 
 				}else {
-					alert("Please give Login Credentials");
+					alert("Please enter Login Credentials");
 				}
 
 			};

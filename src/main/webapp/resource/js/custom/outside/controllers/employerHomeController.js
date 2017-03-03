@@ -24,7 +24,10 @@ app.controller('employerHomeController', function($scope,$http,$location,$rootSc
 				$rootScope.userobj = userobj;
 				$rootScope.returnData = data;
 				if(status === 200){
+					window.localStorage['userObj'] = angular.toJson(userobj);
+					window.localStorage['userDetailsObj'] = angular.toJson(data);
 					localStorage.setItem('isCheckUser', $rootScope.returnData.uuid);
+					localStorage.setItem('userRole', 'employer');
 					// if(data.data=='valid'){
 					$("#employerheader").show();
 	        $("#signoutheader").show();

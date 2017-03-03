@@ -21,44 +21,51 @@
         <div class="tab-content">
           <!-- Employee start-->
           <div id="employee_signup_page" class="tab-pane fade in active">
-            <div class="register-box-body" ng-controller='signUpController'>
-              <form action="#" method="post" novalidate>
+            <div class="register-box-body" ng-controller='signupController'>
+              <form name="signUp" method="post" novalidate>
                 <div class="form-group has-feedback">
-                  <input type="email" name="email" id="email" class="form-control" ng-model="singUp.email" placeholder="Email" required />
+                  <input type="email" name="email" id="email" class="form-control" ng-model="userName" placeholder="Email or Username" required />
                   <span class="glyphicon glyphicon-envelope form-control-feedback">
-                  </span>                    
-                  
+                  </span>
+
                 </div>
                 <div class="form-group has-feedback">
-                  <input type="password" class="form-control" name="pword" ng-model="pass" placeholder="Password" required>
+                  <input type="password" class="form-control" name="pword" ng-model="password" placeholder="Password" required>
                   <span class="glyphicon glyphicon-lock form-control-feedback">
                   </span>
                 </div>
-                <div class="form-group has-feedback">
-                  <input type="password" class="form-control" name="pword" ng-model="pass" placeholder="Confirm Password" required>
+                <!-- <div class="form-group has-feedback">
+                  <input type="password" class="form-control" name="pword" ng-model="password" placeholder="Confirm Password" required>
                   <span class="glyphicon glyphicon-check form-control-feedback">
                   </span>
-                </div>
+                </div> -->
 
                 <div class="form-group has-feedback">
-                  <input type="text" class="form-control" placeholder="Phone Number" ng-model='singUp.mobile'>
+                  <input type="text" class="form-control" placeholder="Phone Number" ng-model='mobile'>
                   <span class="glyphicon glyphicon-earphone form-control-feedback">
                   </span>
                 </div>
+                <div class="form-group has-feedback">
+                  <select class="form-control" ng-model="role" id="RadialLocation" required>
+                    <option value="">Select a Role</option>
+                    <option ng-repeat="items in getRoles" ng-value="items.uuid">{{items.name}}</option>
+                  </select>
+                </div>
+
                 <div class="row">
                   <div class="col-xs-12">
                     <div class="checkbox icheck">
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox"> I agree to the 
-                          <a href="#">terms
-                          </a>
+                          <input type="checkbox" ng-model="iAgree"> I agree to the
+                          <a>terms</a>
                         </label>
                       </div>
                     </div>
                   </div>
-                  <div class="col-xs-12 text-center">  
-                    <button type="submit" class="btn button text-center" ng-click="singUp()">Sign Up
+                  <div class="col-xs-12 text-center">
+                    <button type="submit" class="btn button text-center" ng-disabled="!signUp.$valid" ng-click="signUpUser()">
+                      Sign Up
                     </button>
                   </div>
                 </div>
@@ -72,6 +79,10 @@
                 </a>
                 <a class="btn btn-social-icon btn-google">
                   <i class="fa fa-google-plus">
+                  </i>
+                </a>
+                <a class="btn btn-social-icon btn-google" ng-click="myFacebookRegistration()">
+                  <i class="fa fa-facebook">
                   </i>
                 </a>
               </div>
@@ -90,8 +101,8 @@
                 <div class="form-group has-feedback">
                   <input type="email" name="email" id="email" class="form-control" ng-model="email" placeholder="Email" required />
                   <span class="glyphicon glyphicon-envelope form-control-feedback">
-                  </span>                    
-                  
+                  </span>
+
                 </div>
                 <div class="form-group has-feedback">
                   <input type="password" class="form-control" name="pword" ng-model="pass" placeholder="Password" required>
@@ -113,14 +124,14 @@
                     <div class="checkbox icheck">
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox"> I agree to the 
+                          <input type="checkbox"> I agree to the
                           <a href="#">terms
                           </a>
                         </label>
                       </div>
                     </div>
                   </div>
-                  <div class="col-xs-12 form-group text-center">  
+                  <div class="col-xs-12 form-group text-center">
                     <button type="submit" class="btn button text-center">Sign Up
                     </button>
                   </div>
@@ -143,30 +154,30 @@
 <script>
 $(document).ready(function()
     {
-      
+
       $("#employee_signup_tab").show();
       //$("#employer_signup_tab").hide();
-          
+
       $("#employee_signup_tab").click(function()
       {
         $("#employee_signup_page").show();
         $("#employer_signup_page").hide();
-        
-        
+
+
         $('#employee_signup_tab').addClass('active');
         $('#employer_signup_tab').removeClass('active');
-        
+
       });
 
       $("#employer_signup_tab").click(function()
       {
         $("#employee_signup_page").hide();
         $("#employer_signup_page").show();
-        
-        
+
+
         $('#employee_signup_tab').removeClass('active');
         $('#employer_signup_tab').addClass('active');
-        
+
       });
     });
 </script>

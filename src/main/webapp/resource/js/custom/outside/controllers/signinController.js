@@ -1,5 +1,40 @@
 app.controller('signinController',function($scope,$http,$location,$rootScope){
 
+	var user = localStorage.getItem('isCheckUser');
+	var role = localStorage.getItem('userRole');
+	var accessData = window.localStorage['userObj'];
+	if(user == "" || user == "empty" || user == undefined){
+		// $location.path('/employee-home');
+		$scope.empShow = "display: none";
+		$("#employeeheader").hide();
+		$("#signoutheader").hide();
+		$("#homeheader").show();
+		$("#employerheader").hide();
+		$("#signinheader").show();
+		$("#footersection").show();
+		$(".hideclass").show();
+	}else {
+		// $rootScope.returnData = accessData;
+		// console.log($rootScope.returnData);
+		if (role == "employee") {
+			$("#employeeheader").show();
+			$("#signoutheader").show();
+			$("#homeheader").hide();
+			$("#employerheader").hide();
+			$("#signinheader").hide();
+			$("#footersection").hide();
+			$(".hideclass").hide();
+		}else if(role == "employer") {
+			$("#employeeheader").hide();
+			$("#signoutheader").show();
+			$("#homeheader").hide();
+			$("#employerheader").show();
+			$("#signinheader").hide();
+			$("#footersection").hide();
+			$(".hideclass").hide();
+		}
+	}
+
 		$scope.validatesignin=function(){
 			// alert("validatesignin");
 	    	  if($scope.userName && $scope.pass){
