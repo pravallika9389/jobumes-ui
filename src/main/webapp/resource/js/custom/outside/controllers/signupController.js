@@ -21,11 +21,13 @@ app.controller("signupController", function signupController($scope, $http,$loca
 			alert("Server error in retrieving Roles");
 	});
 
+	$scope.role = "0850685a-70c6-4776-a24b-e51d4522573a";
+
 	// register a user
 	$scope.signUpUser = function() {
 		if (!$scope.iAgree) {
 			alert("Please accept the Terms");
-		}else if($scope.userName && $scope.password && $scope.mobile && $scope.role && $scope.iAgree){
+		}else if($scope.userName && $scope.password && $scope.mobile && $scope.iAgree){
 
 			var body = {
 			  "username": $scope.userName,
@@ -47,8 +49,14 @@ app.controller("signupController", function signupController($scope, $http,$loca
 					$scope.isRegistered = true;
 					 $scope.loginMessage = '';
 					 alert("Registered Succesfully");
-					$location.path('/signin');
-				    // window.location.reload();
+					 // Making the fields empty
+			 			$scope.userName='';
+			 			$scope.password='';
+			 			$scope.mobile = '';
+			 			$scope.role = '';
+			 			$scope.iAgree = '';
+					// $location.path('/signin');
+				  //  window.location.reload();
 				}
 				else{
 					$scope.loginMessage =  status;
@@ -58,14 +66,13 @@ app.controller("signupController", function signupController($scope, $http,$loca
 			});
 			res.error(function(data, status, headers, config) {
 					console.log(data);
-					alert("Server error");
+					if (status == 400 && data.reason == "Username already Exists..!!") {
+						alert(data.reason);
+					}else {
+						alert("Server error <br>" + data.reason);
+					}
 			});
-			// Making the fields empty
-			$scope.userName='';
-			$scope.password='';
-			$scope.mobile = '';
-			$scope.role = '';
-			$scope.iAgree = '';
+
 	  }
 	  else{
 		  $scope.loginMessage = "Please enter your User Name / Password";

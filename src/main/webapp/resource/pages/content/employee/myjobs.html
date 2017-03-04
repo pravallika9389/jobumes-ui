@@ -718,7 +718,30 @@ ont-family: inherit;
             <div  class="recommendedjob">
               <div class="">
 
-              	<ul id="sortable_all" class="row">
+              <ul id="sortable_all" class="row">
+                <li class="col-md-3 col-sm-6" ng-repeat="items in recommendedJobs">
+                    <div class="jobmaindiv">
+                      <div class="box box-block bg-white tile tile-1 m-b-2">
+                      <div class="t-content">
+                         <div class="panel-heading">{{items.title}}</div>
+                          <div class="form-group" align="center">
+                            <img src="http://snigdha.co.in/images/logo.png" class="img-responsive" style="width:140px; padding: 20px;" />
+                          </div>
+                          <div class="locationcss">
+                            <i class="fa fa-map-marker" aria-hidden="true">  <span class="text-muted fontfamily">&nbsp;&nbsp; {{items.location}}</span></i>
+                            </div>
+                            <div class="locationcss">
+                            <i class="fa fa-suitcase" aria-hidden="true">  <span class="text-muted fontfamily">{{items.company}}</span></i>
+                          </div>
+                          <div class="panel-footer text-center bgcolors">
+                            <small>Posted On {{items.postedOn}}</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+              </ul>
+              	<!-- <ul id="sortable_all" class="row">
 		            <li class="col-md-3 col-sm-6">
 		                <div class="jobmaindiv">
 		                  <div class="box box-block bg-white tile tile-1 m-b-2">
@@ -807,7 +830,7 @@ ont-family: inherit;
 		                  </div>
 		                </div>
 		            </li>
-	           </ul>
+	           </ul> -->
 
               </div>
               <!-- Matched  jobs table start here-->
@@ -818,7 +841,96 @@ ont-family: inherit;
             <div  class="appliedJobs">
               <div class="">
 
-                <div class="listing-section search-result">
+              <div class="listing-section search-result" ng-repeat="items in appliedJobs">
+                <div class=" row listing-info">
+                  <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
+                    <div class="right-side2">
+                      <a href="#">
+                        <center>
+                          <img src="http://snigdha.co.in/images/logo.png" class="img-responsive" style="width:140px; padding: 20px;">
+                        </center>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-9 col-lg-10 col-xs-12">
+                    <div class="row">
+                      <div class="left-side1">
+                        <div class="listing-title">
+                          <div class="job-title">
+                            <a href="">{{items.title}}
+                            </a>
+                            <span class="activatedate">
+                              <span class="captions-field">{{items.postedOn}}
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="locationcss">
+                          <ul class="list-inline" style="text-align:left">
+                            <li>
+                              <i class="fa fa-suitcase" aria-hidden="true"></i>
+                              <span class="ng-binding"> {{items.company}}
+                              </span>
+                            </li>
+                            <li>
+                              <i class="fa fa-map-marker" aria-hidden="true"></i>
+                              <span class="ng-binding"> {{items.location}}
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="show-brief">
+                          <div class="description">
+                            {{items.description}}
+                          </div>
+                        </div>
+                        <br>
+                        <!-- 3_sec -->
+                        <div class="locationcss">
+                         <ul class="list-inline" style="text-align:left">
+                            <li>
+                              <i class="fa fa-usd" aria-hidden="true"></i>
+                              <span class="ng-binding"> 10k
+                              </span>
+                            </li>
+                            <li>
+                              <i class="fa fa-home" aria-hidden="true"></i>
+                              <span class="ng-binding"> Management
+                              </span>
+                            </li>
+                            <li>
+                              <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                              <span class="ng-binding"> Hot Job
+                              </span>
+                            </li>
+                            <li>
+                              <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                              <span class="ng-binding"> Part time
+                              </span>
+                            </li>
+                            <li>
+                              <i class="fa fa-graduation-cap" aria-hidden="true">
+                              </i>
+                              <span class="ng-binding">Graduate
+                              </span>
+                            </li>
+                            <a href="#">
+                              <li class="pull-right">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                <span class="ng-binding">Save job</span>
+                              </li>
+                            </a>
+                          </ul>
+
+                        </div>
+                        <!-- 3_sec -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <!-- <div class="listing-section search-result">
                   <div class=" row listing-info">
                     <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
                       <div class="right-side2">
@@ -862,7 +974,6 @@ ont-family: inherit;
                             </div>
                           </div>
                           <br>
-                          <!-- 3_sec -->
                           <div class="locationcss">
                             <ul class="list-inline" style="text-align:left">
                               <li>
@@ -900,7 +1011,6 @@ ont-family: inherit;
                             </ul>
 
                           </div>
-                          <!-- 3_sec -->
                         </div>
                       </div>
                     </div>
@@ -951,7 +1061,6 @@ ont-family: inherit;
                             </div>
                           </div>
                           <br>
-                          <!-- 3_sec -->
                           <div class="locationcss">
                            <ul class="list-inline" style="text-align:left">
                               <li>
@@ -989,12 +1098,11 @@ ont-family: inherit;
                             </ul>
 
                           </div>
-                          <!-- 3_sec -->
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <!-- Applied  jobs table start here -->
               </div>
             </div>
@@ -1003,7 +1111,32 @@ ont-family: inherit;
           <div class="bhoechie-tab-content">
             <div  class="savedjobs">
               <div class="">
-				<ul id="sortable_all" class="row">
+
+              <ul id="sortable_all" class="row">
+                <li class="col-md-3 col-sm-6" ng-repeat="items in savedJobs">
+                    <div class="jobmaindiv">
+                      <div class="box box-block bg-white tile tile-1 m-b-2">
+                      <div class="t-content">
+                         <div class="panel-heading">{{items.title}}</div>
+                          <div class="form-group" align="center">
+                            <img src="http://snigdha.co.in/images/logo.png" class="img-responsive" style="width:140px; padding: 20px;" />
+                          </div>
+                          <div class="locationcss">
+                            <i class="fa fa-map-marker" aria-hidden="true">  <span class="text-muted fontfamily">&nbsp;&nbsp; {{items.location}}</span></i>
+                            </div>
+                            <div class="locationcss">
+                            <i class="fa fa-suitcase" aria-hidden="true">  <span class="text-muted fontfamily">{{items.company}}</span></i>
+                          </div>
+                          <div class="panel-footer text-center bgcolors">
+                            <small>Posted On {{items.postedOn}}</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+              </ul>
+
+				<!-- <ul id="sortable_all" class="row">
 	              <li class="col-md-3 col-sm-6">
 		                <div class="jobmaindiv">
 		                  <div class="box box-block bg-white tile tile-1 m-b-2">
@@ -1180,7 +1313,7 @@ ont-family: inherit;
 		                  </div>
 		                </div>
 		            </li>
-	           	</ul>
+	           	</ul> -->
                 <!-- Applied  jobs table start here -->
               </div>
             </div>
