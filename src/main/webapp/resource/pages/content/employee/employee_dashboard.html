@@ -63,7 +63,7 @@
     font-weight: 300;
 }
 
-.form-control { 
+.form-control {
     transition: padding .3s ease-out;
 }
 
@@ -76,15 +76,15 @@ padding: 6px 12px;
 background-color: #fff;
     background-image: none;
     border-radius: 4px;
-    
+
     }
 
  .form-control, output {
-    
+
     line-height: 1.42857;
     color: #555;
     display: block;
-}   
+}
 
 .row:after {
     clear: both;
@@ -179,7 +179,7 @@ a {
 }
 
 
-<!-- test css code ends 2 -->   
+<!-- test css code ends 2 -->
 .radio-inline, .checkbox-inline {
     color: #555555;
 }
@@ -206,7 +206,7 @@ input[type=radio] {
 input[type=radio] {
     box-sizing: border-box;
     padding: 0;
-}    
+}
 
 .input-group {
     position: relative;
@@ -372,6 +372,38 @@ ont-family: inherit;
     </section>
     <!---Content start here-->
     <div class="col-md-12">
+      <div class="row" style="background: #f7f7f7; border-radius: 10px; margin: 0px 2px 20px 0; padding: 0 2px 20px 2px;">
+        <h3 style="padding-left: 18px; color: #193048;">Upload a Resume</h3>
+        <div class="col-md-5">
+          <div class="search-input" >
+            <input type="text" placeholder="Give the url of Resume" ng-disabled="resChecked" ng-model="resumeLink" name="resume" />
+          </div>
+        </div>
+        <div class="col-md-3" style="padding-top: 12px;">(OR)
+          Please check to Upload a File
+          <input type="checkbox" value="checked" ng-model="resChecked" />
+        </div>
+        <div class="col-md-3">
+          <div class="search-input" style="padding-top: 12px;">
+            <input type="file" file-model = "myFile" placeholder="Upload a Resume" ng-disabled="!resChecked" name="resume" />
+          </div>
+        </div>
+        <div class="col-md-1" style="padding-top: 12px;">
+          <button class="btn button save margin-2" ng-click = "uploadFileLink()">
+            Upload
+          </button>
+        </div>
+        <!-- <div class="col-md-8">
+          <div class="search-input" >
+            <input type="file" file-model = "myFile" placeholder="Upload a Resume" name="resume" />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button class="btn button save margin-2" ng-click = "uploadFile()">
+            Upload
+          </button>
+        </div> -->
+      </div>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12">
               <div class="body-content panel-body ng-scope" ng-init="getDashBoardData('YIN16JNWN3B11893')">
@@ -379,30 +411,30 @@ ont-family: inherit;
                   <div class="searchjob">
                     <form id="frm_jobs_filtration" action="#" method="get" class="search-area search-bg">
                       <div class="col-lg-6 col-md-6 col-sm-5 pad_0">
-                        <div class="search-input search-icon" > 
+                        <div class="search-input search-icon" >
                           <span class="icon-search" style="background-image:url(resource/css/img/chair.png)">
                           </span>
-                          
+
                           <input type="text" placeholder="Company Name or Job Title or Key word" name="job_title" >
-                          
+
                         </div>
-                      </div> 
-                
+                      </div>
+
                       <div class="col-lg-4 col-md-4 col-sm-4 pad_0">
-                        <div class="search-input"> 
+                        <div class="search-input">
                           <i class="icon-search7">
                           </i>
                           <input type="text" id="location" placeholder="Preferred Locations" name="locations">
                         </div>
-                      </div> 
+                      </div>
                       <div class="col-lg-2 col-md-2 col-sm-3 pad_0">
                         <div class="search-btn">
-                          <input type="submit" class="btncss" name="cs_" value="Search All Jobs">                
+                          <input type="submit" class="btncss" name="cs_" value="Search All Jobs">
                         </div>
                         <div id="searchadvance" class="pull-right">
                           <a href="javascript:void(0)"><i class="fa fa-search-plus" aria-hidden="true"></i> Advanced Search</a>
                         </div>
-                        
+
                       </div>
                     </form>
                   </div>
@@ -414,7 +446,7 @@ ont-family: inherit;
                           <h2 class="ad-title">Keywords</h2>
                         </div>
                       </div>
-                      
+
                       <div class="row rowM">
                         <span class="hidden-xs hidden-sm">
 	                        <div class="col-lg-3 colRP">
@@ -459,7 +491,7 @@ ont-family: inherit;
                           	<input type="text" class="form-control input-no-left-radius typeAhead" maxlength="512" name="for_exact" id="for_exact" autocomplete="off" placeholder="with the exact phrase:">
                           </span>
                         </div>
-                      </div>        
+                      </div>
                       <div class="row rowM">
                       	<span class="hidden-xs hidden-sm">
 	                        <div class="col-lg-3 colRP">
@@ -528,11 +560,11 @@ ont-family: inherit;
                       <div class="row rowM">
                         <div class="col-lg-3 colRP">
                           <div class="simple-label">radius in miles:</div>
-                        </div>  
+                        </div>
                         <div class="col-lg-7 colLP">
                           <div id="radiusS" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                             <a class="ui-slider-handle ui-state-default ui-corner-all" id="radiusMileAnchor" href="#" style="left: 50%;"></a>
-                          </div> 
+                          </div>
                           <div class="steps-2">
                             <span class="tick Elmiles">|<br>Exact Location</span>
                             <span class="tick 5miles" style="left: 11.75%;">|<br>Within 5 miles</span>
@@ -561,7 +593,7 @@ ont-family: inherit;
                         <div class="col-lg-7 colLP">
                           <div class="input-group" id="employmentType-select">
                             <span class="form-control input-no-left-radius espan">Select employment type</span>
-                            <input type="hidden" class="form-control input-no-left-radius" maxlength="512" name="jtype" id="jtype"> 
+                            <input type="hidden" class="form-control input-no-left-radius" maxlength="512" name="jtype" id="jtype">
                             <div class="input-group-btn multiple">
                               <button class="btn btn-default dropdown-toggle" type="button">
                                 <span class="caret" val="-1" name="jtype"></span> <span class="sr-only">Toggle Dropdown</span>
@@ -586,7 +618,7 @@ ont-family: inherit;
                           </div>
                         </div>
                       </div>
-                      
+
                       <div class="row rowM">
                         <div class="col-lg-3 colRP postedDate">
                           <div class="simple-label">within job posted:</div>
@@ -594,7 +626,7 @@ ont-family: inherit;
                         <div class="col-lg-7 colLP">
                           <div id="postedDateS" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
                             <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"></a>
-                          </div> 
+                          </div>
                           <div class="steps-2">
                             <span class="tick 3days">|<br>3 days</span>
                             <span class="tick 7days" style="left: 16.11%;">|<br>7 days</span>
@@ -612,10 +644,10 @@ ont-family: inherit;
                           <div class="simple-label">sort by:</div>
                         </div>
                         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 colLP">
-                          <label class="radio-inline col-sm-4 col-xs-4"> 
+                          <label class="radio-inline col-sm-4 col-xs-4">
                           <input type="radio" name="sort" id="sort1" value="relevance" checked="checked">
                             Relevance
-                          </label> 
+                          </label>
                           <label class="radio-inline col-sm-4 col-xs-4">
                            <input type="radio" name="sort" id="sort2" value="date"> Date
                           </label>
@@ -650,7 +682,7 @@ ont-family: inherit;
                           </div>
                           <input id="limit" type="hidden" value="0">
                         </div>
-                        
+
                       </div>
                       <div class="row rowM">
                         <div class="col-lg-3">
@@ -663,7 +695,7 @@ ont-family: inherit;
                     </form>
                   </div>
                  </div>
-				
+
                 <div class="bgcolors margin-bottom-20">
                   <div class="row">
                     <div class="col-md-2 col-sm-12 col-xs-12">
@@ -702,7 +734,7 @@ ont-family: inherit;
                             <div class="fill">
                             </div>
                           </div>
-                        </div> 
+                        </div>
                         <div class="text-center">
                           <p>Personal Details
                           </p>
@@ -736,7 +768,7 @@ ont-family: inherit;
                           </div>
                         </div>
                         <div class="text-center">
-                          <p>Employment Details 
+                          <p>Employment Details
                           </p>
                         </div>
                       </div>
@@ -750,9 +782,9 @@ ont-family: inherit;
                             <div class="fill">
                             </div>
                           </div>
-                        </div> 
+                        </div>
                         <div class="text-center">
-                          <p>Project Details 
+                          <p>Project Details
                           </p>
                         </div>
                       </div>
@@ -775,9 +807,9 @@ ont-family: inherit;
                     </div>
                   </div>
                 </div>
-                
-                 
-				
+
+
+
 				<div class="row">
 					<div class="col-md-12">
 						<div class="stats page-title-buttons  pull-right">
@@ -813,7 +845,7 @@ ont-family: inherit;
                             <i class="fa fa-share" aria-hidden="true">
                             </i>
                           </div>
-                          <a href="#/my-jobs" class="small-box-footer">More info 
+                          <a href="#/my-jobs" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right">
                             </i>
                           </a>
@@ -834,7 +866,7 @@ ont-family: inherit;
                             <i class="fa fa-thumbs-up" aria-hidden="true">
                             </i>
                           </div>
-                          <a href="#/my-jobs" class="small-box-footer">More info 
+                          <a href="#/my-jobs" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right">
                             </i>
                           </a>
@@ -854,7 +886,7 @@ ont-family: inherit;
                             <i class="fa fa-floppy-o" aria-hidden="true">
                             </i>
                           </div>
-                          <a href="#/my-jobs" class="small-box-footer">More info 
+                          <a href="#/my-jobs" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right">
                             </i>
                           </a>
@@ -874,7 +906,7 @@ ont-family: inherit;
                             <i class="fa fa-eye" aria-hidden="true">
                             </i>
                           </div>
-                          <a href="#/profileviews" class="small-box-footer">More info 
+                          <a href="#/profileviews" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right">
                             </i>
                           </a>
@@ -894,7 +926,7 @@ ont-family: inherit;
                             <i class="fa fa-download" aria-hidden="true">
                             </i>
                           </div>
-                          <a href="#/downloads" class="small-box-footer">More info 
+                          <a href="#/downloads" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right">
                             </i>
                           </a>
@@ -914,7 +946,7 @@ ont-family: inherit;
                             <i class="fa fa-calendar-plus-o" aria-hidden="true">
                             </i>
                           </div>
-                          <a href="#/client_schedules" class="small-box-footer">More info 
+                          <a href="#/client_schedules" class="small-box-footer">More info
                             <i class="fa fa-arrow-circle-right">
                             </i>
                           </a>
@@ -922,7 +954,7 @@ ont-family: inherit;
                     </div>
                     <!-- ./col -->
                 </div>
-				
+
               </div>
             </div>
         </div>
@@ -933,7 +965,7 @@ ont-family: inherit;
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">×
+              <button type="button" class="close" data-dismiss="modal">ï¿½
               </button>
               <h4 class="modal-title">Upload Profile Image
               </h4>
@@ -969,7 +1001,7 @@ ont-family: inherit;
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">×
+              <button type="button" class="close" data-dismiss="modal">ï¿½
               </button>
               <h4 class="modal-title">Verify Mobile Number
               </h4>
@@ -997,15 +1029,15 @@ ont-family: inherit;
     </div>
 
 <script>
-   $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?') 
+   $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
          .done (function(location)
          {
-            var country=location.country_name; 
+            var country=location.country_name;
             var state=location.state;
             var city=location.city;
           $("#location").val(city+", "+state+", "+country);
-         }); 
-   
+         });
+
    $(document).ready(function(){
         $("#searchjobs").hide();
           $("#searchadvance").click(function(){
@@ -1013,5 +1045,3 @@ ont-family: inherit;
           });
       });
 </script>
-
-
