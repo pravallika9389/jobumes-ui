@@ -35,13 +35,17 @@ app.controller('employeeDashboardController', function($scope, $location, $rootS
 			var res = $http({
 				method: 'POST',
 				url: 'http://183.82.1.143:9060/resumes',
-				headers: {'Authorization': valuesToBasic},
-				data: $scope.data
+				headers: {
+					'Authorization': valuesToBasic,
+					'Content-Type' : 'multipart/form-data request'
+				}
+				// ,
+				// data: $scope.data
 			});
 
 			res.success(function(data, status, headers, config) {
 				console.log(data);
-				if (status == 200) {
+				if (status >= 200 || status < 300) {
 					alert("File Uploaded Successfully");
 				}else {
 					alert("Please check the File link");
@@ -96,13 +100,18 @@ app.service('fileUpload', ['$http', function ($http) {
 
 		 $http.post(uploadUrl, fd, {
 				// transformRequest: angular.identity,
-				headers: {'Authorization': valuesToBasic}
+				headers: {
+					'Authorization': valuesToBasic,
+					'Content-Type' : 'multipart/form-data'
+				}
 		 })
 
 		 .success(function(){
+			 alert("File Uploaded Successfully");
 		 })
 
 		 .error(function(){
+			 alert("Error Occured");
 		 });
 	}
 }]);
