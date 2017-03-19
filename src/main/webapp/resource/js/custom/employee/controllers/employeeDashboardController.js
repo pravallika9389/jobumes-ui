@@ -99,10 +99,10 @@ app.service('fileUpload', ['$http', function ($http) {
 		 var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
 
 		 $http.post(uploadUrl, fd, {
-				// transformRequest: angular.identity,
+				transformRequest: angular.identity,
 				headers: {
 					'Authorization': valuesToBasic,
-					'Content-Type' : 'multipart/form-data'
+					'Content-Type' : undefined
 				}
 		 })
 
