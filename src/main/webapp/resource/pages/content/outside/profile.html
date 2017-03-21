@@ -7,7 +7,7 @@
 	          <h1> Profile Setting
 	          </h1>
 	        </section>
-	
+
 	        <div class="col-md-12 col-sm-12 col-lg-12 ng-scope">
 		        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
 		            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 bhoechie-tab-menu">
@@ -37,23 +37,70 @@
 		            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 bhoechie-tab">
 		                <!-- flight section -->
 		                <div class="bhoechie-tab-content active">
-		                <div class="panel">
+											<div class="panel" ng-repeat="items in profileDetails">
+			                  <div class="panel-heading">{{items.details.ResumeParserData.Platform}} - {{items.details.ResumeParserData.JobProfile}}
+			                  	<div class="pull-right">
+				                  	<a class="btn button editpadding pull-right" ng-click="gotoEditResume(items)"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+							 							</a>
+							 							<input type="radio" name="default" value="default_resume"><small style="padding: 5px;"> Default Resume</small>
+								 	 				</div>
+			                  </div>
+				                  <div class="new-body">
+														<div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+								               <a href="#">
+								                 <center>
+								                   <img type="file" src="resource/css/img/default_user.png" class="img-responsive img-circle" alt="">
+								                 </center>
+								               </a>
+								           	</div>
+									           <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12">
+									            	<div><h2>{{items.details.ResumeParserData.FullName}}</h2></div>
+									            	<div>
+										            	<i class="fa fa-phone" aria-hidden="true"></i>
+							                			</i>
+									                	<label>
+										                  <b class="ng-binding">{{items.details.ResumeParserData.Mobile}}
+										                  </b>
+										                </label>
+									                </div>
+									            	<div>
+									            		<i class="fa fa-envelope-o" aria-hidden="true"></i>
+										                </i>
+										                <label>
+										                  <b class="ng-binding">{{items.details.ResumeParserData.Email}}
+										                  </b>
+										                </label>
+									            	</div>
+									            	<div>
+									            		<i class="fa fa-home" aria-hidden="true"></i>
+										                </i>
+										                <label>
+										                  <b class="ng-binding">{{items.details.ResumeParserData.FormattedAddress}}
+										                  </b>
+										                </label>
+									            	</div>
+				                    	</div>
+					        						<div class="clearfix"></div>
+														</div>
+													</div>
+				            			<div class="clearfix"></div>
+		                <!-- <div class="panel">
 		                  <div class="panel-heading">PHP DEVLEOPER
 		                  	<div class="pull-right">
 			                  	<a class="btn button editpadding pull-right" href="#edit_profile"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit
 	 							</a>
-	 							<input type="radio" name="default" value="default_resume"><small> Default Resume</small>  
-		 	 				</div>			
+	 							<input type="radio" name="default" value="default_resume"><small> Default Resume</small>
+		 	 				</div>
 		                  </div>
-			                  <div class="new-body">	
+			                  <div class="new-body">
 								<div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
 					               <a href="#">
 					                 <center>
 					                   <img type="file" src="resource/css/img/Employer/dinesh.jpg" class="img-responsive img-circle" alt="">
 					                 </center>
 					               </a>
-					               
-					               
+
+
 					           </div>
 					           <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12">
 					            	<div><h2>John Anderson</h2></div>
@@ -93,10 +140,10 @@
 		                  	<div class="pull-right">
 			                  	<a class="btn button editpadding pull-right" href="#edit_profile"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit
 	 							</a>
-	 							<input type="radio" name="default" value="default_resume"><small> Default Resume</small>   
-		 	 				</div>			
+	 							<input type="radio" name="default" value="default_resume"><small> Default Resume</small>
+		 	 				</div>
 		                  </div>
-			                  <div class="new-body">	
+			                  <div class="new-body">
 								<div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
 					               <a href="#">
 					                 <center>
@@ -140,9 +187,9 @@
 				        		</div>
 				        		<div class="clearfix">
 	                  			</div>
-							</div>
+							</div> -->
 		                </div>
-		            
+
 		                <div class="bhoechie-tab-content">
 		                  <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="overflow-x:auto;">
 		                     <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
@@ -158,7 +205,7 @@
 			                        </th>
 			                      </tr>
 			                    </thead>
-			                    
+
 			                    <tbody>
 				                      <tr role="row" class="odd">
 					                      <td class="sorting_1">PHP DEVELOPER</td>
@@ -184,13 +231,23 @@
 			               <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="overflow-x:auto;">
 		                     <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
 			                    <tbody>
-				                      <tr role="row" class="odd">
+														<tr role="row" class="odd" ng-repeat="items in coverLetterArr">
+															<td class="sorting_1">{{items}}</td>
+															<td>01-12-2016</td>
+															<td>Daily</td>
+															<td>
+																<a class="btn button" data-toggle="modal" data-target="#coverletter_preview">PREVIEW
+																</a>
+															</td>
+															<td><span class="glyphicon glyphicon-trash"  style="color:red;"></span></td>
+													 </tr>
+				                      <!-- <tr role="row" class="odd">
 					                      <td class="sorting_1">PHP DEVELOPER</td>
 					                      <td>01-12-2016</td>
 					                      <td>Daily</td>
 					                      <td>
 					                      	<a class="btn button" data-toggle="modal" data-target="#coverletter_preview">PREVIEW
- 	 										</a>
+ 	 																</a>
 					                      </td>
 					                      <td><span class="glyphicon glyphicon-trash"  style="color:red;"></span></td>
 				                     </tr>
@@ -200,43 +257,43 @@
 					                      <td>Daily</td>
 					                      <td>
 					                      	<a class="btn button"  data-toggle="modal" data-target="#coverletter_preview">PREVIEW
- 	 										</a>
+ 	 																</a>
 					                      </td>
 					                      <td><span class="glyphicon glyphicon-trash" style="color:red;"></span></td>
-				                     </tr>
+				                     </tr> -->
 			                    </tbody>
 			                  </table>
-			               	</div>  
+			               	</div>
 			                  <div>
 				                  <a class="btn button" data-toggle="modal" data-target="#coverletter">Add Cover Letter
 	 	 						  </a>
  	 						  </div>
  	 						 </div>
-			                </div> 
+			                </div>
 		                </div>
 		                <div class="bhoechie-tab-content">
  	 						  <div class="panel">
 				                  <div class="panel-heading">Change Password
 				                  </div>
 				              	 <div class="new-body">
-				    					<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
-				            		      <input type="text" placeholder="New Password" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="newPassword" name="newPassword" required="">
+				    								<div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
+				            		      <input type="text" placeholder="New Password" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="newPassword" name="newPassword" ng-model="newPassword" required="">
 				            		    </div>
 				            		    <div class="form-group col-md-4 col-lg-4 col-sm-12 col-xs-12">
-				            		      <input type="text" placeholder="Retype Password" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="newPassword" name="newPassword" required="">
+				            		      <input type="text" placeholder="Retype Password" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="newPassword" name="newPassword" ng-model="reTypePassword" required="">
 				            		    </div>
 				            		    <div class="form-group" align="center">
-				            		  		<a class="btn button">Update Password
-		 	 						  		</a>    
-				            		    </div>
-								  </div>
+				            		  		<a class="btn button" ng-click="changePwd()">Update Password
+					 	 						  		</a>
+							            		    </div>
+											  </div>
 	 	 					 </div>
 		                </div>
 		            </div>
 	        	</div>
 	    	</div>
-	    	    
-	        <!--- content start here 
+
+	        <!--- content start here
 	        <div class="col-md-12 col-sm-12 col-lg-12 ng-scope">
 	        	<div class="panel">
 		            <div class="panel-heading new-panel-heading"> Profile Setting
@@ -246,7 +303,7 @@
 			              	<div class="col-md-4">
 			                 	<div class="border-top imgcolor">
           							<img ng-src="resource/css/img/Employer/dinesh.jpg" alt="" title="Click to edit your picture" class="img-responsive img-circle" style="height: 200px;width:65%; margin:0px auto;" src="resource/css/img/Employer/dinesh.jpg">
-          							
+
      							</div>
 								<form name="uploadForm" ng-submit="uploadDocument(doctypeId,'98','YIN16JNWN3B11893')" class="ng-pristine ng-invalid ng-invalid-required ng-valid">
 								  <div class="form-group col-md-12">
@@ -281,7 +338,7 @@
 
 
 
-			                </div> 
+			                </div>
 			                <div class="col-md-8 col-sm-12 pd-l-0">
 			                	<div class="col-md-12 ng-scope">
 							        <div class="panel shadownone">
@@ -289,8 +346,8 @@
 											<div class="new-body">
 												<div class="row">
 												  <form name="jobseekersOther" ng-submit="jobseekersOther.$valid &amp;&amp; savePersonalData('98')" novalidate="" class="ng-pristine ng-invalid-required ng-valid-maxlength ng-submitted ng-invalid">
-													
-													
+
+
 													<div class="form-group col-md-12">
 													  <label for="title">First Name :</label>
 													  <input type="text" name="firstname" class="form-control" id="title" maxlength="250" required="">
@@ -299,14 +356,14 @@
 													  <label for="title">Last Name :</label>
 													  <input type="text" name="lastname" class="form-control" id="title" maxlength="250" required="">
 													</div>
-													
+
 													<div class="form-group col-md-12">
 													  <label for="title">Old Password :</label>
 													  <input type="text" name="oldpassword" class="form-control" id="title" maxlength="250" required="">
 													</div>
-													
-													
-													
+
+
+
 													<div class="form-group col-md-12">
 													  <label for="title">New Password :</label>
 													   <input type="text" name="jobtitle" class="form-control" id="title" maxlength="250" required="">
@@ -322,13 +379,13 @@
 													  <label for="title">Phone Number :</label>
 													   <input type="text" name="phonenumber" class="form-control" id="title" maxlength="250" required="">
 													</div>
-													
+
 													<div class="form-group col-md-12">
 													  <label for="title">Alternate Phone Number:</label>
 													   <input type="text" name="phonenumber" class="form-control" id="title" maxlength="250" required="">
 													</div>
-													
-													
+
+
 													<div class="col-md-12 text-center">
 														<button type="submit" class="btn button save margin-2" ng-click="submitted=true">Update</button>
 													</div>
@@ -340,16 +397,16 @@
  		      				</div>
 			    		</div>
 		  			</div>
-		  
+
 				</div>
 			</div>-->
 	</div>
 </div>
-		
-		
+
+
 <div class="modal fade" id="coverletter" role="dialog">
   <div class="modal-dialog margin-top-90">
-  
+
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -366,22 +423,22 @@
             </div>
         </form>
       </div>
-      
+
 
       <div class="modal-footer">
-        <div class="col-xs-12 form-group text-center"> 
+        <div class="col-xs-12 form-group text-center">
         <button type="button" class="btn button" data-dismiss="modal"> Save Cover Letter</button>
       </div>
       </div>
     </div>
-    
+
   </div>
 </div>
 
 
 <div class="modal fade" id="coverletter_preview" role="dialog">
   <div class="modal-dialog margin-top-90">
-  
+
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -402,7 +459,7 @@
         </form>
       </div>
     </div>
-    
+
   </div>
 </div>
 
@@ -418,4 +475,4 @@ $(document).ready(function() {
         $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
     });
 });
-</script>	
+</script>

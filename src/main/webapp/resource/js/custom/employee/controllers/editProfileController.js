@@ -1,4 +1,5 @@
-app.controller('editProfileController',['$scope', '$location', '$rootScope', function($scope, $location, $rootScope) {
+app.controller('editProfileController',['$scope', '$location', '$rootScope', '$http',
+			function($scope, $location, $rootScope, $http) {
 	//$scope.message = 'Contact us! JK. This is just a demo.';
 	var accessData = angular.fromJson(window.localStorage['userObj']);
 	var returnData = angular.fromJson(window.localStorage['userDetailsObj']);
@@ -22,6 +23,33 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', fun
 		$("#signinheader").hide();
 		$("#footersection").hide();
 		$(".hideclass").hide();
+
+		$scope.getResumeDetails = function() {
+
+				var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
+
+				var res = $http({
+					method: 'GET',
+					url: 'http://183.82.1.143:9060/resumes',
+					headers: {'Authorization': valuesToBasic},
+				});
+
+				res.success(function(data, status, headers, config) {
+					console.log(data);
+					if(status >= 200 || status <300){
+
+					}else {
+						alert('Server Error');
+					}
+
+				});
+				res.error(function(data, status, headers, config) {
+						console.log(data);
+						alert("Server Error");
+				});
+		}
+
+		$scope.getResumeDetails();
 	}
 
 		/** holds tabs, we will perform repeat on this **/
