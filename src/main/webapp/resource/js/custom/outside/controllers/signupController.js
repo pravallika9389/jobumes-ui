@@ -23,7 +23,8 @@ app.controller("signupController", function signupController($scope, $http,$loca
 
 		// register a user
 	$scope.signUpUser = function() {
-		$scope.role = "0850685a-70c6-4776-a24b-e51d4522573a";
+		// job-seeker role uuid
+		$scope.role = "e7c5f5f2-d2e1-4ae6-bf66-bff67bef90b1";
 		if (!$scope.iAgree) {
 			alert("Please accept the Terms");
 		}else if($scope.userName && $scope.password && $scope.mobile && $scope.iAgree){
@@ -54,7 +55,8 @@ app.controller("signupController", function signupController($scope, $http,$loca
 
 	// registration through facebook
 	$scope.myFacebookRegistration = function () {
-		$scope.role = "0850685a-70c6-4776-a24b-e51d4522573a";
+		// job-seeker role uuid
+		$scope.role = "e7c5f5f2-d2e1-4ae6-bf66-bff67bef90b1";
 		FB.login(function(){
 			//to share a post with text in message: ''
 			// FB.api('/me/feed', 'post', {message: 'Hello, world!'});
@@ -67,14 +69,15 @@ app.controller("signupController", function signupController($scope, $http,$loca
 					 "username": response.email,
 					 "role": $scope.role,
 					 "status":"new user",
-					 "socialnetwork":"facebook",
-					 "detailsinjson":{
-					   "id": response.id,
-					   "first_name": response.first_name,
-					   "last_name": response.last_name,
-					   "gender": response.gender,
-					   "email": response.email,
-					   "profilePicPath": "http://graph.facebook.com/"+response.id+"/picture"
+					 "socialNetwork":"facebook",
+					 "details":{
+						 "id": response.id,
+						 "firstName": response.first_name,
+						 "middleName": response.middle_name,
+						 "lastName": response.last_name,
+						 "gender": response.gender,
+						 "email": response.email,
+						 "profilePicPath": "http://graph.facebook.com/"+response.id+"/picture"
 					 }
 					}
 					$scope.callRegService(body);
@@ -87,7 +90,8 @@ app.controller("signupController", function signupController($scope, $http,$loca
 
 	// register a recruiter
 $scope.signUpRecruiter = function() {
-	$scope.role = "4ef9c710-fed3-4be0-afd1-178b8e4ca4eb";
+	// job recruiter role uuid
+	$scope.role = "1a6decf9-86c7-47ae-9776-24ed7ece6462";
 	if (!$scope.iAgreeRec) {
 		alert("Please accept the Terms");
 	}else if($scope.userNameRec && $scope.passwordRec && $scope.mobileRec && $scope.iAgreeRec){
@@ -110,7 +114,8 @@ $scope.signUpRecruiter = function() {
 
 // registration through facebook
 $scope.myFacebookRegistrationRec = function () {
-	$scope.role = "4ef9c710-fed3-4be0-afd1-178b8e4ca4eb";
+	// job recruiter role uuid
+	$scope.role = "1a6decf9-86c7-47ae-9776-24ed7ece6462";
 	FB.login(function(){
 			//to share a post with text in message: ''
 			// FB.api('/me/feed', 'post', {message: 'Hello, world!'});
@@ -123,11 +128,12 @@ $scope.myFacebookRegistrationRec = function () {
 					 "username": response.email,
 					 "role": $scope.role,
 					 "status":"new user",
-					 "socialnetwork":"facebook",
-					 "detailsinjson":{
+					 "socialNetwork":"facebook",
+					 "details":{
 						 "id": response.id,
-						 "first_name": response.first_name,
-						 "last_name": response.last_name,
+						 "firstName": response.first_name,
+						 "middleName": response.middle_name,
+						 "lastName": response.last_name,
 						 "gender": response.gender,
 						 "email": response.email,
 						 "profilePicPath": "http://graph.facebook.com/"+response.id+"/picture"

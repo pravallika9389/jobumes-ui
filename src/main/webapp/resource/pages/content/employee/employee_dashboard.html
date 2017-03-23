@@ -373,26 +373,29 @@ ont-family: inherit;
     <!---Content start here-->
     <div class="col-md-12">
       <div class="row" style="background: #f7f7f7; border-radius: 10px; margin: 0px 2px 20px 0; padding: 0 2px 20px 2px;">
-        <h3 style="padding-left: 18px; color: #193048;">Upload a Resume</h3>
-        <div class="col-md-5">
-          <div class="search-input" >
-            <input type="text" placeholder="Give the url of Resume" ng-disabled="resChecked" ng-model="resumeLink" name="resume" />
+        <h3 style="padding-left: 18px; color: #193048;">Upload a Resume *(.docx  -OR-  .pdf)</h3>
+        <form name="uploadResume">
+          <!-- <div class="col-md-5">
+            <div class="search-input" >
+              <input type="text" placeholder="Give the url of Resume" ng-disabled="!resChecked" ng-model="resumeLink" name="resume" />
+            </div>
           </div>
-        </div>
-        <div class="col-md-3" style="padding-top: 12px;">(OR)
-          Please check to Upload a File
-          <input type="checkbox" value="checked" ng-model="resChecked" />
-        </div>
-        <div class="col-md-3">
-          <div class="search-input" style="padding-top: 12px;">
-            <input type="file" file-model = "myFile" placeholder="Upload a Resume" ng-disabled="!resChecked" name="resume" />
+          <div class="col-md-3" style="padding-top: 12px;">(OR)
+            Please check to Upload a File
+            <input type="checkbox" value="checked" ng-model="resChecked" />
+          </div> -->
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="search-input" style="padding-top: 12px;">
+              <input type="file" file-model = "myFile" accept=".docx, .pdf" placeholder="Upload a Resume" name="resume" required />
+            </div>
           </div>
-        </div>
-        <div class="col-md-1" style="padding-top: 12px;">
-          <button class="btn button save margin-2" ng-click = "uploadFile()">
-            Upload
-          </button>
-        </div>
+          <div class="col-md-1" style="padding-top: 12px;">
+            <button ng-disabled="!uploadResume.$valid" type="submit" class="btn button save margin-2" ng-click = "uploadFile()">
+              Upload
+            </button>
+          </div>
+        </form>
         <!-- <div class="col-md-8">
           <div class="search-input" >
             <input type="file" file-model = "myFile" placeholder="Upload a Resume" name="resume" />

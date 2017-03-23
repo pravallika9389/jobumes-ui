@@ -327,7 +327,7 @@ app.run(["$rootScope", "$window", "$location" , function($rootScope, $window, $l
            getMyDetails: function() {
                var deferred = $q.defer();
                FB.api('/me', {
-                   fields: 'id,first_name,last_name,gender,email'
+                   fields: 'id,first_name,last_name,middle_name,gender,email'
                }, function(response) {
                    if (!response || response.error) {
                        deferred.reject('Error occured');
@@ -342,3 +342,53 @@ app.run(["$rootScope", "$window", "$location" , function($rootScope, $window, $l
            }
        }
    });
+
+   app.directive('fileModel', ['$parse', function ($parse) {
+   	return {
+   		 restrict: 'A',
+   		 link: function(scope, element, attrs) {
+   				var model = $parse(attrs.fileModel);
+   				var modelSetter = model.assign;
+
+   				element.bind('change', function(){
+   					 scope.$apply(function(){
+   							modelSetter(scope, element[0].files[0]);
+   					 });
+   				});
+   		 }
+   	};
+   }]);
+
+   app.service('fileUpload', ['$http', function ($http) {
+
+    var accessData = angular.fromJson(window.localStorage['userObj']);
+   	var returnData = angular.fromJson(window.localStorage['userDetailsObj']);
+   	var user = localStorage.getItem('isCheckUser');
+
+    var accessData = angular.fromJson(window.localStorage['userObj']);
+
+   	this.uploadFileToUrl = function(file, uploadUrl, successMsg){
+      // console.log(uploadUrl + ", " +successMsg );
+   	// 	uploadUrl = 'http://183.82.1.143:9060/resumes';
+   		 var fd = new FormData();
+   		 fd.append('file', file);
+   		//  user details
+   		 var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
+
+   		 $http.post(uploadUrl, fd, {
+   				transformRequest: angular.identity,
+   				headers: {
+   					'Authorization': valuesToBasic,
+   					'Content-Type' : undefined
+   				}
+   		 })
+
+   		 .success(function(){
+   			 alert(successMsg);
+   		 })
+
+   		 .error(function(){
+   			 alert("Error Occured");
+   		 });
+   	}
+   }]);
