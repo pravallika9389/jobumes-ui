@@ -56,38 +56,47 @@ app.controller('profileSettingsController', function($scope, $location, $rootSco
 
 	//change Password
 	$scope.changePwd = function(){
+		// alert("pwd");
+		if (!$scope.currPassword) {
+			alert('Please enter Current Password');
+		} else if ($scope.currPassword == accessData.pass) {
+			if($scope.newPassword && $scope.reTypePassword) {
+				if ($scope.newPassword == $scope.reTypePassword) {
+					var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
 
-		if(!$scope.newPassword && !$scope.reTypePassword) {
-			if ($scope.newPassword == $scope.reTypePassword) {
-				var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
+					var res = $http({
+						method: 'PUT',
+						url: 'http://183.82.1.143:9060/profiles',
+						headers: {'Authorization': valuesToBasic},
+						data: {
+							"username": accessData.userName,
+							"password": $scope.newPassword
+						}
+					});
 
-				var res = $http({
-					method: 'PUT',
-					url: 'http://183.82.1.143:9060/profiles',
-					headers: {'Authorization': valuesToBasic},
-					body: {
-						"username": accessData.userName,
-						"password": $scope.newPassword
-					}
-				});
-
-				res.success(function(data, status, headers, config) {
-					console.log(data);
-
-					if(status >= 200 || status <300){
-						alert("Password Changed Successfully");
-					}else {
-						alert('Server Error');
-					}
-
-				});
-				res.error(function(data, status, headers, config) {
+					res.success(function(data, status, headers, config) {
 						console.log(data);
-						alert("Server Error");
-				});
+
+						if(status >= 200 || status <300){
+							alert("Password Changed Successfully.. ! You will be logged out of the session");
+							$rootScope.signOut();
+						}else {
+							alert('Server Error');
+						}
+
+					});
+					res.error(function(data, status, headers, config) {
+							console.log(data);
+							alert("Server Error");
+					});
+				}else {
+					alert("New Password and Confirm Password Should be same");
+				}
 			}else {
-				alert("New Password and Confirm Password Should be same");
+				alert("Please enter all fields");
 			}
+		}else {
+			alert('Warning! You have entered wrong Password');
 		}
 	}
 });

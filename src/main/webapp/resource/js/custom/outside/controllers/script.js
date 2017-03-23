@@ -1,10 +1,18 @@
 var app = angular.module('jobumesApp', ['ngRoute']);
 
-app.run(["$rootScope", "$window", function($rootScope, $window) {
+app.run(["$rootScope", "$window", "$location" , function($rootScope, $window, $location) {
   // localStorage.setItem('isCheckUser', 'empty');
     $rootScope.signOut = function(){
       localStorage.setItem('isCheckUser', 'empty');
       localStorage.setItem('userRole', 'empty');
+      $("#employerheader").hide();
+      $("#homeheader").show();
+      $("#employeeheader").hide();
+      $("#signinheader").show();
+      $("#signoutheader").hide();
+      $("#footersection").show();
+      $location.path('/');
+      window.location.reload();
     }
 }]);
 
