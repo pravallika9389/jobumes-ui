@@ -16,7 +16,7 @@
       transition: all 0.5s !important;
   }
 
-      
+
   @media (min-width: 768px){
       .defaultheader{
           padding: 30px;
@@ -44,7 +44,7 @@
       border-bottom: 1px solid #ddd;
       padding-bottom: 10px;
   }
-</style>  
+</style>
 <!--
   <div class="imgscr"  style="box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.07); margin-top: -60px; !important">
 
@@ -63,43 +63,43 @@
                 <div class="row">
                   <div class="searchjob_hover">
                     <h4 class="listing__title ">
-                      
+
                     </h4>
-                   
+
                    <!-- title -->
                         <div class="caption">
                   <h1>Get Jobumed!</h1>
                   <p>Find Your Future Job</p>
                 </div>
-                   <!--  title ends  -->     
+                   <!--  title ends  -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 search_job">
-                
+
                       <div class="searchjob">
-                        
-                              
+
+
                         <form id="frm_jobs_filtration" action="#" method="get" class="search-area search-bg">
                           <div class="col-lg-6 col-md-6 col-sm-5 pad_0">
-                            <div class="search-input search-icon" > 
+                            <div class="search-input search-icon" >
                               <span class="icon-search" style="background-image:url(resource/css/img/outside/chair.png)">
                               </span>
-                              
+
                               <input type="text" placeholder="Company Name or Job Title or Key word" name="job_title" >
-                              
+
                             </div>
-                          </div> 
-                    
+                          </div>
+
                           <div class="col-lg-4 col-md-4 col-sm-4 pad_0">
-                            <div class="search-input"> 
+                            <div class="search-input">
                               <i class="icon-search7">
                               </i>
                               <input type="text" id="location" placeholder="Preferred Locations" name="locations">
                             </div>
-                          </div> 
+                          </div>
                           <div class="col-lg-2 col-md-2 col-sm-3 pad_0">
                             <div class="search-btn">
                               <a href="#/search-results">
                                 <input type="submit" class="btncss" name="cs_" value="Search All Jobs">
-                              </a>                
+                              </a>
                             </div>
                           </div>
                         </form>
@@ -116,7 +116,7 @@
       </div>
 
     </div>
- 
+
  	<div style="background: rgba(65, 157, 212, 0.65) url(resource/css/img/outside/post-a-job.png) no-repeat 50% 50%;height:380px;width:100%;display: table;">
       <div class="text-center"  style="vertical-align:middle;display: table-cell;">
       	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -128,10 +128,10 @@
     		</div>
       </div>
      </div>
-     
-     
+
+
     <div class="container">
-      <div class="row">    
+      <div class="row">
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="featuredtitle">
@@ -140,16 +140,18 @@
           </h4>
         </div>
         </div>
-       
+
 
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="listing-section">
+
+          <div class="listing-section" ng-repeat="items in getAllJobs">
             <div class=" row listing-info">
               <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
                 <div class="right-side2">
                   <a href="#">
                     <center>
-                      <img src="resource/css/img/outside/logo.jpg" class="img-responsive" alt="">
+                      <!-- <img src="resource/css/img/outside/logo.jpg" class="img-responsive" alt=""> -->
+                      <img src="http://snigdha.co.in/images/logo.png" class="img-responsive" style="width:140px; padding: 20px;" />
                     </center>
                   </a>
                 </div>
@@ -159,39 +161,42 @@
                   <div class="left-side1">
                     <div class="listing-title">
                       <div class="job-title">
-                        <a href="#/single-job-detail">Angularjs Developer
+                        <a>{{items.JobProfile[0]}}
                         </a>
                         <span class="activatedate">
-                          <span class="captions-field">2 hours ago
+                          <span class="captions-field">{{items.ParsingDate[0] | limitTo: '10'}}
                           </span>
                         </span>
                       </div>
-                    </div>    
+                    </div>
                     <div class="locationcss">
                       <ul class="list-inline" style="text-align:left">
                         <li>
-                          <i class="fa fa-suitcase" aria-hidden="true"></i> 
-                          <span class="ng-binding"> Testers LTD
+                          <i class="fa fa-suitcase" aria-hidden="true"></i>
+                          <span class="ng-binding"> Snigdha Technosoft
                           </span>
                         </li>
                         <li>
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
-                          <span class="ng-binding"> Hyderabad
+                          <span class="ng-binding"> {{items.Location[0]}}
                           </span>
                         </li>
                       </ul>
                     </div>
                     <div class="show-brief">
                       <div class="description">
-                        Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....                                         
+                        <!-- {{items.JobDescription[0]}} -->
+                        Required {{items.ExperienceRequired[0]}} experienced candidate, as a {{items.JobProfile[0]}}
+                          in skills like -- {{items.Skills[0].Skill[0].name}}, {{items.Skills[0].Skill[1].name}},
+                          {{items.Skills[0].Skill[2].name}}, {{items.Skills[0].Skill[3].name}}, {{items.Skills[0].Skill[4].name}}
+                          , {{items.Skills[0].Skill[5].name}}, {{items.Skills[0].Skill[6].name}}, {{items.Skills[0].Skill[7].name}}
                       </div>
                     </div>
-                    <br>   
-                    <!-- 3_sec -->
+                    <br>
                     <div class="locationcss">
                       <ul class="list-inline" style="text-align:left">
                         <li>
-                          <i class="fa fa-usd" aria-hidden="true"></i> 
+                          <i class="fa fa-usd" aria-hidden="true"></i>
                           <span class="ng-binding"> 10k
                           </span>
                         </li>
@@ -222,10 +227,96 @@
                             <span class="ng-binding">Save job</span>
                           </li>
                         </a>
-                      </ul> 
+                      </ul>
 
-                    </div>  
-                    <!-- 3_sec -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="listing-section">
+            <div class=" row listing-info">
+              <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
+                <div class="right-side2">
+                  <a href="#">
+                    <center>
+                      <img src="resource/css/img/outside/logo.jpg" class="img-responsive" alt="">
+                    </center>
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-9 col-lg-10 col-xs-12">
+                <div class="row">
+                  <div class="left-side1">
+                    <div class="listing-title">
+                      <div class="job-title">
+                        <a href="#/single-job-detail">Angularjs Developer
+                        </a>
+                        <span class="activatedate">
+                          <span class="captions-field">2 hours ago
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="locationcss">
+                      <ul class="list-inline" style="text-align:left">
+                        <li>
+                          <i class="fa fa-suitcase" aria-hidden="true"></i>
+                          <span class="ng-binding"> Testers LTD
+                          </span>
+                        </li>
+                        <li>
+                          <i class="fa fa-map-marker" aria-hidden="true"></i>
+                          <span class="ng-binding"> Hyderabad
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="show-brief">
+                      <div class="description">
+                        Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....
+                      </div>
+                    </div>
+                    <br>
+                    <div class="locationcss">
+                      <ul class="list-inline" style="text-align:left">
+                        <li>
+                          <i class="fa fa-usd" aria-hidden="true"></i>
+                          <span class="ng-binding"> 10k
+                          </span>
+                        </li>
+                        <li>
+                          <i class="fa fa-home" aria-hidden="true"></i>
+                          <span class="ng-binding"> Management
+                          </span>
+                        </li>
+                        <li>
+                          <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                          <span class="ng-binding"> Hot Job
+                          </span>
+                        </li>
+                        <li>
+                          <i class="fa fa-clock-o" aria-hidden="true"></i>
+                          <span class="ng-binding"> Full time
+                          </span>
+                        </li>
+                        <li>
+                          <i class="fa fa-graduation-cap" aria-hidden="true">
+                          </i>
+                          <span class="ng-binding">Graduate
+                          </span>
+                        </li>
+                        <a href="#">
+                          <li class="pull-right">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                            <span class="ng-binding">Save job</span>
+                          </li>
+                        </a>
+                      </ul>
+
+                    </div>
                   </div>
                 </div>
               </div>
@@ -255,11 +346,11 @@
                           </span>
                         </span>
                       </div>
-                    </div>    
+                    </div>
                     <div class="locationcss">
                       <ul class="list-inline" style="text-align:left">
                         <li>
-                          <i class="fa fa-suitcase" aria-hidden="true"></i> 
+                          <i class="fa fa-suitcase" aria-hidden="true"></i>
                           <span class="ng-binding"> Testers LTD
                           </span>
                         </li>
@@ -272,15 +363,14 @@
                     </div>
                     <div class="show-brief">
                       <div class="description">
-                        Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....                                         
+                        Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....
                       </div>
                     </div>
-                    <br>   
-                    <!-- 3_sec -->
+                    <br>
                     <div class="locationcss">
                      <ul class="list-inline" style="text-align:left">
                         <li>
-                          <i class="fa fa-usd" aria-hidden="true"></i> 
+                          <i class="fa fa-usd" aria-hidden="true"></i>
                           <span class="ng-binding"> 10k
                           </span>
                         </li>
@@ -313,14 +403,13 @@
                         </a>
                       </ul>
 
-                    </div>  
-                    <!-- 3_sec -->
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div class="listing-section">
             <div class=" row listing-info">
               <div class="col-sm-12 col-md-3 col-lg-2 col-xs-12">
@@ -344,11 +433,11 @@
                           </span>
                         </span>
                       </div>
-                    </div>    
+                    </div>
                     <div class="locationcss">
                       <ul class="list-inline" style="text-align:left">
                         <li>
-                          <i class="fa fa-suitcase" aria-hidden="true"></i> 
+                          <i class="fa fa-suitcase" aria-hidden="true"></i>
                           <span class="ng-binding"> Testers LTD
                           </span>
                         </li>
@@ -361,15 +450,14 @@
                     </div>
                     <div class="show-brief">
                       <div class="description">
-                        Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....                                         
+                        Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....
                       </div>
                     </div>
-                    <br>   
-                    <!-- 3_sec -->
+                    <br>
                     <div class="locationcss">
                       <ul class="list-inline" style="text-align:left">
                         <li>
-                          <i class="fa fa-usd" aria-hidden="true"></i> 
+                          <i class="fa fa-usd" aria-hidden="true"></i>
                           <span class="ng-binding"> 10k
                           </span>
                         </li>
@@ -400,10 +488,9 @@
                             <span class="ng-binding">Save job</span>
                           </li>
                         </a>
-                      </ul> 
+                      </ul>
 
-                    </div>  
-                    <!-- 3_sec -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -433,11 +520,11 @@
                           </span>
                         </span>
                       </div>
-                    </div>    
+                    </div>
                     <div class="locationcss">
                       <ul class="list-inline" style="text-align:left">
                         <li>
-                          <i class="fa fa-suitcase" aria-hidden="true"></i> 
+                          <i class="fa fa-suitcase" aria-hidden="true"></i>
                           <span class="ng-binding"> Testers LTD
                           </span>
                         </li>
@@ -450,15 +537,14 @@
                     </div>
                     <div class="show-brief">
                       <div class="description">
-                        Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....                                         
+                        Insurance agent will sell insurance policies to individuals and companies by understanding their needs, requirements and financial conditions. A candidate need to have very good communication and negotiation skills and must be hardworking and meet deadlines and targets....
                       </div>
                     </div>
-                    <br>   
-                    <!-- 3_sec -->
+                    <br>
                     <div class="locationcss">
                      <ul class="list-inline" style="text-align:left">
                         <li>
-                          <i class="fa fa-usd" aria-hidden="true"></i> 
+                          <i class="fa fa-usd" aria-hidden="true"></i>
                           <span class="ng-binding"> 10k
                           </span>
                         </li>
@@ -491,13 +577,12 @@
                         </a>
                       </ul>
 
-                    </div>  
-                    <!-- 3_sec -->
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -505,26 +590,26 @@
     <div class="jobs-by__wrapper jobs-by">
       <div class="container container-fluid">
         <ul class="nav nav-pills" role="tablist">
-    
+
           <li role="presentation" id="jobs_by_category_tab" class="menu active">
             <a href="javascript::void(0);" aria-controls="jobs-by__category" role="tab" data-toggle="pill">Jobs by Category</a>
           </li>
-      
+
           <li role="presentation" id="jobs_by_city_tab" class="menu">
             <a href="javascript::void(0);" aria-controls="jobs-by__city" role="tab" data-toggle="pill">Jobs by City</a>
           </li>
-      
+
           <li role="presentation" id="jobs_by_state_tab" class="menu">
             <a href="javascript::void(0);" aria-controls="jobs-by__state" role="tab" data-toggle="pill">Jobs by State </a>
           </li>
-      
+
         </ul>
         <div class="tab-content">
-    
-    
+
+
     <!-- jobs-by__category start here-->
           <div id="jobs_by_category">
-          
+
         <ul class="list-unstyled browse-by__list">
           <li>
           <a href="#">
@@ -600,13 +685,13 @@
           </li>
         </ul>
           </div>
-        
+
       <!-- jobs-by__category end here-->
-      
-      
+
+
       <!-- jobs-by__city start here-->
       <div  id="jobs_by_city">
-        
+
         <ul class="list-unstyled browse-by__list">
           <li>
           <a href="#">
@@ -650,14 +735,14 @@
           </li>
         </ul>
       </div>
-      
+
       <!-- jobs-by__city end here-->
-      
-      
+
+
        <!-- jobs-by__state start here-->
-      
+
       <div id="jobs_by_state">
-          
+
         <ul class="list-unstyled browse-by__list">
           <li>
           <a href="#">
@@ -693,10 +778,10 @@
           </li>
         </ul>
       </div>
-      
+
     <!-- jobs-by__state end here-->
-    
-    
+
+
         </div>
       </div>
     </div>
@@ -710,7 +795,7 @@
             <div class="subtitle">Jobs has some kind of flexibility option - such as telecommuting, a part-time Every single one of our jobs.
             </div>
           </div>
-          
+
 
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="cs-clinets ">
@@ -866,40 +951,40 @@ $(document).ready(function(){
 });
 </script>-->
 
-  
+
   <script>
     $(document).ready(function()
     {
-      
+
       $("#jobs_by_category").show();
       $("#jobs_by_city").hide();
       $("#jobs_by_state").hide();
-      
-      
-    
+
+
+
       $("#jobs_by_category_tab").click(function()
       {
         $("#jobs_by_category").show();
         $("#jobs_by_city").hide();
         $("#jobs_by_state").hide();
-        
+
         $('#jobs_by_category_tab').addClass('active');
         $('#jobs_by_city_tab').removeClass('active');
         $('#jobs_by_state_tab').removeClass('active');
       });
-      
+
       $("#jobs_by_city_tab").click(function()
-      { 
+      {
         $("#jobs_by_city").show();
         $("#jobs_by_category").hide();
         $("#jobs_by_state").hide();
-        
-        
+
+
         $('#jobs_by_city_tab').addClass('active');
         $('#jobs_by_category_tab').removeClass('active');
         $('#jobs_by_state_tab').removeClass('active');
       });
-      
+
       $("#jobs_by_state_tab").click(function()
       {
         $("#jobs_by_state").show();
@@ -908,11 +993,11 @@ $(document).ready(function(){
         $('#jobs_by_state_tab').addClass('active');
         $('#jobs_by_city_tab').removeClass('active');
         $('#jobs_by_category_tab').removeClass('active');
-          
+
       });
     });
 
-    
+
     $(function() {
 
     var header = $(".defaultheader");
@@ -926,15 +1011,15 @@ $(document).ready(function(){
         }
     });
 });
-   
-   $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?') 
+
+   $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
          .done (function(location)
          {
             var country=location.country_name;
             var state=location.state;
             var city=location.city;
           $("#location").val(city+", "+state+", "+country);
-         }); 
-    
+         });
+
 
   </script>

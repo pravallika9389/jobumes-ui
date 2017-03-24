@@ -1,4 +1,4 @@
-app.controller('postedJobsController', function($scope, $location, $rootScope) {
+app.controller('postedJobsController', function($scope, $location, $rootScope, $http) {
 	//$scope.message = 'Contact us! JK. This is just a demo.';
 	var accessData = angular.fromJson(window.localStorage['userObj']);
 	var returnData = angular.fromJson(window.localStorage['userDetailsObj']);
@@ -22,5 +22,36 @@ app.controller('postedJobsController', function($scope, $location, $rootScope) {
 		$("#signinheader").hide();
 		$("#footersection").hide();
 		$(".hideclass").hide();
+
+		var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
+
+		// to get all posted jobs
+		var res = $http({
+			method: 'GET',
+			url: 'http://183.82.1.143:9060/jobs',
+			headers: {'Authorization': valuesToBasic}
+		});
+		res.success(function(data, status, headers, config) {
+			if((status >= 200 || status < 300)){
+				console.log(data);
+				$rootScope.getJobsByPostedUser = [];
+				data.forEach(function(element) {
+					if (element.parsedJson.JobData.JobProfile[0] != '') {
+						console.log(element.parsedJson.JobData.JobProfile[0]);
+						$rootScope.getJobsByPostedUser.push(element.parsedJson.JobData);
+					}
+
+				})
+				console.log($rootScope.getJobsByPostedUser);
+			}
+			else{
+				alert("Error in retrieving Jobs");
+			}
+
+		});
+		res.error(function(data, status, headers, config) {
+				console.log(data);
+				alert("Server error in retrieving Jobs");
+		});
 	}
 });

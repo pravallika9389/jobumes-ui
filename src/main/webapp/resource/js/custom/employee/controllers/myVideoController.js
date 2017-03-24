@@ -3,6 +3,7 @@ app.controller('myVideoController', function($scope, $location, $rootScope) {
 	var accessData = angular.fromJson(window.localStorage['userObj']);
 	var returnData = angular.fromJson(window.localStorage['userDetailsObj']);
 	var user = localStorage.getItem('isCheckUser');
+	$scope.videoLink = '';
 	if(user == "" || user == "empty" || user == undefined){
 		$location.path('/employee-home');
 	}else {
@@ -22,5 +23,13 @@ app.controller('myVideoController', function($scope, $location, $rootScope) {
 		$("#signinheader").hide();
 		$("#footersection").hide();
 		$(".hideclass").hide();
+
+		if (accessData.userName == 'surya@snigdha.co.in') {
+			$scope.videoLink = 'http://183.82.1.143:9058/jobumes/videos/1/surya.mp4';
+		}else if (accessData.userName == 'pradeep.ragiphani007@gmail.com') {
+			$scope.videoLink = 'http://183.82.1.143:9058/jobumes/videos/1/sample.mp4';
+		}else {
+			$scope.videoLink = 'https://www.youtube.com/embed/ggb9uhFV8NY';
+		}
 	}
 });
