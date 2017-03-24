@@ -96,8 +96,8 @@ app.run(["$rootScope", "$window", "$location" , function($rootScope, $window, $l
 
     .when('/graphical-resume', {
       templateUrl : 'resource/pages/content/employee/graphical_resume.html',
-      // controller  : 'graphicalResumeController'
-      controller: 'editProfileController'
+      controller  : 'graphicalResumeController'
+      // controller: 'editProfileController'
     })
 
     // Employee Route and Controllers end

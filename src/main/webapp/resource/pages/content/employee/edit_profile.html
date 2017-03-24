@@ -2,9 +2,9 @@
 ul.nav.nav-pills li.active {
     border-bottom: 3px solid #f1f1f1;
 }
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover 
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
 {
-    
+
     background-color: #fbfbfb !important;
 }
 .nav-stacked > li.active > a, .nav-stacked > li.active > a:hover {
@@ -15,7 +15,7 @@ ul.nav.nav-pills li.active {
 }
 
 </style>
-  
+
 <style>
 
 .mobileCategories span
@@ -36,7 +36,7 @@ padding:12px;
   border-radius: 50%;
   box-shadow: 0 0 0 1px #1e282c;
   background-color: #1e282c;
- 
+
 }
 
 @media only screen and (min-width:991px){
@@ -120,15 +120,15 @@ div#panelheight {
           <li class="certificationsdet">
             <a href="javascript::void(0);">
               <i class="glyphicon glyphicon-bookmark"></i> <span>Certifications</span>
-            </a>  
+            </a>
           </li>
 
           <li class="acheivementsdet">
             <a href="javascript::void(0);">
               <i class="glyphicon glyphicon-flag"></i> <span>Acheivements</span>
-            </a>  
+            </a>
           </li>
-          
+
         </ul>
         <section class="mobileCategoryMenu">
 	      <div title="Profile Details" class="profiledet"><a href="javascript::void(0);"><span class="glyphicon glyphicon-user"></span></a></div><br>
@@ -140,13 +140,13 @@ div#panelheight {
 	      <div title="Acheivement Details" class="acheivementsdet"><a href="javascript::void(0);"><span class="glyphicon glyphicon-flag"></span></a></div><br>
 	   </section>
       </section>
-          
+
    </div>
     </div>
     <div class="col-md-12 col-sm-10 col-lg-9 col-xs-10">
       <div id="rightbody">
         <!--Body Content Add here-->
-        
+
           <script type="text/ng-template" id="errors" class="ng-scope">
             <div ng-message="required">This field is required </div>
             <div ng-message="pattern"> Enter valid input </div>
@@ -162,7 +162,7 @@ div#panelheight {
             input[type="file"] {
               display: none;
             }
-            
+
             .custom-file-upload {
               border: 1px solid #ccc;
               display: inline-block;
@@ -208,7 +208,7 @@ div#panelheight {
             .nav-tabs > li > a{
           cursor:pointer;
       }
-      
+
       .nav-tabs li a span:hover {
           color: red;
           cursor:pointer;
@@ -223,17 +223,17 @@ div#panelheight {
               </div>
             </div>
           </div>
-          
+
           <div class="body-content ng-scope" id="visualResumeCtrl">
             <div class="row">
               <div class="col-md-12 pd-0">
                 <div class="panel shadownone">
                   <div class="new-body">
-                    <h2 class="name">dinesh
+                    <h2 class="name">{{resumeDetailsToEdit.details.ResumeParserData.FullName}}
                     </h2>
-                    <p>dineshwalas@gmail.com
+                    <p>{{resumeDetailsToEdit.details.ResumeParserData.Email}}
                     </p>
-                    <p>+91 8973721526
+                    <p>{{resumeDetailsToEdit.details.ResumeParserData.Phone}}
                     </p>
                   </div>
                 </div>
@@ -257,12 +257,12 @@ div#panelheight {
                             <div class="row">
                             <div class="form-group col-md-2">
                             <p style="border-style: dashed;height:100px;">
-                            
+
                             </p>
                             <button class="btn button save margin-2" type="submit">Upload
                         	</button>
                             </div>
-                            
+
                             <div class="form-group col-md-10">
                                 <label for="title">Resume Headline:
                                 </label>
@@ -271,18 +271,18 @@ div#panelheight {
                                 <!-- ngIf: jobseekersOther.$submitted -->
                                 <div ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.title.$error" ng-messages-include="errors" class="ng-scope ng-active">
                                   <!-- ngMessage: required -->
-                                  <div ng-message="required" class="ng-scope">This field is required 
+                                  <div ng-message="required" class="ng-scope">This field is required
                                   </div>
                                   <!-- ngMessage: pattern -->
                                   <!-- ngMessage: minlength -->
                                   <!-- ngMessage: email -->
                                   <!-- ngMessage: maxlength -->
                                 </div>
-                                <!-- end ngIf: jobseekersOther.$submitted -->  
+                                <!-- end ngIf: jobseekersOther.$submitted -->
                                 <!-- <label class="fr inpDisabled mt30" name="titleLen"  id="titleCharacterCount" >84</label> -->
                                 <br>
                                 <span class="colorred">Your resume headline is the first thing recruiters will see.
-                                </span> 
+                                </span>
                               </div>
                               <div class="col-md-12 fl w390">
                                 <div class="form-group col-md-6" id="experienceFormRow">
@@ -291,73 +291,73 @@ div#panelheight {
                                   <div class="col-md-4 pd-l-0">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="personalDetails.expInYears" id="experienceYear" name="experienceYear" required="">
                                       <option value="">Year
-                                      </option>  
+                                      </option>
                                       <option value="100">Fresher
-                                      </option>  
+                                      </option>
                                       <option value="0">0
-                                      </option>  
+                                      </option>
                                       <option value="1">1
-                                      </option>  
+                                      </option>
                                       <option value="2">2
-                                      </option>  
+                                      </option>
                                       <option value="3">3
-                                      </option>  
+                                      </option>
                                       <option value="4">4
-                                      </option>  
+                                      </option>
                                       <option value="5">5
-                                      </option>  
+                                      </option>
                                       <option value="6">6
-                                      </option>  
+                                      </option>
                                       <option value="7">7
-                                      </option>  
+                                      </option>
                                       <option value="8">8
-                                      </option>  
+                                      </option>
                                       <option value="9">9
-                                      </option>  
+                                      </option>
                                       <option value="10">10
-                                      </option> 
+                                      </option>
                                       <option value="11">11
-                                      </option>  
+                                      </option>
                                       <option value="12">12
-                                      </option>  
+                                      </option>
                                       <option value="13">13
-                                      </option>  
+                                      </option>
                                       <option value="14">14
-                                      </option>  
+                                      </option>
                                       <option value="15">15
-                                      </option> 
+                                      </option>
                                       <option value="16">16
-                                      </option>  
+                                      </option>
                                       <option value="17">17
-                                      </option>  
+                                      </option>
                                       <option value="18">18
-                                      </option>  
+                                      </option>
                                       <option value="19">19
-                                      </option>  
+                                      </option>
                                       <option value="20">20
-                                      </option>  
+                                      </option>
                                       <option value="21">21
-                                      </option>  
+                                      </option>
                                       <option value="22">22
-                                      </option>  
+                                      </option>
                                       <option value="23">23
-                                      </option>  
+                                      </option>
                                       <option value="24">24
-                                      </option>  
+                                      </option>
                                       <option value="25">25+
-                                      </option>                                  
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.experienceYear.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted -->  
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <div class="col-md-2 expdivlabel">
                                     <span class="f11 fl p_4_Form">Years
@@ -366,43 +366,43 @@ div#panelheight {
                                   <div class="col-md-4" id="experienceMonthS">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="personalDetails.expInMonths" id="experienceMonth" name="experienceMonth" ng-required="personalDetails.expInYears!=100" required="required">
                                       <option value="">Month
-                                      </option> 
+                                      </option>
                                       <option value="0">0
-                                      </option>  
+                                      </option>
                                       <option value="1">1
-                                      </option>  
+                                      </option>
                                       <option value="2">2
-                                      </option> 
+                                      </option>
                                       <option value="3">3
-                                      </option>  
+                                      </option>
                                       <option value="4">4
-                                      </option> 
+                                      </option>
                                       <option value="5">5
-                                      </option>  
+                                      </option>
                                       <option value="6">6
-                                      </option> 
+                                      </option>
                                       <option value="7">7
-                                      </option>  
+                                      </option>
                                       <option value="8">8
-                                      </option> 
+                                      </option>
                                       <option value="9">9
-                                      </option>  
+                                      </option>
                                       <option value="10">10
-                                      </option>  
+                                      </option>
                                       <option value="11">11
-                                      </option>                              
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.experienceMonth.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted -->  
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <div class="col-md-2 expdivlabel">
                                     <span class="f11 fl p_4_Form">Months
@@ -415,91 +415,91 @@ div#panelheight {
                                   <div class="col-md-4 padd-l-0">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="personalDetails.currentCTC" id="ctcLacs" name="ctcLacs" ng-required="personalDetails.expInYears!=100" required="required">
                                       <option value="">Lacs
-                                      </option>  
+                                      </option>
                                       <option value="0">0
-                                      </option>  
+                                      </option>
                                       <option value="1">1
-                                      </option>  
+                                      </option>
                                       <option value="2">2
-                                      </option>  
+                                      </option>
                                       <option value="3">3
-                                      </option>  
+                                      </option>
                                       <option value="4">4
-                                      </option>  
+                                      </option>
                                       <option value="5">5
-                                      </option>  
+                                      </option>
                                       <option value="6">6
-                                      </option>  
+                                      </option>
                                       <option value="7">7
-                                      </option>  
+                                      </option>
                                       <option value="8">8
-                                      </option>  
+                                      </option>
                                       <option value="9">9
-                                      </option>  
+                                      </option>
                                       <option value="10">10
-                                      </option>  
+                                      </option>
                                       <option value="11">11
-                                      </option>  
+                                      </option>
                                       <option value="12">12
-                                      </option>  
+                                      </option>
                                       <option value="13">13
-                                      </option> 
+                                      </option>
                                       <option value="14">14
-                                      </option>  
+                                      </option>
                                       <option value="15">15
-                                      </option>  
+                                      </option>
                                       <option value="16">16
-                                      </option> 
+                                      </option>
                                       <option value="17">17
-                                      </option>  
+                                      </option>
                                       <option value="18">18
-                                      </option>  
+                                      </option>
                                       <option value="19">19
-                                      </option> 
+                                      </option>
                                       <option value="20">20
-                                      </option>  
+                                      </option>
                                       <option value="21">21
-                                      </option>  
+                                      </option>
                                       <option value="22">22
-                                      </option>  
+                                      </option>
                                       <option value="23">23
-                                      </option>  
+                                      </option>
                                       <option value="24">24
-                                      </option>  
+                                      </option>
                                       <option value="25">25
-                                      </option> 
+                                      </option>
                                       <option value="26">26
-                                      </option>  
+                                      </option>
                                       <option value="27">27
-                                      </option>  
+                                      </option>
                                       <option value="28">28
-                                      </option>  
+                                      </option>
                                       <option value="29">29
-                                      </option>  
+                                      </option>
                                       <option value="30">30
-                                      </option>  
+                                      </option>
                                       <option value="31">31
-                                      </option>  
+                                      </option>
                                       <option value="32">32
-                                      </option>  
+                                      </option>
                                       <option value="33">33
-                                      </option>  
+                                      </option>
                                       <option value="34">34
-                                      </option>  
+                                      </option>
                                       <option value="35">35
-                                      </option>                                    
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.ctcLacs.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted -->  
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <div class="col-md-2 expdivlabel">
                                     <span class="f11 fl p_4_Form">Lakhs
@@ -508,66 +508,66 @@ div#panelheight {
                                   <div class="col-md-4 ">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="personalDetails.currentCTCThousand" id="ctcThousands" name="ctcThousands" ng-required="personalDetails.expInYears!=100" required="required">
                                       <option value="">Thousands
-                                      </option>  
+                                      </option>
                                       <option value="0">0
-                                      </option>  
+                                      </option>
                                       <option value="5">5
-                                      </option>  
+                                      </option>
                                       <option value="10">10
-                                      </option>  
+                                      </option>
                                       <option value="15">15
-                                      </option>  
+                                      </option>
                                       <option value="20">20
-                                      </option> 
+                                      </option>
                                       <option value="25">25
-                                      </option>  
+                                      </option>
                                       <option value="30">30
-                                      </option>  
+                                      </option>
                                       <option value="35">35
-                                      </option>  
+                                      </option>
                                       <option value="40">40
-                                      </option> 
+                                      </option>
                                       <option value="45">45
-                                      </option>  
+                                      </option>
                                       <option value="50">50
-                                      </option>  
+                                      </option>
                                       <option value="55">55
-                                      </option>  
+                                      </option>
                                       <option value="60">60
-                                      </option> 
+                                      </option>
                                       <option value="65">65
-                                      </option>  
+                                      </option>
                                       <option value="70">70
-                                      </option>  
+                                      </option>
                                       <option value="75">75
-                                      </option>  
+                                      </option>
                                       <option value="80">80
-                                      </option>  
+                                      </option>
                                       <option value="85">85
-                                      </option>  
+                                      </option>
                                       <option value="90">90
-                                      </option>  
+                                      </option>
                                       <option value="95">95
-                                      </option>                              
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.ctcThousands.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted -->  
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <div class="col-md-2 expdivlabel">
                                     <span class="f11 fl p_4_Form">Thousands
                                     </span>
                                   </div>
-                                </div>    
-                              </div>    
+                                </div>
+                              </div>
                               <div class="col-md-12 fl w390">
                                 <div class="form-group col-md-6" id="ctcFormRow">
                                   <label class="col-md-12" for="ctc">Expected CTC:
@@ -575,91 +575,91 @@ div#panelheight {
                                   <div class="col-md-4 padd-l-0">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="personalDetails.expectedCTC" id="exctcLacs" name="exctcLacs" required="">
                                       <option value="">Lacs
-                                      </option>  
+                                      </option>
                                       <option value="0">0
-                                      </option>  
+                                      </option>
                                       <option value="1">1
-                                      </option>  
+                                      </option>
                                       <option value="2">2
-                                      </option>  
+                                      </option>
                                       <option value="3">3
-                                      </option>  
+                                      </option>
                                       <option value="4">4
-                                      </option>  
+                                      </option>
                                       <option value="5">5
-                                      </option>  
+                                      </option>
                                       <option value="6">6
-                                      </option>  
+                                      </option>
                                       <option value="7">7
-                                      </option>  
+                                      </option>
                                       <option value="8">8
-                                      </option>  
+                                      </option>
                                       <option value="9">9
-                                      </option>  
+                                      </option>
                                       <option value="10">10
-                                      </option>  
+                                      </option>
                                       <option value="11">11
-                                      </option>  
+                                      </option>
                                       <option value="12">12
-                                      </option>  
+                                      </option>
                                       <option value="13">13
-                                      </option> 
+                                      </option>
                                       <option value="14">14
-                                      </option>  
+                                      </option>
                                       <option value="15">15
-                                      </option>  
+                                      </option>
                                       <option value="16">16
-                                      </option> 
+                                      </option>
                                       <option value="17">17
-                                      </option>  
+                                      </option>
                                       <option value="18">18
-                                      </option>  
+                                      </option>
                                       <option value="19">19
-                                      </option> 
+                                      </option>
                                       <option value="20">20
-                                      </option>  
+                                      </option>
                                       <option value="21">21
-                                      </option>  
+                                      </option>
                                       <option value="22">22
-                                      </option>  
+                                      </option>
                                       <option value="23">23
-                                      </option>  
+                                      </option>
                                       <option value="24">24
-                                      </option>  
+                                      </option>
                                       <option value="25">25
-                                      </option> 
+                                      </option>
                                       <option value="26">26
-                                      </option>  
+                                      </option>
                                       <option value="27">27
-                                      </option>  
+                                      </option>
                                       <option value="28">28
-                                      </option>  
+                                      </option>
                                       <option value="29">29
-                                      </option>  
+                                      </option>
                                       <option value="30">30
-                                      </option>  
+                                      </option>
                                       <option value="31">31
-                                      </option>  
+                                      </option>
                                       <option value="32">32
-                                      </option>  
+                                      </option>
                                       <option value="33">33
-                                      </option>  
+                                      </option>
                                       <option value="34">34
-                                      </option>  
+                                      </option>
                                       <option value="35">35
-                                      </option>                                    
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.exctcLacs.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted -->  
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <div class="col-md-2 expdivlabel">
                                     <span class="f11 fl p_4_Form">Lakhs
@@ -668,80 +668,80 @@ div#panelheight {
                                   <div class="col-md-4 ">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="personalDetails.expectedCTCThousand" id="exctcThousands" name="exctcThousands" required="">
                                       <option value="">Thousands
-                                      </option>  
+                                      </option>
                                       <option value="0">0
-                                      </option>  
+                                      </option>
                                       <option value="5">5
-                                      </option>  
+                                      </option>
                                       <option value="10">10
-                                      </option>  
+                                      </option>
                                       <option value="15">15
-                                      </option>  
+                                      </option>
                                       <option value="20">20
-                                      </option> 
+                                      </option>
                                       <option value="25">25
-                                      </option>  
+                                      </option>
                                       <option value="30">30
-                                      </option>  
+                                      </option>
                                       <option value="35">35
-                                      </option>  
+                                      </option>
                                       <option value="40">40
-                                      </option> 
+                                      </option>
                                       <option value="45">45
-                                      </option>  
+                                      </option>
                                       <option value="50">50
-                                      </option>  
+                                      </option>
                                       <option value="55">55
-                                      </option>  
+                                      </option>
                                       <option value="60">60
-                                      </option> 
+                                      </option>
                                       <option value="65">65
-                                      </option>  
+                                      </option>
                                       <option value="70">70
-                                      </option>  
+                                      </option>
                                       <option value="75">75
-                                      </option>  
+                                      </option>
                                       <option value="80">80
-                                      </option>  
+                                      </option>
                                       <option value="85">85
-                                      </option>  
+                                      </option>
                                       <option value="90">90
-                                      </option>  
+                                      </option>
                                       <option value="95">95
-                                      </option>                              
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.exctcThousands.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted -->  
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <div class="col-md-2 expdivlabel">
                                     <span class="f11 fl p_4_Form">Thousands
                                     </span>
                                   </div>
-                                </div>   
+                                </div>
                                 <div id="notuce" class="form-group col-md-2">
                                   <label for="cityId">Notice Period:
                                   </label>
-                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="np" placeholder="Ex: 30 " ng-model="personalDetails.noticePeriod" name="np" ng-maxlength="100" required=""> 
+                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="np" placeholder="Ex: 30 " ng-model="personalDetails.noticePeriod" name="np" ng-maxlength="100" required="">
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.np.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted -->  
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                 </div>
                                 <div class="col-md-1 expdivlabel" style="margin-top: 32px;">
                                   <span class="f11 fl p_4_Form">Days
@@ -750,109 +750,109 @@ div#panelheight {
                                 <div class="form-group col-md-3">
                                   <label for="locationPrefId">Mobility:
                                   </label>
-                                  <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="mobility" ng-model="personalDetails.mobility" name="mobility" required=""> 
+                                  <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="mobility" ng-model="personalDetails.mobility" name="mobility" required="">
                                     <option value="">Select One
-                                    </option>  
+                                    </option>
                                     <option value="Yes">Yes
-                                    </option>  
+                                    </option>
                                     <option value="No">No
-                                    </option>  
+                                    </option>
                                   </select>
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.mobility.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted -->  
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                 </div>
-                              </div>                      
+                              </div>
                               <div class="col-md-12 ">
                                 <div id="cityDiv" class="form-group col-md-3">
                                   <label for="cityId">Current Location:
                                   </label>
-                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="cloc" placeholder="Ex: Bangalore" ng-model="personalDetails.currentLocation" name="cloc" ng-maxlength="100" required=""> 
+                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="cloc" placeholder="Ex: Bangalore" ng-model="personalDetails.currentLocation" name="cloc" ng-maxlength="100" required="">
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.cloc.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted -->  
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                 </div>
                                 <div class="form-group col-md-3">
                                   <label for="locationPrefId">Preferred Location:
                                   </label>
-                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="ploc" placeholder="EX: Hyderabad,Bangalore" ng-model="personalDetails.preferredLoc" name="ploc" ng-maxlength="100" required=""> 
+                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="ploc" placeholder="EX: Hyderabad,Bangalore" ng-model="personalDetails.preferredLoc" name="ploc" ng-maxlength="100" required="">
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.ploc.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted -->  
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                 </div>
                                 <div class="form-group col-md-3">
                                   <label for="industryTypeId">Industry:
                                   </label>
-                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="industry" placeholder="EX: Accounting/Finance" ng-model="personalDetails.industry" name="industry" ng-maxlength="100" required=""> 
+                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="industry" placeholder="EX: Accounting/Finance" ng-model="personalDetails.industry" name="industry" ng-maxlength="100" required="">
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.industry.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted -->  
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                 </div>
                                 <div class="form-group col-md-3">
                                   <label for="funcAreaId">Functional Area:
                                   </label>
-                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="farea" placeholder="Ex: Fashion / Garments / Merchandising" ng-model="personalDetails.functionalArea" name="farea" ng-maxlength="100" required=""> 
+                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="farea" placeholder="Ex: Fashion / Garments / Merchandising" ng-model="personalDetails.functionalArea" name="farea" ng-maxlength="100" required="">
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.farea.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted --> 
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                 </div>
                               </div>
                               <div class="col-md-12 ">
                                 <div class="form-group col-md-3">
                                   <label for="roleId">Designation:
                                   </label>
-                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="role" placeholder="Ex: System Analyst" ng-model="personalDetails.role" name="role" ng-maxlength="100" required=""> 
+                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="role" placeholder="Ex: System Analyst" ng-model="personalDetails.role" name="role" ng-maxlength="100" required="">
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.role.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted --> 
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                 </div>
                                 <div class="form-group col-md-6" id="dobFormRow">
                                   <label for="dobDay" class="col-md-12">Date of Birth:
@@ -922,166 +922,166 @@ div#panelheight {
                                       <option value="30">30
                                       </option>
                                       <option value="31">31
-                                      </option>                                
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.dobday.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted --> 
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <div class="col-md-4">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="personalDetails.dobInMonth" id="dobmnth" name="dobmnth" required="">
                                       <option value="">Month
-                                      </option> 
+                                      </option>
                                       <option value="1">Jan
-                                      </option> 
+                                      </option>
                                       <option value="2">Feb
-                                      </option> 
+                                      </option>
                                       <option value="3">Mar
-                                      </option> 
+                                      </option>
                                       <option value="4">Apr
-                                      </option> 
+                                      </option>
                                       <option value="5">May
                                       </option>
                                       <option value="6">Jun
-                                      </option> 
+                                      </option>
                                       <option value="7">Jul
-                                      </option> 
+                                      </option>
                                       <option value="8">Aug
-                                      </option> 
+                                      </option>
                                       <option value="9">Sep
-                                      </option> 
+                                      </option>
                                       <option value="10">Oct
-                                      </option> 
+                                      </option>
                                       <option value="11">Nov
-                                      </option> 
+                                      </option>
                                       <option value="12">Dec
-                                      </option>                                
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.dobmnth.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted --> 
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <div class="col-md-4">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="personalDetails.dobInYear" id="dobyear" name="dobyear" required="">
                                       <option value="">Year
-                                      </option>  
+                                      </option>
                                       <option value="1998">1998
-                                      </option> 
+                                      </option>
                                       <option value="1997">1997
-                                      </option> 
+                                      </option>
                                       <option value="1996">1996
                                       </option>
                                       <option value="1995">1995
-                                      </option>  
+                                      </option>
                                       <option value="1994">1994
-                                      </option>  
+                                      </option>
                                       <option value="1993">1993
-                                      </option>  
+                                      </option>
                                       <option value="1992">1992
-                                      </option>  
+                                      </option>
                                       <option value="1991">1991
-                                      </option>  
+                                      </option>
                                       <option value="1990">1990
-                                      </option>  
+                                      </option>
                                       <option value="1989">1989
-                                      </option>  
+                                      </option>
                                       <option value="1988">1988
-                                      </option>  
+                                      </option>
                                       <option value="1987">1987
-                                      </option>  
+                                      </option>
                                       <option value="1986">1986
-                                      </option>  
+                                      </option>
                                       <option value="1985">1985
-                                      </option>  
+                                      </option>
                                       <option value="1984">1984
-                                      </option>  
+                                      </option>
                                       <option value="1983">1983
-                                      </option>  
+                                      </option>
                                       <option value="1982">1982
-                                      </option>  
+                                      </option>
                                       <option value="1981">1981
-                                      </option>  
+                                      </option>
                                       <option value="1980">1980
-                                      </option>  
+                                      </option>
                                       <option value="1979">1979
-                                      </option>  
+                                      </option>
                                       <option value="1978">1978
-                                      </option>  
+                                      </option>
                                       <option value="1977">1977
-                                      </option>  
+                                      </option>
                                       <option value="1976">1976
-                                      </option>  
+                                      </option>
                                       <option value="1975">1975
-                                      </option>  
+                                      </option>
                                       <option value="1974">1974
-                                      </option>  
+                                      </option>
                                       <option value="1973">1973
-                                      </option>  
+                                      </option>
                                       <option value="1972">1972
-                                      </option>  
+                                      </option>
                                       <option value="1971">1971
-                                      </option>  
+                                      </option>
                                       <option value="1970">1970
-                                      </option>  
+                                      </option>
                                       <option value="1969">1969
-                                      </option>  
+                                      </option>
                                       <option value="1968">1968
-                                      </option>  
+                                      </option>
                                       <option value="1967">1967
-                                      </option>  
+                                      </option>
                                       <option value="1966">1966
-                                      </option>  
+                                      </option>
                                       <option value="1965">1965
-                                      </option>  
+                                      </option>
                                       <option value="1964">1964
-                                      </option>  
+                                      </option>
                                       <option value="1963">1963
-                                      </option>  
+                                      </option>
                                       <option value="1962">1962
-                                      </option>  
+                                      </option>
                                       <option value="1961">1961
-                                      </option>  
+                                      </option>
                                       <option value="1960">1960
-                                      </option>  
+                                      </option>
                                       <option value="1959">1959
-                                      </option>  
+                                      </option>
                                       <option value="1958">1958
-                                      </option>  
+                                      </option>
                                       <option value="1957">1957
-                                      </option>  
+                                      </option>
                                       <option value="1956">1956
-                                      </option>  
+                                      </option>
                                     </select>
                                     <!-- ngIf: jobseekersOther.$submitted -->
                                     <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.dobyear.$error" ng-messages-include="errors">
                                       <!-- ngMessage: required -->
-                                      <div ng-message="required" class="ng-scope">This field is required 
+                                      <div ng-message="required" class="ng-scope">This field is required
                                       </div>
                                       <!-- ngMessage: pattern -->
                                       <!-- ngMessage: minlength -->
                                       <!-- ngMessage: email -->
                                       <!-- ngMessage: maxlength -->
                                     </div>
-                                    <!-- end ngIf: jobseekersOther.$submitted --> 
+                                    <!-- end ngIf: jobseekersOther.$submitted -->
                                   </div>
                                   <i id="birthDateErr-error">
-                                  </i> 
+                                  </i>
                                 </div>
                                 <div class="form-group col-md-3">
                                   <label for="gender">Gender:
@@ -1097,22 +1097,22 @@ div#panelheight {
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.gender.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted --> 
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                 </div>
                               </div>
                               <div class="col-md-12">
                                 <div class="form-group  col-md-12">
-                                  <span class=""><input type="checkbox">  Upon Requiter request will you provide your H1 Copy</span> 
+                                  <span class=""><input type="checkbox">  Upon Requiter request will you provide your H1 Copy</span>
                                 </div>
                               </div>
-                              
+
                               <div class="col-md-12">
                                 <div class="form-group  col-md-12">
                                   <label for="skills">Key Skills
@@ -1122,17 +1122,17 @@ div#panelheight {
                                   <!-- ngIf: jobseekersOther.$submitted -->
                                   <div class="th-error ng-scope ng-active" ng-if="jobseekersOther.$submitted" ng-messages="jobseekersOther.keySkill.$error" ng-messages-include="errors">
                                     <!-- ngMessage: required -->
-                                    <div ng-message="required" class="ng-scope">This field is required 
+                                    <div ng-message="required" class="ng-scope">This field is required
                                     </div>
                                     <!-- ngMessage: pattern -->
                                     <!-- ngMessage: minlength -->
                                     <!-- ngMessage: email -->
                                     <!-- ngMessage: maxlength -->
                                   </div>
-                                  <!-- end ngIf: jobseekersOther.$submitted --> 
+                                  <!-- end ngIf: jobseekersOther.$submitted -->
                                   <br>
                                   <span class="colorred"> Be creative in how you enter your key skills, because that is the first thing Recruiters will see.
-                                  </span> 
+                                  </span>
                                 </div>
                               </div>
                               <div class="row col-md-12 text-center">
@@ -1154,8 +1154,8 @@ div#panelheight {
                               <hr class="margin-bt-5 margin-tp-5">
                             </div>
                             <div class="form-group col-md-3 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding" ng-show="personalDetails.expInYears!=100"> Years  
-                                Months 
+                              <label class="margin-bt-0 ng-binding" ng-show="personalDetails.expInYears!=100"> Years
+                                Months
                               </label>
                               <label class="margin-bt-0 ng-hide" ng-show="personalDetails.expInYears==100">Fresher
                               </label>
@@ -1164,14 +1164,14 @@ div#panelheight {
                               </span>
                             </div>
                             <div class="form-group col-md-3 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding" ng-show="personalDetails.currentCTC!='' &amp;&amp; personalDetails.currentCTCThousand!=''">   Lakhs   
-                                Thousands 
+                              <label class="margin-bt-0 ng-binding" ng-show="personalDetails.currentCTC!='' &amp;&amp; personalDetails.currentCTCThousand!=''">   Lakhs
+                                Thousands
                               </label>
                               <label class="margin-bt-0 ng-binding ng-hide" ng-show="personalDetails.currentCTC!='' &amp;&amp; personalDetails.currentCTCThousand==''">   Lakhs   0
-                                Thousands 
+                                Thousands
                               </label>
-                              <label class="margin-bt-0 ng-binding ng-hide" ng-show="personalDetails.currentCTC=='' &amp;&amp; personalDetails.currentCTCThousand!=''">  0 Lakhs  
-                                Thousands 
+                              <label class="margin-bt-0 ng-binding ng-hide" ng-show="personalDetails.currentCTC=='' &amp;&amp; personalDetails.currentCTCThousand!=''">  0 Lakhs
+                                Thousands
                               </label>
                               <label class="margin-bt-0 ng-hide" style="color:red" ng-show="personalDetails.currentCTC=='' &amp;&amp; personalDetails.currentCTCThousand==''">  Not Updated
                               </label>
@@ -1179,15 +1179,15 @@ div#panelheight {
                               <span class="labelspan"> Current CTC
                               </span>
                             </div>
-                            <div class="form-group col-md-3 text-center" id="experienceFormRow"> 
-                              <label class="margin-bt-0 ng-binding" ng-show="personalDetails.expectedCTC!='' &amp;&amp; personalDetails.expectedCTCThousand!=''">   Lakhs   
-                                Thousands 
+                            <div class="form-group col-md-3 text-center" id="experienceFormRow">
+                              <label class="margin-bt-0 ng-binding" ng-show="personalDetails.expectedCTC!='' &amp;&amp; personalDetails.expectedCTCThousand!=''">   Lakhs
+                                Thousands
                               </label>
                               <label class="margin-bt-0 ng-binding ng-hide" ng-show="personalDetails.expectedCTC!='' &amp;&amp; personalDetails.expectedCTCThousand==''">   Lakhs   0
-                                Thousands 
+                                Thousands
                               </label>
-                              <label class="margin-bt-0 ng-binding ng-hide" ng-show="personalDetails.expectedCTC=='' &amp;&amp; personalDetails.expectedCTCThousand!=''">  0 Lakhs  
-                                Thousands 
+                              <label class="margin-bt-0 ng-binding ng-hide" ng-show="personalDetails.expectedCTC=='' &amp;&amp; personalDetails.expectedCTCThousand!=''">  0 Lakhs
+                                Thousands
                               </label>
                               <label class="margin-bt-0 ng-hide" style="color:red" ng-show="personalDetails.expectedCTC=='' &amp;&amp; personalDetails.expectedCTCThousand==''">  Not Updated
                               </label>
@@ -1205,42 +1205,42 @@ div#panelheight {
                               </span>
                             </div>
                             <div class="form-group col-md-3 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding"> 
+                              <label class="margin-bt-0 ng-binding">
                               </label>
                               <br>
                               <span class="labelspan"> Dob
                               </span>
                             </div>
                             <div class="form-group col-md-3 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding">   
+                              <label class="margin-bt-0 ng-binding">
                               </label>
                               <br>
                               <span class="labelspan"> Gender
                               </span>
                             </div>
                             <div class="form-group col-md-3 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding">            
+                              <label class="margin-bt-0 ng-binding">
                               </label>
                               <br>
                               <span class="labelspan"> Current Location
                               </span>
                             </div>
                             <div class="form-group col-md-3 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding">   
+                              <label class="margin-bt-0 ng-binding">
                               </label>
                               <br>
                               <span class="labelspan"> Preferred Location
                               </span>
                             </div>
                             <div class="form-group col-md-3 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding">         
+                              <label class="margin-bt-0 ng-binding">
                               </label>
                               <br>
                               <span class="labelspan"> Designation
                               </span>
                             </div>
                             <div class="form-group col-md-3 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding">       
+                              <label class="margin-bt-0 ng-binding">
                               </label>
                               <br>
                               <span class="labelspan">Industry
@@ -1256,7 +1256,7 @@ div#panelheight {
                               </span>
                             </div>
                             <div class="form-group col-md-12 text-center" id="experienceFormRow">
-                              <label class="margin-bt-0 ng-binding">        
+                              <label class="margin-bt-0 ng-binding">
                               </label>
                               <br>
                               <span class="labelspan">Key Skills
@@ -1271,11 +1271,11 @@ div#panelheight {
                   </div>
                 </div>
                </div>
-               <div class="col-md-12 pd-0"> 
+               <div class="col-md-12 pd-0">
                 <div id="educationdetails">
                     <div class="panel shadownone">
                       <div class="panel-heading deatilednew ">
-                        Education Details 
+                        Education Details
                         <span > <!-- ng-show="educationStatus=='View'" class="ng-hide" -->
                           <a href="" ng-click="educationStatus='Creation'" class="pull-right">
                             <i class="fa fa-pencil-square-o editicon" aria-hidden="true">
@@ -1284,7 +1284,7 @@ div#panelheight {
                         </span>
                       </div>
                       <div class="new-body">
-                        <div class="row">                 
+                        <div class="row">
                          <div role="tabpanel">
                           <div class="col-md-2">
                             <div class="panel" id="panelheight">
@@ -1311,30 +1311,30 @@ div#panelheight {
                                         <div class="form-group">
                                           <label>Highest Degree
                                           </label>
-                                          <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="degree" placeholder="Highest Degree" ng-model="educationDetails.degree" name="degree" ng-maxlength="100" required="">  
-                                          <!-- ngIf: jobseekeredu.$submitted -->    
+                                          <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="degree" placeholder="Highest Degree" ng-model="educationDetails.degree" name="degree" ng-maxlength="100" required="">
+                                          <!-- ngIf: jobseekeredu.$submitted -->
                                         </div>
                                         <div class="form-group">
                                           Specialization
                                           <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="specialization" placeholder="Highest Degree" ng-model="educationDetails.specialization" name="specialization" ng-maxlength="500" required="">
-                                          <!-- ngIf: jobseekeredu.$submitted --> 
+                                          <!-- ngIf: jobseekeredu.$submitted -->
                                         </div>
                                         <div class="form-group">
                                           Percentage
                                           <input type="text" placeholder="Percentage" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="percentage" name="percentage" ng-model="educationDetails.percentage" required="">
-                                          <!-- ngIf: jobseekeredu.$submitted --> 
+                                          <!-- ngIf: jobseekeredu.$submitted -->
                                         </div>
                                 </div>
                                       <div class="col-md-6 col-sm-12 col-xs-12">
                                         <div class="form-group">
                                           University
                                           <input type="text" placeholder="University" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="university" name="university" ng-model="educationDetails.university" required="">
-                                          <!-- ngIf: jobseekeredu.$submitted --> 
+                                          <!-- ngIf: jobseekeredu.$submitted -->
                                         </div>
                                         <div class="form-group">
                                           Completed Year
                                           <input type="text" placeholder="Completed Year" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="completedYear" name="completedYear" ng-model="educationDetails.completedYear" required="">
-                                          <!-- ngIf: jobseekeredu.$submitted --> 
+                                          <!-- ngIf: jobseekeredu.$submitted -->
                                         </div>
                                         <div class="form-group">
                                           Course Type
@@ -1346,7 +1346,7 @@ div#panelheight {
                                             <option value="Correspondence">Correspondence
                                             </option>
                                           </select>
-                                          <!-- ngIf: jobseekeredu.$submitted --> 
+                                          <!-- ngIf: jobseekeredu.$submitted -->
                                         </div>
                                       </div>
                                <p class="pull-right" id="deleteEducation" style="display:none;"><a type="button" ng-click="deleteTab($index)" class="btn btn-danger"> Delete This Degree</a></p>
@@ -1372,7 +1372,7 @@ div#panelheight {
                   <div id="skillsdetails">
                     <div class="panel shadownone">
                       <div class="panel-heading deatilednew ">
-                        Skills  
+                        Skills
                         <span > <!-- ng-show="skillStatus=='View'" class="ng-hide" -->
                           <a href="" ng-click="editSkills();" class="pull-right">
                             <i class="fa fa-pencil-square-o editicon" aria-hidden="true">
@@ -1391,7 +1391,8 @@ div#panelheight {
                           <!--Loading Container End here-->
                           <form name="jobseekerskills" ng-submit="jobseekerskills.$valid &amp;&amp; saveSkills('YIN16JNWN3B11893','98')" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
                             <br>
-                            
+
+                            <!-- <div class="col-md-12 input_fields_wrapnew" ng-repeat="items in resumeDetailsToEdit.details.ResumeParserData.SkillKeywords.SkillSet"> -->
                             <div class="col-md-12 input_fields_wrapnew">
                               <div  class="ng-scope">
                                 <div class="col-md-12 padd-0">
@@ -1399,7 +1400,7 @@ div#panelheight {
                                     <label class="flot-left">Skill Name
                                     </label>
                                     <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName" id="pskillName1" name="pskillName1" required="">
-                                    <!-- ngIf: jobseekerskills.$submitted --> 
+                                    <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
                                   <div class="form-group col-md-2">
                                     <label class="flot-left">Experience
@@ -1429,7 +1430,7 @@ div#panelheight {
                                       </option>
                                       <option value="5">5
                                       </option>
-                                    </select> 
+                                    </select>
                                     <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
                                   <div class="col-md-4 text-center">
@@ -1437,20 +1438,20 @@ div#panelheight {
                                       <a ng-click="addNewprimaryskill();">
                                         <label class="flot-left">Add
                                         </label>
-                                        <br> 
+                                        <br>
                                         <i class="fa fa-plus addicon add-icon icons add-fields2">
-                                        </i>  
+                                        </i>
                                       </a>
                                     </div>
                                     <div class="col-md-6">
-                                      <a ng-click="removePrimaryskill();"> 
+                                      <a ng-click="removePrimaryskill();">
                                         <label class="flot-left ">Remove
-                                        </label> 
+                                        </label>
                                         <br>
                                         <i class="fa fa-minus  add-icon icons addicon">
-                                        </i>  
+                                        </i>
                                       </a>
-                                    </div> 
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -1469,8 +1470,8 @@ div#panelheight {
                             <ul class="list-inline">
                               <!-- ngRepeat: primaryskill in primaryskills -->
                               <li ng-repeat="primaryskill in primaryskills" class="ng-scope">
-                                <div class=" "> 
-                                  <span class="label label-default primaryskill ng-binding"> 
+                                <div class=" ">
+                                  <span class="label label-default primaryskill ng-binding">
                                   </span>
                                 </div>
                               </li>
@@ -1486,8 +1487,8 @@ div#panelheight {
                             <ul class="list-inline">
                               <!-- ngRepeat: secondaryskill in secondaryskills -->
                               <li ng-repeat="secondaryskill in secondaryskills" class="ng-scope">
-                                <div class=" "> 
-                                  <span class="label label-default secondaryskill ng-binding"> 
+                                <div class=" ">
+                                  <span class="label label-default secondaryskill ng-binding">
                                   </span>
                                 </div>
                               </li>
@@ -1507,7 +1508,7 @@ div#panelheight {
                   <div id="employementhistroydetails">
                     <div class="panel shadownone">
                       <div class="panel-heading deatilednew ">
-                          Employment History   
+                          Employment History
                           <a href="" ng-click="emplomentAdd='Add'" class="pull-right">
                             <i class="fa fa-plus-circle editicon" aria-hidden="true">
                             </i>
@@ -1541,22 +1542,22 @@ div#panelheight {
                                 <div class="form-group col-md-6 col-sm-12 col-xs-12">
                                   <label>Employer Name:
                                   </label>
-                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="employerName" placeholder="Employer Name" ng-model="empBean.employerName" name="employerName" ng-maxlength="100" required="">  
-                                  <!-- ngIf: jobseekeremp.$submitted -->    
+                                  <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" id="employerName" placeholder="Employer Name" ng-model="empBean.employerName" name="employerName" ng-maxlength="100" required="">
+                                  <!-- ngIf: jobseekeremp.$submitted -->
                                   <div class="form-inline">
                                     <input type="radio" ng-model="empBean.status" value="CURRENT" required="required" name="empstatus" class="ng-pristine ng-untouched ng-invalid ng-invalid-required">
-                                    <span style="margin-left:5px;color:#0a97bf">Current Employer 
+                                    <span style="margin-left:5px;color:#0a97bf">Current Employer
                                     </span>
                                     <input type="radio" ng-model="empBean.status" value="PREVIOUS" required="required" name="empstatus" class="ng-pristine ng-untouched ng-invalid ng-invalid-required">
-                                    <span style="margin-left:5px;color:#0a97bf">Previous Employer 
+                                    <span style="margin-left:5px;color:#0a97bf">Previous Employer
                                     </span>
-                                    <!-- ngIf: jobseekeremp.$submitted --> 
+                                    <!-- ngIf: jobseekeremp.$submitted -->
                                   </div>
-                                </div>    
+                                </div>
                                 <div class="form-group col-md-6 col-sm-12 col-xs-12">
                                   Designation
                                   <input type="text" placeholder="Designation" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="designation" name="designation" ng-model="empBean.designation" required="">
-                                  <!-- ngIf: jobseekeremp.$submitted --> 
+                                  <!-- ngIf: jobseekeremp.$submitted -->
                                 </div>
                                 <div class="form-group col-md-12 pd-0" id="dobFormRow">
                                   <label for="dobDay" class="col-md-12">Duration:
@@ -1564,199 +1565,199 @@ div#panelheight {
                                   <div class="col-md-3">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="empBean.startMonth" id="startMonth" name="startMonth" required="">
                                       <option value="">Month
-                                      </option> 
+                                      </option>
                                       <option value="1">Jan
-                                      </option> 
+                                      </option>
                                       <option value="2">Feb
-                                      </option> 
+                                      </option>
                                       <option value="3">Mar
-                                      </option> 
+                                      </option>
                                       <option value="4">Apr
-                                      </option> 
+                                      </option>
                                       <option value="5">May
                                       </option>
                                       <option value="6">Jun
-                                      </option> 
+                                      </option>
                                       <option value="7">Jul
-                                      </option> 
+                                      </option>
                                       <option value="8">Aug
-                                      </option> 
+                                      </option>
                                       <option value="9">Sep
-                                      </option> 
+                                      </option>
                                       <option value="10">Oct
-                                      </option> 
+                                      </option>
                                       <option value="11">Nov
-                                      </option> 
+                                      </option>
                                       <option value="12">Dec
-                                      </option>                                
+                                      </option>
                                     </select>
-                                    <!-- ngIf: jobseekeremp.$submitted --> 
+                                    <!-- ngIf: jobseekeremp.$submitted -->
                                   </div>
                                   <div class="col-md-3 col-sm-12 col-xs-12">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="empBean.startYear" id="startYear" name="startYear" required="">
                                       <option value="">Year
-                                      </option>  
+                                      </option>
                                       <option value="2016">2016
-                                      </option> 
+                                      </option>
                                       <option value="2015">2015
-                                      </option> 
+                                      </option>
                                       <option value="2014">2014
                                       </option>
                                       <option value="2013">2013
-                                      </option>  
+                                      </option>
                                       <option value="2012">2012
-                                      </option>  
+                                      </option>
                                       <option value="2011">2011
-                                      </option>  
+                                      </option>
                                       <option value="2010">2010
-                                      </option>  
+                                      </option>
                                       <option value="2009">2009
-                                      </option>  
+                                      </option>
                                       <option value="2008">2008
-                                      </option>  
+                                      </option>
                                       <option value="2007">2007
-                                      </option>  
+                                      </option>
                                       <option value="2006">2006
-                                      </option>  
+                                      </option>
                                       <option value="2005">2005
-                                      </option>  
+                                      </option>
                                       <option value="2004">2004
-                                      </option>  
+                                      </option>
                                       <option value="2003">2003
-                                      </option>  
+                                      </option>
                                       <option value="2002">2002
-                                      </option>  
+                                      </option>
                                       <option value="2001">2001
-                                      </option>  
+                                      </option>
                                       <option value="2000">2000
-                                      </option>  
+                                      </option>
                                       <option value="1999">1999
-                                      </option>  
+                                      </option>
                                       <option value="1998">1998
-                                      </option>  
+                                      </option>
                                       <option value="1997">1997
-                                      </option>  
+                                      </option>
                                       <option value="1996">1996
-                                      </option>  
+                                      </option>
                                       <option value="1995">1995
-                                      </option>  
+                                      </option>
                                       <option value="1994">1994
-                                      </option>  
+                                      </option>
                                       <option value="1993">1993
-                                      </option>  
+                                      </option>
                                       <option value="1992">1992
-                                      </option>  
+                                      </option>
                                       <option value="1991">1991
-                                      </option>  
+                                      </option>
                                       <option value="1990">1990
-                                      </option>  
+                                      </option>
                                       <option value="1989">1989
-                                      </option>  
+                                      </option>
                                     </select>
-                                    <!-- ngIf: jobseekeremp.$submitted --> 
+                                    <!-- ngIf: jobseekeremp.$submitted -->
                                   </div>
                                   <label for="dobDay" class="col-md-1">To:
                                   </label>
                                   <div class="col-md-2 col-sm-12 col-xs-12">
                                     <select class="form-control ng-pristine ng-untouched ng-valid ng-valid-required" ng-model="empBean.endMonth" id="endMonth" name="endMonth" ng-required="empBean.status=='PREVIOUS'">
                                       <option value="">End Month
-                                      </option> 
+                                      </option>
                                       <option value="1">Jan
-                                      </option> 
+                                      </option>
                                       <option value="2">Feb
-                                      </option> 
+                                      </option>
                                       <option value="3">Mar
-                                      </option> 
+                                      </option>
                                       <option value="4">Apr
-                                      </option> 
+                                      </option>
                                       <option value="5">May
                                       </option>
                                       <option value="6">Jun
-                                      </option> 
+                                      </option>
                                       <option value="7">Jul
-                                      </option> 
+                                      </option>
                                       <option value="8">Aug
-                                      </option> 
+                                      </option>
                                       <option value="9">Sep
-                                      </option> 
+                                      </option>
                                       <option value="10">Oct
-                                      </option> 
+                                      </option>
                                       <option value="11">Nov
-                                      </option> 
+                                      </option>
                                       <option value="12">Dec
-                                      </option>                                
+                                      </option>
                                     </select>
-                                    <!-- ngIf: jobseekeremp.$submitted --> 
+                                    <!-- ngIf: jobseekeremp.$submitted -->
                                   </div>
                                   <div class="col-md-3 col-sm-12 col-xs-12">
                                     <select class="form-control ng-pristine ng-untouched ng-valid ng-valid-required" ng-model="empBean.endYear" id="endYear" name="endYear" ng-required="empBean.status=='PREVIOUS'">
                                       <option value="">End Year
-                                      </option>  
+                                      </option>
                                       <option value="2016">2016
-                                      </option> 
+                                      </option>
                                       <option value="2015">2015
-                                      </option> 
+                                      </option>
                                       <option value="2014">2014
                                       </option>
                                       <option value="2013">2013
-                                      </option>  
+                                      </option>
                                       <option value="2012">2012
-                                      </option>  
+                                      </option>
                                       <option value="2011">2011
-                                      </option>  
+                                      </option>
                                       <option value="2010">2010
-                                      </option>  
+                                      </option>
                                       <option value="2009">2009
-                                      </option>  
+                                      </option>
                                       <option value="2008">2008
-                                      </option>  
+                                      </option>
                                       <option value="2007">2007
-                                      </option>  
+                                      </option>
                                       <option value="2006">2006
-                                      </option>  
+                                      </option>
                                       <option value="2005">2005
-                                      </option>  
+                                      </option>
                                       <option value="2004">2004
-                                      </option>  
+                                      </option>
                                       <option value="2003">2003
-                                      </option>  
+                                      </option>
                                       <option value="2002">2002
-                                      </option>  
+                                      </option>
                                       <option value="2001">2001
-                                      </option>  
+                                      </option>
                                       <option value="2000">2000
-                                      </option>  
+                                      </option>
                                       <option value="1999">1999
-                                      </option>  
+                                      </option>
                                       <option value="1998">1998
-                                      </option>  
+                                      </option>
                                       <option value="1997">1997
-                                      </option>  
+                                      </option>
                                       <option value="1996">1996
-                                      </option>  
+                                      </option>
                                       <option value="1995">1995
-                                      </option>  
+                                      </option>
                                       <option value="1994">1994
-                                      </option>  
+                                      </option>
                                       <option value="1993">1993
-                                      </option>  
+                                      </option>
                                       <option value="1992">1992
-                                      </option>  
+                                      </option>
                                       <option value="1991">1991
-                                      </option>  
+                                      </option>
                                       <option value="1990">1990
-                                      </option>  
+                                      </option>
                                       <option value="1989">1989
-                                      </option>  
+                                      </option>
                                     </select>
-                                    <!-- ngIf: jobseekeremp.$submitted --> 
+                                    <!-- ngIf: jobseekeremp.$submitted -->
                                   </div>
                                   <i id="birthDateErr-error">
-                                  </i> 
+                                  </i>
                                 </div>
                                 <p class="pull-right" id="deleteExperience" style="display:none;"><a type="button" ng-click="deleteExperienceTab($index)" class="btn btn-danger">Delete This job</a></p>
                                 </div>
-                              </form> 
+                              </form>
                             </div>
                             <div ng-show="emplomentStatus=='View'">
                               <style>
@@ -1778,12 +1779,12 @@ div#panelheight {
                                         <div class="new-body">
                                           <div class="col-md-12">&nbsp;
                                           </div>
-                                          <div class="form-group"> 
+                                          <div class="form-group">
                                             <a href="" class="confirm-btn model-show yes" data-dismiss="modal" ng-click="deleteEmployment('YIN16JNWN3B11893',delEmpId)">
                                               <i class="fa fa-check" aria-hidden="true">
                                               </i> &nbsp;Yes
                                             </a>
-                                            <a class="confirm-btn no" href="" data-dismiss="modal">  
+                                            <a class="confirm-btn no" href="" data-dismiss="modal">
                                               <i class="fa fa-times" aria-hidden="true">
                                               </i> &nbsp;No
                                             </a>
@@ -1793,7 +1794,7 @@ div#panelheight {
                                     </div>
                                   </div>
                                 </div>
-                              </div>   
+                              </div>
                               <!-- ngRepeat: employer in employmentDetails -->
                               <div ng-show="employmentDetails==null" class="ng-hide">
                                 <span style="color:red">Not Updated
@@ -1811,8 +1812,8 @@ div#panelheight {
            </div>
                     </div>
                   </div>
-                  
-                 
+
+
                   <div class="col-md-12 pd-0">
                       <div id="languagesdetails" class="panel shadownone">
                         <div class="panel-heading deatilednew ">Languages
@@ -1824,7 +1825,7 @@ div#panelheight {
                           </span>
                         </div>
                         <div class="new-body">
-                          <div class="row"> 
+                          <div class="row">
                             <div role="tabpanel">
                                 <div class="col-md-2">
                             <div class="panel" id="panelheight">
@@ -1841,11 +1842,11 @@ div#panelheight {
                           </div>
                   <div class="tab-content col-md-10">
                         <div class="tabpanel"  class="tab-pane active" id="tab">
-                
-                
+
+
                                   <form name="jobseekerslang" ng-submit="jobseekerslang.$valid &amp;&amp; saveLanguages('YIN16JNWN3B11893','98')" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
                                     <!--Loading Container Strat here-->
-                                    
+
                                     <div class="block-container2 ng-hide" ng-show="loading">
                                       <div class="img-cont">
                                         <img src="/talhire/resources/cvimages/blue-spinner.gif" width="100px">
@@ -1886,9 +1887,9 @@ div#panelheight {
                                       </div>
                                       <p class="pull-right" id="deleteLanguage" style="display:none;"><a type="button" ng-click="deleteLanguageTab($index)" class="btn btn-danger">Delete This Language</a></p>
                                      </div>
-                                 
+
                                     <!-- end ngRepeat: language in languages -->
-                                    
+
                                   </form>
                           </div>
                           <div ng-show="languageStatus=='View'" class="ng-hide">
@@ -1899,7 +1900,7 @@ div#panelheight {
                                   <tbody>
                                     <tr>
                                       <td width="25%">
-                                        <label class="ng-binding"> 
+                                        <label class="ng-binding">
                                         </label>
                                       </td>
                                       <td ng-show="language.read" class="ng-hide">
@@ -1941,18 +1942,18 @@ div#panelheight {
                       </div>
                     </div>
                     <div class="row">
-             
+
              <div class="col-md-12 text-center">
                                <button type="submit" class="btn button save margin-2" ng-click="submitted=true">Save
                                </button>
                           </div>
            </div>
-                    
+
                   </div>
               </div>
            </div>
-                  
-                 
+
+
                   <div class="col-md-12 padd-0">
                   <div id="certificationsdetails">
                       <div class="panel shadownone">
@@ -1980,7 +1981,7 @@ div#panelheight {
                                     <a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab">Certificate  {{tab.id}} </a>
                                 </li>
                       </ul>
-                      
+
                     </div>
                     <div class="col-md-2 text-center">
                       <button type="submit" class="btn button save margin-2" ng-click="addCertificateTab()">Add New
@@ -1989,11 +1990,11 @@ div#panelheight {
                   </div>
                   <div class="tab-content col-md-10">
                         <div class="tabpanel"  class="tab-pane active" id="tab">
-              
+
                                     <form name="jobseekersCrt" ng-submit="jobseekersCrt.$valid &amp;&amp; saveCertifications('YIN16JNWN3B11893','98')" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
                                       <div class="input_fields_wrapnewscer">
                                         <!-- ngRepeat: certification in certifications -->
-                                        <div class="col-md-12"> 
+                                        <div class="col-md-12">
                                         <div class="col-md-10">
                                           <div  class="col-md-12 ng-scope"> <!-- ng-repeat="certification in certifications" -->
                                             <div class="form-group col-md-5 ">
@@ -2011,19 +2012,19 @@ div#panelheight {
                                             </div>
                                             <div class="col-md-3">
                                               <div class="col-md-6">
-                                                <a ng-click="addCertification();" ng-show="certifications.length==$index+1" class=""> 
+                                                <a ng-click="addCertification();" ng-show="certifications.length==$index+1" class="">
                                                   <label class="flot-left color-tra">Add
-                                                  </label>  
+                                                  </label>
                                                   <i class="fa fa-plus add-icon icons add-fields5">
-                                                  </i>  
+                                                  </i>
                                                 </a>
                                               </div>
                                               <div class="col-md-6">
-                                                <a ng-click="removeCertification();" ng-show="certifications.length>1 &amp;&amp; certifications.length==$index+1" class="ng-hide"> 
+                                                <a ng-click="removeCertification();" ng-show="certifications.length>1 &amp;&amp; certifications.length==$index+1" class="ng-hide">
                                                   <label class="flot-left color-tra">Remove
-                                                  </label>  
+                                                  </label>
                                                   <i class="fa fa-minus  add-icon icons">
-                                                  </i>  
+                                                  </i>
                                                 </a>
                                               </div>
                                             </div>
@@ -2043,10 +2044,10 @@ div#panelheight {
                                   <tbody>
                                     <tr>
                                       <td width="25%">
-                                        <label class="ng-binding"> 
+                                        <label class="ng-binding">
                                         </label>
                                       </td>
-                                      <td class="ng-binding"> 
+                                      <td class="ng-binding">
                                       </td>
                                     </tr>
                                   </tbody>
@@ -2061,10 +2062,10 @@ div#panelheight {
                           </div>
                         </div>
                       </div>
-                      
+
                     </div>
                     <div class="row">
-             
+
              <div class="col-md-12 text-center">
                                <button type="submit" class="btn button save margin-2" ng-click="submitted=true">Save
                                </button>
@@ -2078,7 +2079,7 @@ div#panelheight {
 				<div class="col-md-12 padd-0">
                 	<div id="acheivementsdetails">
                       <div class="panel shadownone">
-                        <div class="panel-heading deatilednew ">Acheivements
+                        <div class="panel-heading deatilednew ">Achievements
                           <span > <!-- ng-show="certificationStatus=='View'" class="ng-hide" -->
                             <a href="" ng-click="editCertificates();" class="pull-right">
                               <i class="fa fa-pencil-square-o  editicon" aria-hidden="true">
@@ -2095,23 +2096,23 @@ div#panelheight {
                               </div>
                             </div>
                             <div role="tabpanel">
-                    
+
 		                	  <div class="tab-content col-md-12">
 		                        <div class="tabpanel"  class="tab-pane active" id="tab">
 		                            <form name="jobseekersCrt" ng-submit="jobseekersCrt.$valid &amp;&amp; saveCertifications('YIN16JNWN3B11893','98')" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
                                       <div class="input_fields_wrapnewscer">
                                         <!-- ngRepeat: certification in certifications -->
-                                        <div class="col-md-12"> 
+                                        <div class="col-md-12">
                                           <div  class="col-md-12 ng-scope"> <!-- ng-repeat="certification in certifications" -->
-                                              <label class="flot-left">Add Acheivements
+                                              <label class="flot-left">Add Achievements
                                               </label>
-                                              <textarea class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" cols="3" rows="3"  name="acheivements" id="acheivements" maxlength="250" required="">
+                                              <textarea ng-model="achievement.achievementName" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" cols="3" rows="3"  name="acheivements" id="acheivements" maxlength="250" required="">
                                				 </textarea>
                                               <!-- ngIf: jobseekersCrt.$submitted -->
                                             </div>
                                           </div>
                                         </div>
-                                       
+
                                         <!-- end ngRepeat: certification in certifications -->
                                     </form>
                       	        </div>
@@ -2124,10 +2125,10 @@ div#panelheight {
 	                                  <tbody>
 	                                    <tr>
 	                                      <td width="25%">
-	                                        <label class="ng-binding"> 
+	                                        <label class="ng-binding">
 	                                        </label>
 	                                      </td>
-	                                      <td class="ng-binding"> 
+	                                      <td class="ng-binding">
 	                                      </td>
 	                                    </tr>
 	                                  </tbody>
@@ -2146,12 +2147,12 @@ div#panelheight {
                                </button>
                           </div>
                       </div>
-                      
+
                     </div>
                   </div>
                   </div>
                   </div>
-				
+
                   <div class="clearfix">
                   </div>
                   <div class="new-body">
@@ -2184,51 +2185,51 @@ section.sidebar {
                 $('html, body').animate({
                     scrollTop: $("#profiledetails").offset().top - 80
                 }, 200);
-                
-              
+
+
             });
 
             $(".educationdet").click(function (){
                 $('html, body').animate({
                     scrollTop: $("#educationdetails").offset().top - 80
                 }, 200);
-                
-               
+
+
             });
 
             $(".skilldet").click(function (){
                 $('html, body').animate({
                     scrollTop: $("#skillsdetails").offset().top - 80
                 }, 200);
-                
-               
+
+
             });
 
             $(".employementhistroydet").click(function (){
                 $('html, body').animate({
                     scrollTop: $("#employementhistroydetails").offset().top - 80
                 }, 200);
-               
+
             });
 
             $(".languagesdet").click(function (){
                 $('html, body').animate({
                     scrollTop: $("#languagesdetails").offset().top - 80
                 }, 200);
-               
+
             });
 
             $(".certificationsdet").click(function (){
                 $('html, body').animate({
                     scrollTop: $("#certificationsdetails").offset().top - 80
                 }, 200);
-               
+
             });
             $(".acheivementsdet").click(function (){
                 $('html, body').animate({
                     scrollTop: $("#acheivementsdetails").offset().top - 80
                 }, 200);
-               
+
             });
         });
     </script>

@@ -50,7 +50,7 @@ app.controller('profileSettingsController', function($scope, $location, $rootSco
 	}
 
 	$scope.gotoEditResume = function(items){
-		$rootScope.resumeDetails = items;
+		$rootScope.resumeDetailsToEdit = items;
 		$location.path('/edit_profile');
 	}
 

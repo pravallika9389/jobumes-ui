@@ -7,6 +7,69 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', '$h
 	if(user == "" || user == "empty" || user == undefined){
 		$location.path('/employee-home');
 	}else {
+		if ($rootScope.resumeDetailsToEdit == undefined) {
+			$location.path('/graphical-resume');
+		}else {
+			console.log($rootScope.resumeDetailsToEdit);
+
+			$scope.personalDetails = {};
+			$scope.personalDetails.resumeTitle = $scope.resumeDetailsToEdit.details.ResumeParserData.Objectives;
+			$scope.personalDetails.expInYears = '';
+			$scope.personalDetails.expInMonths = '';
+			$scope.personalDetails.currentCTC = '';
+			$scope.personalDetails.currentCTCThousand = '';
+			$scope.personalDetails.expectedCTC = '';
+			$scope.personalDetails.expectedCTCThousand = '';
+			$scope.personalDetails.noticePeriod = '';
+			$scope.personalDetails.mobility = '';
+			$scope.personalDetails.currentLocation = $scope.resumeDetailsToEdit.details.ResumeParserData.CurrentLocation;
+			$scope.personalDetails.preferredLoc = $scope.resumeDetailsToEdit.details.ResumeParserData.PreferredLocation;
+			$scope.personalDetails.resumeTitle = '';
+			$scope.personalDetails.industry = '';
+			$scope.personalDetails.functionalArea = '';
+			$scope.personalDetails.role = '';
+			$scope.personalDetails.dobInDay = '';
+			$scope.personalDetails.dobInMonth = '';
+			$scope.personalDetails.dobInYear = '';
+			$scope.personalDetails.gender = $scope.resumeDetailsToEdit.details.ResumeParserData.Gender;
+			$scope.personalDetails.keySkills = $scope.resumeDetailsToEdit.details.ResumeParserData.Skills;
+
+			$scope.educationDetails = {};
+			$scope.educationDetails.degree = '';
+			$scope.educationDetails.specialization = '';
+			$scope.educationDetails.percentage = '';
+			$scope.educationDetails.university = '';
+			$scope.educationDetails.completedYear = '';
+			$scope.educationDetails.courseType = '';
+
+			$scope.primaryskill = {};
+			$scope.primaryskill.skillName = '';
+			$scope.primaryskill.skillExp = '';
+			$scope.primaryskill.year = '';
+			$scope.primaryskill.skillRating = '';
+
+			$scope.empBean = {};
+			$scope.empBean.employerName = '';
+			$scope.empBean.status = '';
+			$scope.empBean.designation = '';
+			$scope.empBean.startMonth = '';
+			$scope.empBean.startYear = '';
+			$scope.empBean.endMonth = '';
+			$scope.empBean.endYear = '';
+
+			$scope.language = {};
+			$scope.language.languageName = $scope.resumeDetailsToEdit.details.ResumeParserData.LanguageKnown;
+			$scope.language.read = '';
+			$scope.language.write = '';
+			$scope.language.speak = '';
+
+			$scope.certification = {};
+			$scope.certification.certificationName = $scope.resumeDetailsToEdit.details.ResumeParserData.Certification;
+			$scope.certification.certifiedOn = '';
+
+			$scope.achievement = {};
+			$scope.achievement.achievementName = $scope.resumeDetailsToEdit.details.ResumeParserData.Achievements;
+		}
 		$(".graphical_resume").addClass("active");
 		$(".graphsume").removeClass("active");
 		$(".emp_dashboard").removeClass("active");
@@ -24,32 +87,33 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', '$h
 		$("#footersection").hide();
 		$(".hideclass").hide();
 
-		$scope.getResumeDetails = function() {
+		// $scope.getResumeDetails = function() {
+		//
+		// 		var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
+		//
+		// 		var res = $http({
+		// 			method: 'GET',
+		// 			url: 'http://183.82.1.143:9060/resumes',
+		// 			headers: {'Authorization': valuesToBasic},
+		// 		});
+		//
+		// 		res.success(function(data, status, headers, config) {
+		// 			console.log(data);
+		// 			if(status >= 200 || status <300){
+		//
+		// 			}else {
+		// 				alert('Server Error');
+		// 			}
+		//
+		// 		});
+		// 		res.error(function(data, status, headers, config) {
+		// 				console.log(data);
+		// 				alert("Server Error");
+		// 		});
+		// }
 
-				var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
+		// $scope.getResumeDetails();
 
-				var res = $http({
-					method: 'GET',
-					url: 'http://183.82.1.143:9060/resumes',
-					headers: {'Authorization': valuesToBasic},
-				});
-
-				res.success(function(data, status, headers, config) {
-					console.log(data);
-					if(status >= 200 || status <300){
-
-					}else {
-						alert('Server Error');
-					}
-
-				});
-				res.error(function(data, status, headers, config) {
-						console.log(data);
-						alert("Server Error");
-				});
-		}
-
-		$scope.getResumeDetails();
 	}
 
 		/** holds tabs, we will perform repeat on this **/

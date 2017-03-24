@@ -926,7 +926,7 @@ li.up .avatar {
   <div class="row">
     <section class="content-header">
       <h1>Graphsume</h1>
-      <a class="btn button editpadding pull-right" href="#edit_profile"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+      <a class="btn button editpadding pull-right" ng-click="gotoEditResume(defaultResume)"> <i class="fa fa-pencil" aria-hidden="true"></i> Edit
 	  </a>
     </section>
     <!--- Content start here-->
@@ -936,13 +936,14 @@ li.up .avatar {
           <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
                <a href="#">
                  <center>
-                   <img src="resource/css/img/Employer/dinesh.jpg" class="img-responsive img-circle" alt="">
+                   <!-- <img src="resource/css/img/Employer/dinesh.jpg" class="img-responsive img-circle" alt=""> -->
+                   <img src="resource/css/img/default_user.png" class="img-circle" style="max-height:160px;" alt="User Image">
                  </center>
                </a>
           </div>
           <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12">
 	          <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" align="center">
-                <h2 style="font-weight: bold;color: #fff;"> JOHN ANDERSON
+                <h2 style="font-weight: bold;color: #fff;"> {{defaultResume.details.ResumeParserData.FullName}}
                 </h2>
 	          </div>
               <div class="col-md-12 pd-0 col-sm-12 col-xs-12 pd-lg-12">
@@ -951,7 +952,7 @@ li.up .avatar {
 	              		<i class="fa fa-birthday-cake " aria-hidden="true">
 		                </i>
 		                <label>
-		                  <b class="ng-binding">5/6/1992
+		                  <b class="ng-binding">{{defaultResume.details.ResumeParserData.DateOfBirth}}
 		                  </b>
 		                </label>
 	                </li>
@@ -959,7 +960,7 @@ li.up .avatar {
 	                	<i class="fa fa-phone" aria-hidden="true"></i>
 	                	</i>
 	                	<label>
-		                  <b class="ng-binding">9876543210
+		                  <b class="ng-binding">{{defaultResume.details.ResumeParserData.Phone}}
 		                  </b>
 		                </label>
 	                </li>
@@ -967,7 +968,7 @@ li.up .avatar {
 	                	<i class="fa fa-envelope-o" aria-hidden="true"></i>
 		                </i>
 		                <label>
-		                  <b class="ng-binding">testing@gmail.com
+		                  <b class="ng-binding">{{defaultResume.details.ResumeParserData.Email}}
 		                  </b>
 		                </label>
 	                </li>
@@ -975,14 +976,14 @@ li.up .avatar {
 	                	<i class="fa fa-home" aria-hidden="true"></i>
 		                </i>
 		                <label>
-		                  <b class="ng-binding">350 Fifth Avenue, 34th floor. New York, NY 10118-3299
+		                  <b class="ng-binding">{{defaultResume.details.ResumeParserData.FormattedAddress}}
 		                  </b>
 		                </label>
 	                </li>
               	</ul>
               	<ul class="list-inline" style="text-align:center;color:#fff;">
               		<li>
-              			An adaptable, conscientious, enthusiastic, and self-motivated individual with exposure to a wide range of areas. Possessing excellent communication skills combined with the ability to relate well to people at all levels. Now seeking next challenging and rewarding opportunity within a successful organization
+              			{{defaultResume.details.ResumeParserData.ExecutiveSummary}}
               		</li>
               	</ul>
               </div>
@@ -1010,12 +1011,13 @@ li.up .avatar {
 		          <div class="new-body headline-sty">
 		          	 <div class="row">
 		          	 	<ul>
-		          	 	<li>
+                    {{defaultResume.details.ResumeParserData.Qualification}}
+		          	 	<!-- <li>
 		          	 	<b>2016 ( BTECH ) </b>- Now seeking next challenging and rewarding opportunity within a successful organization.
 		          	 	</li>
 		          	 	<li>
 		          	 	<b>2012 ( DIPLOMA ) </b>- Now seeking next challenging and rewarding opportunity within a successful organization.
-		          	 	</li>
+		          	 	</li> -->
 		          	 	</ul>
 		          	 </div>
 		          	 <!-- <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
@@ -1312,9 +1314,13 @@ li.up .avatar {
           <div class="new-body headline-sty">
             <div class="ng-binding">
             <ul>
-             <li> Microsoft Certificate in ASP.net and C# .Net in 2015. </li>
+              {{defaultResume.details.ResumeParserData.Certification}}
+             <!-- <li> Microsoft Certificate in ASP.net and C# .Net in 2015. </li>
              <li> Earned a promotion from an entry-level position to lead specialist for my department. </li>
-             <li> Improved office efficiency by updating database. </li>
+             <li> Improved office efficiency by updating database. </li> -->
+               <div ng-if="defaultResume.details.ResumeParserData.Certification == ''">
+                 <p>No Certifications Added</p>
+               </div>
             </ul>
             </div>
           </div>
@@ -1328,10 +1334,14 @@ li.up .avatar {
           <div class="new-body headline-sty">
             <div class="ng-binding">
             <ul>
-             <li> Successfully completed major systems update within a tight one-month deadline. </li>
+              {{defaultResume.details.ResumeParserData.Achievements}}
+             <!-- <li> Successfully completed major systems update within a tight one-month deadline. </li>
              <li> Efficiently resolved many client issues, often earning praise from clients for my efforts. </li>
              <li> Earned a promotion from an entry-level position to lead specialist for my department. </li>
-             <li> Improved office efficiency by updating database. </li>
+             <li> Improved office efficiency by updating database. </li> -->
+               <div ng-if="defaultResume.details.ResumeParserData.Achievements == ''">
+                 <p>No Achievements Added</p>
+               </div>
             </ul>
             </div>
           </div>
