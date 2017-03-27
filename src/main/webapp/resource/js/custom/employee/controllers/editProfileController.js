@@ -33,13 +33,15 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', '$h
 			$scope.personalDetails.dobInYear = '';
 			$scope.personalDetails.gender = $scope.resumeDetailsToEdit.details.ResumeParserData.Gender;
 			$scope.personalDetails.keySkills = $scope.resumeDetailsToEdit.details.ResumeParserData.Skills;
+			$scope.personalDetails.experience = $scope.resumeDetailsToEdit.details.ResumeParserData.Experience;
+			$scope.personalDetails.executiveSummary = $scope.resumeDetailsToEdit.details.ResumeParserData.ExecutiveSummary;
 
 			$scope.educationDetails = {};
-			$scope.educationDetails.degree = '';
+			$scope.educationDetails.degree = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].Degree;
 			$scope.educationDetails.specialization = '';
-			$scope.educationDetails.percentage = '';
+			$scope.educationDetails.percentage = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].Aggregate.Value;
 			$scope.educationDetails.university = '';
-			$scope.educationDetails.completedYear = '';
+			$scope.educationDetails.completedYear = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].EndDate;
 			$scope.educationDetails.courseType = '';
 
 			$scope.primaryskill = {};
