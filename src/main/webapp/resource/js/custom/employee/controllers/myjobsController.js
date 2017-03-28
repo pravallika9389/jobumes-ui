@@ -13,8 +13,6 @@ app.controller('myJobsController', function($scope, $location, $rootScope, $http
     $(".detailed_resume").removeClass("active");
     $(".my_documents").removeClass("active");
 
-		$rootScope.userobj = accessData;
-		$rootScope.returnData = returnData;
 		$("#employeeheader").show();
 		$("#signoutheader").show();
 		$("#homeheader").hide();
@@ -22,6 +20,31 @@ app.controller('myJobsController', function($scope, $location, $rootScope, $http
 		$("#signinheader").hide();
 		$("#footersection").hide();
 		$(".hideclass").hide();
+
+		$rootScope.userobj = accessData;
+		$rootScope.returnData = returnData;
+
+		var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
+		
+		var res = $http({
+			method: 'GET',
+			url: 'http://183.82.1.143:9060/feedbacks',
+			headers: {'Authorization': valuesToBasic}
+		});
+
+		res.success(function(data, status, headers, config) {
+			console.log(data);
+			if(status >= 200 || status <300){
+				$scope.getFeedbacks = data
+			}else {
+				alert('Server Error in Retriving Feedbacks');
+			}
+
+		});
+		res.error(function(data, status, headers, config) {
+				console.log(data);
+				alert("Server Error in Retriving Feedbacks");
+		});
 	}
 
 	$scope.feedback = {};

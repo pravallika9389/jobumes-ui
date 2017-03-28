@@ -1676,7 +1676,16 @@ ont-family: inherit;
                 <div class="panel-heading">Received Feedback
                 </div>
                 <div class="new-body">
-                    <div class="locationcss">
+                  <div class="locationcss" ng-repeat="items in getFeedbacks">
+                    <h3><b>{{items.name}}</b></h3>
+                    <p style="font-style: italic;">
+                      "{{items.comment}}"
+                    </p>
+                    <p>
+                    <i class="fa fa-calendar" aria-hidden="true">  <span class="text-muted">{{items.timestamp | limitTo: '10'}}</span></i> , From {{items.name}} - Email: {{items.emailid}}
+                    </p>
+                  </div>
+                    <!-- <div class="locationcss">
                     	<h3><b>Harish</b></h3>
                     	<p style="font-style: italic;">
                     		"Its also important to think about what skills you need to receive feedback, especially when it is something you dont want to hear, and not least because not everyone is skilled at giving feedback."
@@ -1693,7 +1702,7 @@ ont-family: inherit;
                     	<p>
                     	<i class="fa fa-calendar" aria-hidden="true">  <span class="text-muted">06/02/2017</span></i> , Gowtham worked with dinesh company as web designer.
                     	</p>
-                    </div>
+                    </div> -->
                 </div>
               </div>
 
