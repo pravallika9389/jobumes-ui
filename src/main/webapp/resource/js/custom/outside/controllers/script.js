@@ -321,6 +321,12 @@ app.run(["$rootScope", "$window", "$location" , function($rootScope, $window, $l
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
+   (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+
    // ...
    app.factory('facebookService', function($q) {
        return {
@@ -336,8 +342,8 @@ app.run(["$rootScope", "$window", "$location" , function($rootScope, $window, $l
                    }
                });
               //  to get accessToken
-              //  var accessToken = FB.getAuthResponse();
-              //  console.log(accessToken);
+               var accessToken = FB.getAuthResponse();
+               console.log(accessToken);
                return deferred.promise;
            }
        }
