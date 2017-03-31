@@ -1,4 +1,4 @@
-app.controller('myVideoController', function($scope, $location, $rootScope) {
+app.controller('myVideoController', function($scope, $location, $rootScope, putFileUpload) {
 	//$scope.message = 'Contact us! JK. This is just a demo.';
 	var accessData = angular.fromJson(window.localStorage['userObj']);
 	var returnData = angular.fromJson(window.localStorage['userDetailsObj']);
@@ -31,5 +31,24 @@ app.controller('myVideoController', function($scope, $location, $rootScope) {
 		}else {
 			$scope.videoLink = 'https://www.youtube.com/embed/ggb9uhFV8NY';
 		}
+
+		$scope.uploadVideo = function(){
+	     var file = $scope.myVideo;
+
+	     console.log('file is ' );
+	     console.dir(file);
+
+			 if (file.name != "" || file.name != undefined) {
+			 	$scope.profilePicPath = file.name;
+			 }
+
+			 if (file == '' || file == undefined) {
+			 	alert("Please select a Video");
+			}else {
+				var uploadUrl = "http://183.82.1.143:9060/profiles/videos";
+	 		 	var successMsg = 'Video Uploaded Successfully';
+				putFileUpload.uploadFileToUrl(file, uploadUrl, successMsg);
+			}
+	  };
 	}
 });

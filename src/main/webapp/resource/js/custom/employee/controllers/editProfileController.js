@@ -1,5 +1,5 @@
-app.controller('editProfileController',['$scope', '$location', '$rootScope', '$http',
-			function($scope, $location, $rootScope, $http) {
+app.controller('editProfileController',['$scope', '$location', '$rootScope', '$http', 'putFileUpload',
+			function($scope, $location, $rootScope, $http, putFileUpload) {
 	//$scope.message = 'Contact us! JK. This is just a demo.';
 	var accessData = angular.fromJson(window.localStorage['userObj']);
 	var returnData = angular.fromJson(window.localStorage['userDetailsObj']);
@@ -37,18 +37,35 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', '$h
 			$scope.personalDetails.executiveSummary = $scope.resumeDetailsToEdit.details.ResumeParserData.ExecutiveSummary;
 
 			$scope.educationDetails = {};
-			$scope.educationDetails.degree = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].Degree;
+			if ($scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit.length > 0) {
+				$scope.educationDetails.degree = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].Degree;
+				$scope.educationDetails.completedYear = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].EndDate;
+
+				if ($scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].Aggregate != null ||
+						$scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].Aggregate != undefined) {
+					$scope.educationDetails.percentage = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].Aggregate.Value;
+				}
+
+			}
 			$scope.educationDetails.specialization = '';
-			$scope.educationDetails.percentage = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].Aggregate.Value;
 			$scope.educationDetails.university = '';
-			$scope.educationDetails.completedYear = $scope.resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit[0].EndDate;
 			$scope.educationDetails.courseType = '';
 
 			$scope.primaryskill = {};
-			$scope.primaryskill.skillName = '';
+			$scope.primaryskill.skillName;
 			$scope.primaryskill.skillExp = '';
 			$scope.primaryskill.year = '';
 			$scope.primaryskill.skillRating = '';
+
+			// click checkbox to edit
+			// $('#editAnchorBtn').click(function(){
+			// 	console.log("clicked");
+			// 	 $('#editTextBox').trigger('click');
+			// });
+
+			$scope.saveSkills = function(){
+				// console.log($scope.primaryskill.skillName[2]);
+			}
 
 			$scope.empBean = {};
 			$scope.empBean.employerName = '';
@@ -88,6 +105,31 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', '$h
 		$("#signinheader").hide();
 		$("#footersection").hide();
 		$(".hideclass").hide();
+
+		$scope.profilePicPath = "http://183.82.1.143:9058/jobumes/resource/css/img/default_user.png";
+		// click file button
+		$('#OpenImgUpload').click(function(){
+			 $('#imgupload').trigger('click');
+		});
+
+		$scope.uploadProfilePic = function(){
+	     var file = $scope.profilePic;
+
+	     console.log('file is ' );
+	     console.dir(file);
+
+			 if (file.name != "" || file.name != undefined) {
+			 	$scope.profilePicPath = file.name;
+			 }
+
+			 if (file == '' || file == undefined) {
+			 	alert("Please select an Image");
+			}else {
+				var uploadUrl = "http://183.82.1.143:9060/profiles/images";
+	 		 	var successMsg = 'Image Uploaded Successfully';
+				putFileUpload.uploadFileToUrl(file, uploadUrl, successMsg);
+			}
+	  };
 
 		// $scope.getResumeDetails = function() {
 		//

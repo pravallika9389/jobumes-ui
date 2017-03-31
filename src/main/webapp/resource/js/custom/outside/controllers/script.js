@@ -398,3 +398,37 @@ app.run(["$rootScope", "$window", "$location" , function($rootScope, $window, $l
    		 });
    	}
    }]);
+
+   app.service('putFileUpload', ['$http', function ($http) {
+
+    var accessData = angular.fromJson(window.localStorage['userObj']);
+   	var returnData = angular.fromJson(window.localStorage['userDetailsObj']);
+   	var user = localStorage.getItem('isCheckUser');
+
+    var accessData = angular.fromJson(window.localStorage['userObj']);
+
+   	this.uploadFileToUrl = function(file, uploadUrl, successMsg){
+      // console.log(uploadUrl + ", " +successMsg );
+   	// 	uploadUrl = 'http://183.82.1.143:9060/resumes';
+   		 var fd = new FormData();
+   		 fd.append('file', file);
+   		//  user details
+   		 var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);
+
+   		 $http.put(uploadUrl, fd, {
+   				transformRequest: angular.identity,
+   				headers: {
+   					'Authorization': valuesToBasic,
+   					'Content-Type' : undefined
+   				}
+   		 })
+
+   		 .success(function(){
+   			 alert(successMsg);
+   		 })
+
+   		 .error(function(){
+   			 alert("Error Occured");
+   		 });
+   	}
+   }]);

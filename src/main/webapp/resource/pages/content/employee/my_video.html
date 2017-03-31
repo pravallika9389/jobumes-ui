@@ -20,7 +20,7 @@
                   <iframe ng-src='{{videoLink}}' frameborder='0' allowfullscreen></iframe>
                 </div>
               </div>
-              <form name="uploadForm" ng-submit="uploadDocument(doctypeId,'98','YIN16JNWN3B11893')" class="ng-pristine ng-invalid ng-invalid-required">
+              <form name="uploadForm" class="ng-pristine ng-invalid ng-invalid-required">
                 <div class="form-group col-md-12">
                   <br>
                   <div class="form-group col-md-6 ">
@@ -29,7 +29,7 @@
                   </div>
                   <div class="form-group col-md-6 ">
                     <label for="title">Video:</label>
-                    <input type="file" name="keyword" class="form-control">
+                    <input type="file" file-model="myVideo" name="myVideo" class="form-control">
                   </div>
                    <div class="th-error ng-hide" ng-show="submitted &amp;&amp; uploadForm.doctype.$error.required">This field is required
                   </div>
@@ -48,7 +48,7 @@
                     </div>
                     <br>
                     <div class="form-group col-md-12 ">
-                      <button class="btn button save margin-2" type="submit">Upload</button>
+                      <button class="btn button save margin-2" type="submit" ng-click="uploadVideo()">Upload</button>
                     </div>
               </form>
               <div class="col-sm-12 ng-scope" style="overflow-x:auto; display: none;">

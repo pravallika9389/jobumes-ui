@@ -256,11 +256,13 @@ div#panelheight {
                           <form name="jobseekersOther" ng-submit="jobseekersOther.$valid &amp;&amp; savePersonalData('98')" novalidate="" class="ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-submitted">
                             <div class="row">
                             <div class="form-group col-md-2">
-                            <p style="border-style: dashed;height:100px;">
-
-                            </p>
-                            <button class="btn button save margin-2" type="submit">Upload
-                        	</button>
+                              <p style="border-style: dashed; width: 100px; height:100px;">
+                                <img ng-src="{{profilePicPath}}" style="width: 94px;" id="OpenImgUpload">
+                                <input type="file" id="imgupload" file-model="profilePic" accept=".jpg, .png" name="profilePic">
+                              </p>
+                              <button class="btn button save margin-2" ng-click="uploadProfilePic()">
+                                Upload
+                          	  </button>
                             </div>
 
                             <div class="form-group col-md-10">
@@ -1415,26 +1417,26 @@ div#panelheight {
                           <form name="jobseekerskills" ng-submit="jobseekerskills.$valid &amp;&amp; saveSkills('YIN16JNWN3B11893','98')" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
                             <br>
 
-                            <!-- <div class="col-md-12 input_fields_wrapnew" ng-repeat="items in resumeDetailsToEdit.details.ResumeParserData.SkillKeywords.SkillSet"> -->
-                            <div class="col-md-12 input_fields_wrapnew">
+                            <div class="col-md-12 input_fields_wrapnew" ng-repeat="items in resumeDetailsToEdit.details.ResumeParserData.SkillKeywords.SkillSet">
+                            <!-- <div class="col-md-12 input_fields_wrapnew"> -->
                               <div  class="ng-scope">
                                 <div class="col-md-12 padd-0">
-                                  <div class="form-group col-md-2 ">
+                                  <div class="form-group col-md-4">
                                     <label class="flot-left">Skill Name
                                     </label>
-                                    <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName" id="pskillName1" name="pskillName1" required="">
-                                    <!-- ngIf: jobseekerskills.$submitted -->
+                                    <!-- <input type="text" ng-value="items.Skill" ng-disabled="!(editSkillRow[$index])" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required=""> -->
+                                    <input type="text" ng-value="items.Skill" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required="">
                                   </div>
                                   <div class="form-group col-md-2">
                                     <label class="flot-left">Experience
                                     </label>
-                                    <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex : 4 (or) 4.6" ng-model="primaryskill.skillExp" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillexp1" name="pskillexp1" required="">
+                                    <input type="text" ng-value="items.ExperienceInMonths" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex : 4 (or) 4.6" ng-model="primaryskill.skillExp" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillexp1" name="pskillexp1" required="">
                                     <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
                                   <div class="form-group col-md-2">
                                     <label class="flot-left">Last Used
                                     </label>
-                                    <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Year" ng-model="primaryskill.year" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillyear" name="pskillyear" required="">
+                                    <input type="text" ng-value="items.LastUsed" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Year" ng-model="primaryskill.year" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillyear" name="pskillyear" required="">
                                     <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
                                   <div class="form-group col-md-2">
@@ -1454,9 +1456,8 @@ div#panelheight {
                                       <option value="5">5
                                       </option>
                                     </select>
-                                    <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
-                                  <div class="col-md-4 text-center">
+                                  <!-- <div class="col-md-4 text-center">
                                     <div class="col-md-6">
                                       <a ng-click="addNewprimaryskill();">
                                         <label class="flot-left">Add
@@ -1475,13 +1476,22 @@ div#panelheight {
                                         </i>
                                       </a>
                                     </div>
-                                  </div>
+                                  </div> -->
+                                  <!-- <div class="col-md-4 text-center">
+                                    <div class="col-md-6"></div>
+                                    <div class="col-md-6">
+                                      <button class="btn button editpadding pull-right" id="editAnchorBtn">
+                                        Edit
+                                      </button>
+                                       <input type="checkbox" style="display: none;" id="editTextBox" class="btn button editpadding pull-right" ng-model="editSkillRow[$index]">
+                                    </div>
+                                  </div> -->
                                 </div>
                               </div>
                               <!-- end ngRepeat: primaryskill in primaryskills -->
                             </div>
                             <div class="text-center">
-                              <button type="submit" class="btn button save margin-2" ng-click="submitted=true">Save
+                              <button type="submit" class="btn button save margin-2" ng-click="saveSkills()">Save
                               </button>
                             </div>
                           </form>
