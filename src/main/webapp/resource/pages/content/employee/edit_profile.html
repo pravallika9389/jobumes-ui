@@ -1314,17 +1314,20 @@ div#panelheight {
                           <div class="col-md-2">
                             <div class="panel" id="panelheight">
                               <ul class="nav nav-pills nav-stacked" role="tablist">
-                         <li role="presentation" ng-repeat="tab in tabs" ng-click="selectTab($index)" ng-class="{'active':selectedTab == $index}">
+                                <li role="presentation" ng-repeat="tab in resumeDetailsToEdit.details.ResumeParserData.SegregatedQualification.EducationSplit" ng-click="selectTab($index)" ng-class="{'active':selectedTab == $index}">
+                                   <a ng-click="gotoEditEduDetails(tab)" data-target="#tab" aria-controls="home" role="tab" data-toggle="tab">{{tab.Degree}} </a>
+                               </li>
+                                <!-- <li role="presentation" ng-repeat="tab in tabs" ng-click="selectTab($index)" ng-class="{'active':selectedTab == $index}">
                                     <a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab">Education {{tab.id}} </a>
-                                </li>
+                                </li> -->
                                 <li  role="presentation">
                                   <a data-target="#tab" aria-controls="home" role="tab" data-toggle="tab"></a>
                                 </li>
                       </ul>
                     </div>
                      <div class="col-md-2 text-center">
-                      <button type="submit" class="btn button save margin-2" ng-click="addTab()">Add New
-                                </button>
+                      <!-- <button type="submit" class="btn button save margin-2" ng-click="addTab()">Add New
+                                </button> -->
                              </div>
                   </div>
                   <div class="tab-content col-md-10 edumobheight">
@@ -1395,7 +1398,7 @@ div#panelheight {
                 </div>
                 <div class="col-md-12 pd-0">
                   <div id="skillsdetails">
-                    <div class="panel shadownone">
+                    <div class="panel shadownone" style="width: 100%; float: left;">
                       <div class="panel-heading deatilednew ">
                         Skills
                         <span > <!-- ng-show="skillStatus=='View'" class="ng-hide" -->
@@ -1416,32 +1419,48 @@ div#panelheight {
                           <!--Loading Container End here-->
                           <form name="jobseekerskills" ng-submit="jobseekerskills.$valid &amp;&amp; saveSkills('YIN16JNWN3B11893','98')" novalidate="" class="ng-pristine ng-invalid ng-invalid-required">
                             <br>
-
-                            <div class="col-md-12 input_fields_wrapnew" ng-repeat="items in resumeDetailsToEdit.details.ResumeParserData.SkillKeywords.SkillSet">
-                            <!-- <div class="col-md-12 input_fields_wrapnew"> -->
+                            <div class="col-md-12 input_fields_wrapnew">
                               <div  class="ng-scope">
                                 <div class="col-md-12 padd-0">
-                                  <div class="form-group col-md-4">
+                                  <div class="form-group col-md-3">
                                     <label class="flot-left">Skill Name
                                     </label>
-                                    <!-- <input type="text" ng-value="items.Skill" ng-disabled="!(editSkillRow[$index])" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required=""> -->
-                                    <input type="text" ng-value="items.Skill" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required="">
                                   </div>
                                   <div class="form-group col-md-2">
                                     <label class="flot-left">Experience
                                     </label>
-                                    <input type="text" ng-value="items.ExperienceInMonths" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex : 4 (or) 4.6" ng-model="primaryskill.skillExp" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillexp1" name="pskillexp1" required="">
-                                    <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
                                   <div class="form-group col-md-2">
                                     <label class="flot-left">Last Used
                                     </label>
-                                    <input type="text" ng-value="items.LastUsed" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Year" ng-model="primaryskill.year" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillyear" name="pskillyear" required="">
-                                    <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
                                   <div class="form-group col-md-2">
                                     <label class="flot-left">Rating
                                     </label>
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <label class="flot-left">Remove
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            <div class="col-md-12 input_fields_wrapnew" ng-repeat="items in resumeDetailsToEdit.details.ResumeParserData.SkillKeywords.SkillSet">
+                            <!-- <div class="col-md-12 input_fields_wrapnew"> -->
+                              <div  class="ng-scope">
+                                <div class="col-md-12 padd-0">
+                                  <div class="form-group col-md-3">
+                                    <!-- <input type="text" ng-value="items.Skill" ng-disabled="!(editSkillRow[$index])" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required=""> -->
+                                    <input type="text" ng-value="items.Skill" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required="">
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <input type="text" ng-value="items.ExperienceInMonths" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex : 4 (or) 4.6" ng-model="primaryskill.skillExp" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillexp1" name="pskillexp1" required="">
+                                    <!-- ngIf: jobseekerskills.$submitted -->
+                                  </div>
+                                  <div class="form-group col-md-2">
+                                    <input type="text" ng-value="items.LastUsed" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Year" ng-model="primaryskill.year" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillyear" name="pskillyear" required="">
+                                    <!-- ngIf: jobseekerskills.$submitted -->
+                                  </div>
+                                  <div class="form-group col-md-2">
                                     <select class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="primaryskill.skillRating" id="pskillRating1" name="pskillRating1" required="">
                                       <option value="">Select One
                                       </option>
@@ -1457,8 +1476,8 @@ div#panelheight {
                                       </option>
                                     </select>
                                   </div>
-                                  <!-- <div class="col-md-4 text-center">
-                                    <div class="col-md-6">
+                                  <div class="col-md-2 text-center">
+                                    <!-- <div class="col-md-6">
                                       <a ng-click="addNewprimaryskill();">
                                         <label class="flot-left">Add
                                         </label>
@@ -1466,17 +1485,17 @@ div#panelheight {
                                         <i class="fa fa-plus addicon add-icon icons add-fields2">
                                         </i>
                                       </a>
-                                    </div>
+                                    </div> -->
                                     <div class="col-md-6">
                                       <a ng-click="removePrimaryskill();">
-                                        <label class="flot-left ">Remove
-                                        </label>
+                                        <!-- <label class="flot-left ">Remove
+                                        </label> -->
                                         <br>
                                         <i class="fa fa-minus  add-icon icons addicon">
                                         </i>
                                       </a>
                                     </div>
-                                  </div> -->
+                                  </div>
                                   <!-- <div class="col-md-4 text-center">
                                     <div class="col-md-6"></div>
                                     <div class="col-md-6">

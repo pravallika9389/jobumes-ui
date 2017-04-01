@@ -34,6 +34,9 @@ app.controller('graphicalResumeController',['$scope', '$location', '$rootScope',
 					headers: {'Authorization': valuesToBasic},
 				});
 
+				$scope.hideGraph = false;
+				$scope.showNoGraph = false;
+
 				res.success(function(data, status, headers, config) {
 					console.log(data);
 					if(status >= 200 || status <300){
@@ -45,6 +48,54 @@ app.controller('graphicalResumeController',['$scope', '$location', '$rootScope',
 						// $scope.profileDetails = profileDetails;
 						$scope.defaultResume = data.resumes[0];
 						console.log(data.resumes[0]);
+						var arrEdu = $scope.defaultResume.details.ResumeParserData.SegregatedExperience.WorkHistory;
+						var eduSplitArr = [];
+						var objEdu = {};
+						var startDate, endDate;
+						arrEdu.forEach(function(element, i){
+							if (element.StartDate == null || element.StartDate == undefined ||
+									element.EndDate == null || element.EndDate == undefined) {
+								$scope.hideGraph = false;
+								$scope.showNoGraph = true;
+							}else {
+								$scope.hideGraph = true;
+								$scope.showNoGraph = false;
+								objEdu = {};
+								$scope.convertDate = function(dateTo) {
+									var dateRet;
+									var parts = dateTo.split('/');
+									var datejson = {
+									  "year": parts[2],
+									  "month":parts[1], "day": parts[0]
+									}
+									// console.log(datejson);
+									dateRet = datejson.month + '/' + datejson.day + '/' + datejson.year;
+									console.log(dateRet);
+									return dateRet;
+								}
+								startDate = $scope.convertDate(element.StartDate);
+								endDate = $scope.convertDate(element.EndDate);
+								var empAdd = element.Employer +'<br>'+ element.JobLocation.EmployerCountry + '<br>' + element.JobLocation.EmployerCountry;
+								objEdu = {"id": i+1, "content": empAdd, "start": startDate, "end": endDate};
+								eduSplitArr.push(objEdu);
+								console.log(objEdu);
+							}
+						});
+
+						// DOM element where the Timeline will be attached
+					  var container = document.getElementById('visualization');
+
+					  // Create a DataSet (allows two way data-binding)
+						var items = new vis.DataSet(eduSplitArr);
+						console.log(items);
+
+					  // Configuration for the Timeline
+					  var options = {};
+
+					  // Create a Timeline
+					  var timeline = new vis.Timeline(container, items, options);
+
+						console.log(eduSplitArr);
 					}else {
 						alert('Server Error');
 					}

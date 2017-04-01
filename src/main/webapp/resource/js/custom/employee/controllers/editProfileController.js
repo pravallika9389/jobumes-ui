@@ -131,6 +131,15 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', '$h
 			}
 	  };
 
+		// onchange click on education details
+		$scope.gotoEditEduDetails = function(item) {
+			// console.log(item);
+			$scope.educationDetails.degree = item.Degree;
+			$scope.educationDetails.completedYear = item.EndDate;
+			$scope.educationDetails.percentage = item.Aggregate;
+			$scope.educationDetails.university = item.Institution.Name;
+		}
+
 		// $scope.getResumeDetails = function() {
 		//
 		// 		var valuesToBasic = 'Basic ' + btoa(accessData.userName + ':' + accessData.pass);

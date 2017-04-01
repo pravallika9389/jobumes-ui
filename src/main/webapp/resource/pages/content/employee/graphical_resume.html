@@ -1011,7 +1011,10 @@ li.up .avatar {
 		          <div class="new-body headline-sty">
 		          	 <div class="row">
 		          	 	<ul>
-                    {{defaultResume.details.ResumeParserData.Qualification}}
+                    <!-- {{defaultResume.details.ResumeParserData.Qualification}} -->
+                    <li ng-repeat="items in defaultResume.details.ResumeParserData.SegregatedQualification.EducationSplit">
+  		          	 	     <b>{{items.EndDate | limitTo: '4' : '6'}} </b>- {{items.Degree}}
+  		          	 	</li>
 		          	 	<!-- <li>
 		          	 	<b>2016 ( BTECH ) </b>- Now seeking next challenging and rewarding opportunity within a successful organization.
 		          	 	</li>
@@ -1165,7 +1168,8 @@ li.up .avatar {
 		          <div class="panel-heading"><i class="fa fa-suitcase" aria-hidden="true"></i> Work Experience
 		          </div>
 		          <div class="new-body headline-sty">
-			    	<div id="visualization"></div>
+			    	<div id="visualization" ng-hide="!hideGraph"></div>
+            <div ng-hide="!showNoGraph" style="padding-left: 5%;"><p>No Experience Added</p></div>
 				</div>
 			</div>
 		</div>
@@ -1374,19 +1378,19 @@ $(document).ready(function() {
 </script>
 
 <script type="text/javascript">
-  // DOM element where the Timeline will be attached
-  var container = document.getElementById('visualization');
-
-  // Create a DataSet (allows two way data-binding)
-  var items = new vis.DataSet([
-    {id: 1, content: 'Junior Developer<br> CTS <br> Chennai', start: '2004-04-25', end: '2007-04-25'},
-    {id: 2, content: 'Web Designer<br> Infosys<br> Chennai', start: '2007-09-02', end: '2012-06-21'},
-    {id: 3, content: 'Web Developer<br>Tcs<br> Bangalore', start: '2012-07-27', end: '2017-01-20'}
-  ]);
-
-  // Configuration for the Timeline
-  var options = {};
-
-  // Create a Timeline
-  var timeline = new vis.Timeline(container, items, options);
+  // // DOM element where the Timeline will be attached
+  // var container = document.getElementById('visualization');
+  //
+  // // Create a DataSet (allows two way data-binding)
+  // var items = new vis.DataSet([
+  //   {id: 1, content: 'Junior Developer<br> CTS <br> Chennai', start: '2004-04-25', end: '2007-04-25'},
+  //   {id: 2, content: 'Web Designer<br> Infosys<br> Chennai', start: '2007-09-02', end: '2012-06-21'},
+  //   {id: 3, content: 'Web Developer<br>Tcs<br> Bangalore', start: '2012-07-27', end: '2017-01-20'}
+  // ]);
+  //
+  // // Configuration for the Timeline
+  // var options = {};
+  //
+  // // Create a Timeline
+  // var timeline = new vis.Timeline(container, items, options);
 </script>
