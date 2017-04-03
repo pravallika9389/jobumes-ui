@@ -1444,20 +1444,20 @@ div#panelheight {
                                   </div>
                                 </div>
                               </div>
-                            <div class="col-md-12 input_fields_wrapnew" ng-repeat="items in resumeDetailsToEdit.details.ResumeParserData.SkillKeywords.SkillSet">
+                            <div class="col-md-12 input_fields_wrapnew" ng-repeat="items in repeatSkillSets">
                             <!-- <div class="col-md-12 input_fields_wrapnew"> -->
                               <div  class="ng-scope">
                                 <div class="col-md-12 padd-0">
                                   <div class="form-group col-md-3">
                                     <!-- <input type="text" ng-value="items.Skill" ng-disabled="!(editSkillRow[$index])" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required=""> -->
-                                    <input type="text" ng-value="items.Skill" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required="">
+                                    <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex:Java" ng-model="primaryskill.skillName[$index]" id="pskillName1" name="pskillName1" required="">
                                   </div>
                                   <div class="form-group col-md-2">
-                                    <input type="text" ng-value="items.ExperienceInMonths" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex : 4 (or) 4.6" ng-model="primaryskill.skillExp" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillexp1" name="pskillexp1" required="">
+                                    <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Ex : 4 (or) 4.6" ng-model="primaryskill.skillExp[$index]" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillexp1" name="pskillexp1" required="">
                                     <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
                                   <div class="form-group col-md-2">
-                                    <input type="text" ng-value="items.LastUsed" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Year" ng-model="primaryskill.year" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillyear" name="pskillyear" required="">
+                                    <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" placeholder="Year" ng-model="primaryskill.year[$index]" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57 || event.charCode == 46" id="pskillyear" name="pskillyear" required="">
                                     <!-- ngIf: jobseekerskills.$submitted -->
                                   </div>
                                   <div class="form-group col-md-2">
@@ -1486,8 +1486,8 @@ div#panelheight {
                                         </i>
                                       </a>
                                     </div> -->
-                                    <div class="col-md-6">
-                                      <a ng-click="removePrimaryskill();">
+                                    <div class="col-md-6" style="margin: -22px 0 25px 0;">
+                                      <a ng-click="removePrimaryskill($index);">
                                         <!-- <label class="flot-left ">Remove
                                         </label> -->
                                         <br>

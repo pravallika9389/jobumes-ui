@@ -52,10 +52,17 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', '$h
 			$scope.educationDetails.courseType = '';
 
 			$scope.primaryskill = {};
-			$scope.primaryskill.skillName;
-			$scope.primaryskill.skillExp = '';
-			$scope.primaryskill.year = '';
+			$scope.primaryskill.skillName = [];
+			$scope.primaryskill.skillExp = [];
+			$scope.primaryskill.year = [];
 			$scope.primaryskill.skillRating = '';
+
+			$scope.repeatSkillSets = $scope.resumeDetailsToEdit.details.ResumeParserData.SkillKeywords.SkillSet;
+			$scope.repeatSkillSets.forEach(function(element, i) {
+				$scope.primaryskill.skillName.push(element.Skill);
+				$scope.primaryskill.skillExp.push(element.ExperienceInMonths);
+				$scope.primaryskill.year.push(element.LastUsed);
+			})
 
 			// click checkbox to edit
 			// $('#editAnchorBtn').click(function(){
@@ -63,8 +70,20 @@ app.controller('editProfileController',['$scope', '$location', '$rootScope', '$h
 			// 	 $('#editTextBox').trigger('click');
 			// });
 
-			$scope.saveSkills = function(){
-				// console.log($scope.primaryskill.skillName[2]);
+			$scope.saveSkills = function() {
+				console.log($scope.primaryskill.skillName);
+			}
+
+			$scope.removePrimaryskill = function(id) {
+				console.log(id);
+				$scope.repeatSkillSets.splice(id, 1);
+				console.log($scope.repeatSkillSets);
+				// $scope.repeatSkillSets.forEach(function(element, i) {
+				// 	$scope.primaryskill.skillName.push(element.Skill);
+				// 	$scope.primaryskill.skillExp.push(element.ExperienceInMonths);
+				// 	$scope.primaryskill.year.push(element.LastUsed);
+				// })
+				$("#skillsdetails").hide().fadeIn('fast');
 			}
 
 			$scope.empBean = {};
